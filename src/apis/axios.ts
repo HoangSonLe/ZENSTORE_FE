@@ -1,10 +1,10 @@
 import { IApiService } from './interface';
 import axios from 'axios';
 import queryString from 'query-string';
-
+import env from '../constants/env';
 // Create an Axios instance
 const axiosInstance = axios.create({
-  baseURL: 'https://your-api-url.com/api', // Change this to your API URL
+  baseURL: env.API_URL, // Change this to your API URL
   timeout: 10000,
 });
 

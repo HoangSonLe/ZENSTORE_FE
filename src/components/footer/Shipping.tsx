@@ -1,4 +1,3 @@
-
 const Shipping = () => {
     return (
         <section className="shipping mb-80" id="shipping">
@@ -11,9 +10,7 @@ const Shipping = () => {
                             </span>
                             <div className="">
                                 <h6 className="mb-0">Phí vận chuyển</h6>
-                                <span className="text-sm text-heading">
-                                    Vận chuyển (Miễn phí toàn quốc)
-                                </span>
+                                <span className="text-sm text-heading">Miễn phí toàn quốc</span>
                             </div>
                         </div>
                     </div>

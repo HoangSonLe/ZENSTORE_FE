@@ -11,7 +11,7 @@ const DaySaleOne = ({ bannerList }: IProps) => {
             <div className="container container-lg">
                 <div className="day-sale-box rounded-16 overflow-hidden flex-between position-relative mb-24 z-1">
                     <img
-                        src="assets/images/bg/day-sale-bg.png"
+                        src="/assets/images/bg/day-sale-bg.png"
                         alt=""
                         className="position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100 cover-img"
                     />
@@ -33,7 +33,7 @@ const DaySaleOne = ({ bannerList }: IProps) => {
                             className="btn btn-outline-white flex-align d-inline-flex rounded-pill gap-8 mt-28"
                             tabIndex={0}
                         >
-                            Shop Now <i className="ph ph-plus text-xl d-flex" />
+                            Mua ngay <i className="ph ph-plus text-xl d-flex" />
                         </Link>
                     </div>
                     <div className="d-md-block d-none pe-xxl-5 pe-md-4">

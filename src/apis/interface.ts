@@ -155,6 +155,7 @@ export interface IApiResponse<T> {
     data: T;
     isSuccess: boolean;
     errorMessageList: string[];
+    successMessageList: string[];
 }
 
 export interface IApiResponseTable<T> extends IApiResponse<IApiTable<T>> {

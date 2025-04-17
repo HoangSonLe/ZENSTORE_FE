@@ -70,7 +70,7 @@ const TopSellingOne = () => {
                 <div className="border border-gray-100 p-24 rounded-16">
                     <div className="section-heading mb-24">
                         <div className="flex-between flex-wrap gap-8">
-                            <h5 className="mb-0">Top Selling Products</h5>
+                            <h5 className="mb-0">Sản phẩm bán chạy</h5>
                             <div className="flex-align mr-point gap-16">
                                 <Link
                                     to="/shop"
@@ -86,7 +86,7 @@ const TopSellingOne = () => {
                         <div className="col-md-4">
                             <div className="position-relative rounded-16 overflow-hidden p-28 z-1 text-center">
                                 <img
-                                    src="assets/images/bg/deal-bg.png"
+                                    src="/assets/images/bg/deal-bg.png"
                                     alt=""
                                     className="position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100"
                                 />
@@ -98,11 +98,11 @@ const TopSellingOne = () => {
                                         className="btn text-heading border-neutral-600 hover-bg-neutral-600 hover-text-white py-16 px-24 flex-center d-inline-flex rounded-pill gap-8 fw-medium"
                                         tabIndex={0}
                                     >
-                                        Shop Now <i className="ph ph-shopping-cart text-xl d-flex" />
+                                        Mua ngay <i className="ph ph-shopping-cart text-xl d-flex" />
                                     </Link>
                                 </div>
                                 <div className="d-md-block d-none mt-36">
-                                    <img src="assets/images/thumbs/deal-img.png" alt="" />
+                                    <img src="/assets/images/thumbs/deal-img.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ const TopSellingOne = () => {
                                                     Sold
                                                 </span>
                                                 <img
-                                                    src="assets/images/thumbs/product-two-img7.png"
+                                                    src="/assets/images/thumbs/product-two-img7.png"
                                                     alt=""
                                                     className="w-auto max-w-unset"
                                                 />
@@ -198,7 +198,7 @@ const TopSellingOne = () => {
                                                     Sale 50%{" "}
                                                 </span>
                                                 <img
-                                                    src="assets/images/thumbs/product-two-img8.png"
+                                                    src="/assets/images/thumbs/product-two-img8.png"
                                                     alt=""
                                                     className="w-auto max-w-unset"
                                                 />
@@ -277,7 +277,7 @@ const TopSellingOne = () => {
                                                     New
                                                 </span>
                                                 <img
-                                                    src="assets/images/thumbs/product-two-img9.png"
+                                                    src="/assets/images/thumbs/product-two-img9.png"
                                                     alt=""
                                                     className="w-auto max-w-unset"
                                                 />
@@ -356,7 +356,7 @@ const TopSellingOne = () => {
                                                     Best seller
                                                 </span>
                                                 <img
-                                                    src="assets/images/thumbs/product-two-img10.png"
+                                                    src="/assets/images/thumbs/product-two-img10.png"
                                                     alt=""
                                                     className="w-auto max-w-unset"
                                                 />
@@ -435,7 +435,7 @@ const TopSellingOne = () => {
                                                     Best Seller{" "}
                                                 </span>
                                                 <img
-                                                    src="assets/images/thumbs/product-two-img8.png"
+                                                    src="/assets/images/thumbs/product-two-img8.png"
                                                     alt=""
                                                     className="w-auto max-w-unset"
                                                 />

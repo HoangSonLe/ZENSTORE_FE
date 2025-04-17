@@ -49,7 +49,7 @@ const HomePage = () => {
 
             {/* DaySaleOne */}
             <DaySaleOne
-                bannerList={bannerList?.data.filter((i) => i.bannerTypeCode === EBannerOrder.ROW_4)}
+                bannerList={bannerList?.data.filter((i) => i.bannerTypeCode === EBannerOrder.ROW_5)}
             />
 
             {/* BrandTwo */}

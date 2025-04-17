@@ -16,6 +16,7 @@ export interface IProduct {
     productPriceSale: number;
     productImage: string;
     listImage: string[];
+    productShortDetail: string;
     productDetail: string;
     createdAt: Date;
     updatedAt: Date;

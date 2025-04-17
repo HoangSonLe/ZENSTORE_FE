@@ -16,4 +16,5 @@ export enum EBannerOrder {
     ROW_2 = "ROW_2",
     ROW_3 = "ROW_3",
     ROW_4 = "ROW_4",
+    ROW_5 = "ROW_5",
 }

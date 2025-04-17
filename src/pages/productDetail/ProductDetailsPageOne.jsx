@@ -7,54 +7,47 @@ import ShippingOne from "../components/ShippingOne";
 import NewsletterOne from "../components/NewsletterOne";
 import FooterOne from "../../components/FooterOne";
 import BottomFooter from "../components/BottomFooter";
-import BreadcrumbTwo from './../components/BreadcrumbTwo';
+import BreadcrumbTwo from "./../components/BreadcrumbTwo";
 import ScrollToTop from "react-scroll-to-top";
 import ColorInit from "../../helper/ColorInit";
 
 const ProductDetailsPageOne = () => {
+    return (
+        <>
+            {/* Preloader */}
+            <Preloader />
 
+            {/* ColorInit */}
+            <ColorInit color={false} />
 
+            {/* ScrollToTop */}
+            <ScrollToTop smooth color="#299E60" />
 
-  return (
-    <>
+            {/* HeaderOne */}
+            <HeaderOne />
 
-      {/* Preloader */}
-      <Preloader />
+            {/* Breadcrumb */}
+            <BreadcrumbTwo title={"Chi tiết sản phẩm"} />
 
-      {/* ColorInit */}
-      <ColorInit color={false} />
+            {/* ProductDetailsOne */}
+            <ProductDetailsOne />
 
-      {/* ScrollToTop */}
-      <ScrollToTop smooth color="#299E60" />
+            {/* NewArrivalTwo */}
+            <NewArrivalTwo />
 
-      {/* HeaderOne */}
-      <HeaderOne />
+            {/* ShippingOne */}
+            <ShippingOne />
 
-      {/* Breadcrumb */}
-      <BreadcrumbTwo title={"Product Details"} />
+            {/* NewsletterOne */}
+            <NewsletterOne />
 
-      {/* ProductDetailsOne */}
-      <ProductDetailsOne />
+            {/* FooterTwo */}
+            <FooterOne />
 
-      {/* NewArrivalTwo */}
-      <NewArrivalTwo />
-
-      {/* ShippingOne */}
-      <ShippingOne />
-
-      {/* NewsletterOne */}
-      <NewsletterOne />
-
-      {/* FooterTwo */}
-      <FooterOne />
-
-      {/* BottomFooter */}
-      <BottomFooter />
-
-
-
-    </>
-  );
+            {/* BottomFooter */}
+            <BottomFooter />
+        </>
+    );
 };
 
 export default ProductDetailsPageOne;

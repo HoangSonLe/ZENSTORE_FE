@@ -5,7 +5,7 @@ const BlogPage = () => {
     return (
         <>
             {/* Breadcrumb */}
-            <Breadcrumb title={"Blog"} />
+            <Breadcrumb title={"Tin tức"} />
 
             {/* Blog */}
             <Blog />

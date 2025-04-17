@@ -6,7 +6,7 @@ const ShopPage = () => {
     return (
         <>
             {/* Breadcrumb */}
-            <Breadcrumb title={"Shop"} />
+            <Breadcrumb title={"Sản phẩm"} />
             {/* ShopSection */}
             <ShopSection />
 

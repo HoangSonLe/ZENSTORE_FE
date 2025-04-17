@@ -1506,6 +1506,8 @@ input[type="number"] {
     padding: clamp(0.375rem, -2.248rem + 3vw, 0.75rem) clamp(0.5rem, -2.998rem + 4vw, 1rem);
     border-radius: 8px;
     position: relative;
+    width: fit-content !important;
+    padding: 5px !important;
 }
 
 @media screen and (max-width: 1399px) {

@@ -1,21 +1,20 @@
+import { useParams } from "react-router-dom";
 import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 import Shipping from "../../components/footer/Shipping";
-import ProductDetailsTwo from "../../components/productDetail/ProductDetailsTwo";
+import ProductDetails from "../../components/productDetail/ProductDetails";
 
-const ProductDetailsPage = () => {
-
+const ProductDetailsPage = ({ productId }: { productId: number }) => {
+    const { productParamId } = useParams<{ productParamId: string }>();
     return (
         <>
             {/* Breadcrumb */}
-            <Breadcrumb title={"Product Details"} />
+            <Breadcrumb title={"Chi tiết sản phẩm"} />
 
             {/* ProductDetailsTwo */}
-            <ProductDetailsTwo />
+            <ProductDetails productId={productId ?? productParamId} />
 
             {/* ShippingOne */}
             <Shipping />
-
-         
         </>
     );
 };

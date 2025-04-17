@@ -14,7 +14,7 @@ const Breadcrumb = ({ title }: { title: string }) => {
                                 className="text-gray-900 flex-align gap-8 hover-text-main-600"
                             >
                                 <i className="ph ph-house" />
-                                Home
+                                Trang chủ
                             </Link>
                         </li>
                         <li className="flex-align">

@@ -22,7 +22,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
                 <div className="banner-two-wrapper d-flex align-items-start">
                     <div className="banner-item-two-wrapper rounded-24 overflow-hidden position-relative arrow-center flex-grow-1 mb-0">
                         <img
-                            src="assets/images/bg/banner-two-bg.png"
+                            src="/assets/images/bg/banner-two-bg.png"
                             alt=""
                             className="banner-img position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 z-n1 object-fit-cover rounded-24"
                         />
@@ -30,17 +30,14 @@ const BannerTwo = ({ bannerList }: IProps) => {
                             <Slider {...settings}>
                                 <div className="banner-item-two">
                                     <div className="banner-item-two__content">
-                                        <span className="text-white mb-8 h6">
-                                            Starting at only $250
-                                        </span>
-                                        <h2 className="banner-item-two__title bounce text-white">
-                                            Get The Sound You Love For Less
-                                        </h2>
+                                        <h4 className="banner-item-two__title bounce text-white">
+                                            {bannerList[0].bannerTitle}
+                                        </h4>
                                         <Link
                                             to="/shop"
                                             className="btn btn-outline-white d-inline-flex align-items-center rounded-pill gap-8 mt-48"
                                         >
-                                            Shop Now
+                                            Mua ngay
                                             <span className="icon text-xl d-flex">
                                                 <i className="ph ph-shopping-cart-simple" />
                                             </span>
@@ -55,17 +52,14 @@ const BannerTwo = ({ bannerList }: IProps) => {
                                 </div>
                                 <div className="banner-item-two">
                                     <div className="banner-item-two__content">
-                                        <span className="text-white mb-8 h6">
-                                            Starting at only $250
-                                        </span>
-                                        <h2 className="banner-item-two__title bounce text-white">
-                                            Get The Sound You Love For Less
-                                        </h2>
+                                        <h4 className="banner-item-two__title bounce text-white">
+                                            {bannerList[1].bannerTitle}
+                                        </h4>
                                         <Link
                                             to="/shop"
                                             className="btn btn-outline-white d-inline-flex align-items-center rounded-pill gap-8 mt-48"
                                         >
-                                            Shop Now
+                                            Mua ngay
                                             <span className="icon text-xl d-flex">
                                                 <i className="ph ph-shopping-cart-simple" />
                                             </span>

@@ -57,7 +57,7 @@ const Header = (category: any) => {
                         <input
                             type="text"
                             className="form-control py-16 px-24 text-xl rounded-pill pe-64"
-                            placeholder="Search for a product or brand"
+                            placeholder="Tìm kiếm ..."
                         />
                         <button
                             type="submit"
@@ -83,7 +83,7 @@ const Header = (category: any) => {
                 </button>
                 <div className="mobile-menu__inner">
                     <Link to="/" className="mobile-menu__logo">
-                        <img src="assets/images/logo/logo.png" alt="Logo" />
+                        <img src="/assets/images/logo/logo.png" alt="Logo" />
                     </Link>
                     <div className="mobile-menu__menu">
                         {/* Nav Menu Start */}
@@ -93,7 +93,7 @@ const Header = (category: any) => {
                                 className={`on-hover-item nav-menu__item`}
                             >
                                 <Link to="/" className="nav-menu__link">
-                                    Home
+                                    Trang chủ
                                 </Link>
                             </li>
                             <li
@@ -134,7 +134,7 @@ const Header = (category: any) => {
                             </li>
                             <li className="on-hover-item nav-menu__item">
                                 <Link to="/blog" className="nav-menu__link">
-                                    Blog
+                                    Tin tức
                                 </Link>
                             </li>
                         </ul>
@@ -150,7 +150,7 @@ const Header = (category: any) => {
                         {/* Logo Start */}
                         <div className="logo">
                             <Link to="/" className="link">
-                                <img src="assets/images/logo/logo.png" alt="Logo" />
+                                <img src="/assets/images/logo/logo.png" alt="Logo" />
                             </Link>
                         </div>
                         {/* Logo End  */}
@@ -162,7 +162,7 @@ const Header = (category: any) => {
                                         <input
                                             type="text"
                                             className="search-form__input common-input py-13 ps-16 pe-18 rounded-0 border-0"
-                                            placeholder="Search for a product or brand"
+                                            placeholder="Tìm kiếm ..."
                                         />
                                     </div>
                                     <button
@@ -197,44 +197,17 @@ const Header = (category: any) => {
                                 <ul className="nav-menu flex-align ">
                                     <li className="on-hover-item nav-menu__item">
                                         <Link to="/" className="nav-menu__link">
-                                            Home
+                                            Trang chủ
                                         </Link>
                                     </li>
-                                    <li className="on-hover-item nav-menu__item has-submenu">
-                                        <Link to="#" className="nav-menu__link">
-                                            Shop
+                                    <li className="on-hover-item nav-menu__item">
+                                        <Link to="/shop" className="nav-menu__link">
+                                            Sản phẩm
                                         </Link>
-                                        <ul className="on-hover-dropdown common-dropdown nav-submenu scroll-sm">
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/shop"
-                                                    className={(navData) =>
-                                                        navData.isActive
-                                                            ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage"
-                                                            : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    Shop
-                                                </NavLink>
-                                            </li>
-                                            <li className="common-dropdown__item nav-submenu__item">
-                                                <NavLink
-                                                    to="/product-details"
-                                                    className={(navData) =>
-                                                        navData.isActive
-                                                            ? "common-dropdown__link nav-submenu__link hover-bg-neutral-100 activePage"
-                                                            : "common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                                    }
-                                                >
-                                                    {" "}
-                                                    Shop Details
-                                                </NavLink>
-                                            </li>
-                                        </ul>
                                     </li>
                                     <li className="on-hover-item nav-menu__item">
                                         <Link to="/blog" className="nav-menu__link">
-                                            Blog
+                                            Tin tức
                                         </Link>
                                     </li>
                                 </ul>

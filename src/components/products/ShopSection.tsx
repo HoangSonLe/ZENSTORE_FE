@@ -8,6 +8,7 @@ import { useApi } from "../../hooks";
 import { formatVND, getRandomFloat, getRandomInteger } from "../../utils/numberUtils";
 import Filter from "./Filter";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 
 const ShopSection = () => {
     const { register, handleSubmit, watch, setValue, getValues, control } = useForm<IProductQuery>({
@@ -53,10 +54,12 @@ const ShopSection = () => {
     }, []);
 
     const onChangeFilter = () => {
-        console.log(getValues());
+        setValue("pageNumber", 1);
+        getProductData();
     };
     const onPageChange = (page: number) => {
         setValue("pageNumber", page);
+        getProductData();
     };
     const getTagCssClass = (status: EProductStatus | string) => {
         switch (status) {
@@ -130,30 +133,40 @@ const ShopSection = () => {
                             {productTableData && productTableData.data?.length > 0 ? (
                                 <>
                                     {productTableData.data.map((i) => (
-                                        <div
+                                        <Link
+                                            to={`/product-details/${i.productId}`}
                                             key={i.productId}
                                             className="product-card h-100 p-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2 cursor-pointer"
                                         >
                                             <div className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative">
-                                                <img
-                                                    style={{ width: "232px", height: "180px" }}
-                                                    src={i.listImage[0]}
-                                                    alt=""
-                                                    className="w-auto max-w-unset"
-                                                />
-                                                <span
-                                                    className={`product-card__badge ${getTagCssClass(
-                                                        i.productStatusCode
-                                                    )} px-8 py-4 text-sm text-white position-absolute inset-inline-start-0 inset-block-start-0`}
+                                                <Link
+                                                    to={`/product-details/${i.productId}`}
+                                                    className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative"
                                                 >
-                                                    {i.productStatusName}
-                                                </span>
+                                                    <img
+                                                        style={{ width: "232px", height: "180px" }}
+                                                        src={i.listImage[0]}
+                                                        alt=""
+                                                        className="w-auto max-w-unset"
+                                                    />
+                                                    <span
+                                                        className={`product-card__badge ${getTagCssClass(
+                                                            i.productStatusCode
+                                                        )} px-8 py-4 text-sm text-white position-absolute inset-inline-start-0 inset-block-start-0`}
+                                                    >
+                                                        {i.productStatusName}
+                                                    </span>
+                                                </Link>
                                             </div>
                                             <div className="product-card__content mt-16">
                                                 <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                                    <div className="link text-line-2" tabIndex={0}>
+                                                    <Link
+                                                        to="/product-details-two"
+                                                        className="link text-line-2"
+                                                        tabIndex={0}
+                                                    >
                                                         {i.productName}
-                                                    </div>
+                                                    </Link>
                                                 </h6>
                                                 <div className="flex-align mb-20 mt-16 gap-6">
                                                     <span className="text-xs fw-medium text-gray-500">
@@ -175,7 +188,7 @@ const ShopSection = () => {
                                                     </span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     ))}
                                     <div style={{ gridColumn: "span 4" }}>
                                         {/* Pagination Start */}

@@ -87,7 +87,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                 <div className="border border-gray-100 p-24 rounded-16">
                     <div className="section-heading mb-24">
                         <div className="flex-between flex-wrap gap-8">
-                            <h5 className="mb-0">Deal of The Week</h5>
+                            <h5 className="mb-0">Khuyến mãi trong tuần</h5>
                             <div className="flex-align mr-point gap-16">
                                 <Link
                                     to="/shop"
@@ -100,7 +100,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                     </div>
                     <div className="deal-week-box rounded-16 overflow-hidden flex-between position-relative z-1 mb-24">
                         <img
-                            src="assets/images/bg/week-deal-bg.png"
+                            src="/assets/images/bg/week-deal-bg.png"
                             alt=""
                             className="position-absolute inset-block-start-0 inset-block-start-0 w-100 h-100 z-n1 object-fit-cover"
                         />
@@ -156,7 +156,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                                             Sold
                                         </span>
                                         <img
-                                            src="assets/images/thumbs/product-two-img1.png"
+                                            src="/assets/images/thumbs/product-two-img1.png"
                                             alt=""
                                             className="w-auto max-w-unset"
                                         />
@@ -239,7 +239,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                                             Sale 50%{" "}
                                         </span>
                                         <img
-                                            src="assets/images/thumbs/product-two-img2.png"
+                                            src="/assets/images/thumbs/product-two-img2.png"
                                             alt=""
                                             className="w-auto max-w-unset"
                                         />
@@ -322,7 +322,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                                             New
                                         </span>
                                         <img
-                                            src="assets/images/thumbs/product-two-img3.png"
+                                            src="/assets/images/thumbs/product-two-img3.png"
                                             alt=""
                                             className="w-auto max-w-unset"
                                         />
@@ -405,7 +405,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                                             Best seller
                                         </span>
                                         <img
-                                            src="assets/images/thumbs/product-two-img4.png"
+                                            src="/assets/images/thumbs/product-two-img4.png"
                                             alt=""
                                             className="w-auto max-w-unset"
                                         />
@@ -488,7 +488,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                                             Best Seller{" "}
                                         </span>
                                         <img
-                                            src="assets/images/thumbs/product-two-img5.png"
+                                            src="/assets/images/thumbs/product-two-img5.png"
                                             alt=""
                                             className="w-auto max-w-unset"
                                         />
@@ -571,7 +571,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                                             Best seller
                                         </span>
                                         <img
-                                            src="assets/images/thumbs/product-two-img6.png"
+                                            src="/assets/images/thumbs/product-two-img6.png"
                                             alt=""
                                             className="w-auto max-w-unset"
                                         />
@@ -654,7 +654,7 @@ const DealsOne = ({ bannerList }: IProps) => {
                                             New
                                         </span>
                                         <img
-                                            src="assets/images/thumbs/product-two-img9.png"
+                                            src="/assets/images/thumbs/product-two-img9.png"
                                             alt=""
                                             className="w-auto max-w-unset"
                                         />

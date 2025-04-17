@@ -6,9 +6,6 @@ const NewsletterTwo = () => {
             <div className="container container-lg">
                 <div className="flex-between gap-20 flex-wrap">
                     <div className="flex-align gap-22">
-                        <span className="d-flex">
-                            <img src="assets/images/icon/envelop.png" alt="" />
-                        </span>
                         <div>
                             <h5 className="text-white mb-12 fw-medium">
                                 Join Our Newsletter, Get 10% Off
@@ -18,22 +15,6 @@ const NewsletterTwo = () => {
                             </p>
                         </div>
                     </div>
-                    <form action="#" className="newsletter-two__form w-50">
-                        <div className="flex-align gap-16">
-                            <input
-                                type="text"
-                                className="common-input style-two rounded-8 flex-grow-1 py-14"
-                                placeholder="Enter your email address"
-                            />
-                            <button
-                                type="submit"
-                                className="btn btn-main-two flex-shrink-0 rounded-8 py-16"
-                            >
-                                {" "}
-                                Subscribe
-                            </button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

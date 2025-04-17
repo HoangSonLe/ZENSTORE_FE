@@ -1,10 +1,34 @@
 /* ========================== Top Brand Section Start ================================ */
 .top-brand {
     &__item {
-        max-height: 84px;
-        max-width: 160px;
         width: 100%;
+        max-width: 160px;
         aspect-ratio: 1;
+        overflow: hidden;
+        /* Prevents image from overflowing the container */
+        border-radius: 8px;
+        /* Rounds the corners of the parent div */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f8f8;
+        /* Optional background color */
+        padding: 0 !important;
     }
 }
+
+.top-brand__item img {
+    width: 100%;
+    /* Ensures the image takes up full width */
+    height: 100%;
+    /* Ensures the image takes up full height */
+    object-fit: cover;
+    /* Ensures image fills the area and respects aspect ratio */
+    object-position: center;
+    /* Centers the image within the container */
+    border-radius: 8px;
+    /* Rounds the corners of the image */
+}
+
+
 /* ========================== Top Brand Section End ================================ */

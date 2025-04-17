@@ -1,8 +1,6 @@
-import React from "react";
 import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
-import ShippingTwo from "../../components/footer/ShippingTwo";
+import Shipping from "../../components/footer/Shipping";
 import ShopSection from "../../components/products/ShopSection";
-import NewsletterTwo from "../../components/footer/NewsletterTwo";
 
 const ShopPage = () => {
     return (
@@ -13,7 +11,7 @@ const ShopPage = () => {
             <ShopSection />
 
             {/* ShippingTwo */}
-            <ShippingTwo />
+            <Shipping />
         </>
     );
 };

@@ -1,7 +1,5 @@
-import React from 'react'
 
-const ShippingTwo = () => {
-
+const Shipping = () => {
     return (
         <section className="shipping mb-80" id="shipping">
             <div className="container container-lg">
@@ -12,9 +10,9 @@ const ShippingTwo = () => {
                                 <i className="ph-fill ph-car-profile" />
                             </span>
                             <div className="">
-                                <h6 className="mb-0">Free Shipping</h6>
+                                <h6 className="mb-0">Phí vận chuyển</h6>
                                 <span className="text-sm text-heading">
-                                    Free shipping all over the US
+                                    Vận chuyển (Miễn phí toàn quốc)
                                 </span>
                             </div>
                         </div>
@@ -25,9 +23,9 @@ const ShippingTwo = () => {
                                 <i className="ph-fill ph-hand-heart" />
                             </span>
                             <div className="">
-                                <h6 className="mb-0"> 100% Satisfaction</h6>
+                                <h6 className="mb-0">Uy tín</h6>
                                 <span className="text-sm text-heading">
-                                    Free shipping all over the US
+                                    Luôn đặt chất lượng hàng đầu
                                 </span>
                             </div>
                         </div>
@@ -38,9 +36,9 @@ const ShippingTwo = () => {
                                 <i className="ph-fill ph-credit-card" />
                             </span>
                             <div className="">
-                                <h6 className="mb-0"> Secure Payments</h6>
+                                <h6 className="mb-0"> Thanh toán </h6>
                                 <span className="text-sm text-heading">
-                                    Free shipping all over the US
+                                    Mọi hình thức thanh toán
                                 </span>
                             </div>
                         </div>
@@ -51,18 +49,15 @@ const ShippingTwo = () => {
                                 <i className="ph-fill ph-chats" />
                             </span>
                             <div className="">
-                                <h6 className="mb-0"> 24/7 Support</h6>
-                                <span className="text-sm text-heading">
-                                    Free shipping all over the US
-                                </span>
+                                <h6 className="mb-0">24/7 Hỗ trợ</h6>
+                                <span className="text-sm text-heading">Mọi lúc, mọi nơi</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    );
+};
 
-    )
-}
-
-export default ShippingTwo
+export default Shipping;

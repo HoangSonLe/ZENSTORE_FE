@@ -1,14 +1,15 @@
-import React, { memo, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
-import { getCountdown } from '../../helper/Countdown';
-
+import React, { memo, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import { getCountdown } from "../../helper/Countdown";
+import { IBanner } from "../../apis/banner/banner.interface";
 
 const SampleNextArrow = memo(function SampleNextArrow(props: any) {
     const { className, onClick } = props;
     return (
         <button
-            type="button" onClick={onClick}
+            type="button"
+            onClick={onClick}
             className={` ${className} slick-next slick-arrow flex-center rounded-circle border border-gray-100 hover-border-neutral-600 text-xl hover-bg-neutral-600 hover-text-white transition-1`}
         >
             <i className="ph ph-caret-right" />
@@ -28,8 +29,10 @@ const SamplePrevArrow = memo(function SamplePrevArrow(props: any) {
         </button>
     );
 });
-
-const DealsOne = () => {
+interface IProps {
+    bannerList: IBanner[];
+}
+const DealsOne = ({ bannerList }: IProps) => {
     const [timeLeft, setTimeLeft] = useState(getCountdown());
 
     useEffect(() => {
@@ -56,31 +59,26 @@ const DealsOne = () => {
                 breakpoint: 1599,
                 settings: {
                     slidesToShow: 5,
-
                 },
             },
             {
                 breakpoint: 1399,
                 settings: {
                     slidesToShow: 3,
-
                 },
             },
             {
                 breakpoint: 1199,
                 settings: {
                     slidesToShow: 2,
-
                 },
             },
             {
                 breakpoint: 575,
                 settings: {
                     slidesToShow: 1,
-
                 },
             },
-
         ],
     };
     return (
@@ -107,7 +105,11 @@ const DealsOne = () => {
                             className="position-absolute inset-block-start-0 inset-block-start-0 w-100 h-100 z-n1 object-fit-cover"
                         />
                         <div className="d-lg-block d-none ps-32 flex-shrink-0">
-                            <img src="assets/images/thumbs/week-deal-img1.png" alt="" />
+                            <img
+                                style={{ width: "195px", height: "171px" }}
+                                src={bannerList[0]?.bannerImage}
+                                alt={bannerList[0]?.bannerImage}
+                            />
                         </div>
                         <div className="deal-week-box__content px-sm-4 d-block w-100 text-center">
                             <h6 className="mb-20">Apple AirPods Max, Over Ear Headphones</h6>
@@ -115,26 +117,30 @@ const DealsOne = () => {
                                 <ul className="countdown-list style-four flex-center flex-wrap">
                                     <li className="countdown-list__item flex-align flex-column text-sm fw-medium text-white rounded-circle bg-neutral-600">
                                         <span className="days" />
-                                        {timeLeft.days} <br /> Days
+                                        {timeLeft.days} <br /> Ngày
                                     </li>
                                     <li className="countdown-list__item flex-align flex-column text-sm fw-medium text-white rounded-circle bg-neutral-600">
                                         <span className="hours" />
-                                        {timeLeft.hours} <br /> Hour
+                                        {timeLeft.hours} <br /> Giờ
                                     </li>
                                     <li className="countdown-list__item flex-align flex-column text-sm fw-medium text-white rounded-circle bg-neutral-600">
                                         <span className="minutes" />
-                                        {timeLeft.minutes} <br /> Min
+                                        {timeLeft.minutes} <br /> Phút
                                     </li>
                                     <li className="countdown-list__item flex-align flex-column text-sm fw-medium text-white rounded-circle bg-neutral-600">
                                         <span className="seconds" />
-                                        {timeLeft.seconds} <br /> Sec
+                                        {timeLeft.seconds} <br /> Giây
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="d-lg-block d-none flex-shrink-0 pe-xl-5">
                             <div className="me-xxl-5">
-                                <img src="assets/images/thumbs/week-deal-img2.png" alt="" />
+                                <img
+                                    style={{ width: "195px", height: "171px" }}
+                                    src={bannerList[1]?.bannerImage}
+                                    alt={bannerList[1]?.bannerImage}
+                                />
                             </div>
                         </div>
                     </div>
@@ -157,11 +163,15 @@ const DealsOne = () => {
                                     </Link>
                                     <div className="product-card__content mt-16">
                                         <div className="flex-align gap-6">
-                                            <span className="text-xs fw-medium text-gray-500">4.8</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                4.8
+                                            </span>
                                             <span className="text-15 fw-medium text-warning-600 d-flex">
                                                 <i className="ph-fill ph-star" />
                                             </span>
-                                            <span className="text-xs fw-medium text-gray-500">(17k)</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                (17k)
+                                            </span>
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link
@@ -203,7 +213,10 @@ const DealsOne = () => {
                                                 $28.99
                                             </span>
                                             <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
+                                                $14.99{" "}
+                                                <span className="text-gray-500 fw-normal">
+                                                    /Qty
+                                                </span>{" "}
                                             </span>
                                         </div>
                                         <Link
@@ -233,11 +246,15 @@ const DealsOne = () => {
                                     </Link>
                                     <div className="product-card__content mt-16">
                                         <div className="flex-align gap-6">
-                                            <span className="text-xs fw-medium text-gray-500">4.8</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                4.8
+                                            </span>
                                             <span className="text-15 fw-medium text-warning-600 d-flex">
                                                 <i className="ph-fill ph-star" />
                                             </span>
-                                            <span className="text-xs fw-medium text-gray-500">(17k)</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                (17k)
+                                            </span>
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link
@@ -279,7 +296,10 @@ const DealsOne = () => {
                                                 $28.99
                                             </span>
                                             <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
+                                                $14.99{" "}
+                                                <span className="text-gray-500 fw-normal">
+                                                    /Qty
+                                                </span>{" "}
                                             </span>
                                         </div>
                                         <Link
@@ -309,11 +329,15 @@ const DealsOne = () => {
                                     </Link>
                                     <div className="product-card__content mt-16">
                                         <div className="flex-align gap-6">
-                                            <span className="text-xs fw-medium text-gray-500">4.8</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                4.8
+                                            </span>
                                             <span className="text-15 fw-medium text-warning-600 d-flex">
                                                 <i className="ph-fill ph-star" />
                                             </span>
-                                            <span className="text-xs fw-medium text-gray-500">(17k)</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                (17k)
+                                            </span>
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link
@@ -355,7 +379,10 @@ const DealsOne = () => {
                                                 $28.99
                                             </span>
                                             <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
+                                                $14.99{" "}
+                                                <span className="text-gray-500 fw-normal">
+                                                    /Qty
+                                                </span>{" "}
                                             </span>
                                         </div>
                                         <Link
@@ -385,11 +412,15 @@ const DealsOne = () => {
                                     </Link>
                                     <div className="product-card__content mt-16">
                                         <div className="flex-align gap-6">
-                                            <span className="text-xs fw-medium text-gray-500">4.8</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                4.8
+                                            </span>
                                             <span className="text-15 fw-medium text-warning-600 d-flex">
                                                 <i className="ph-fill ph-star" />
                                             </span>
-                                            <span className="text-xs fw-medium text-gray-500">(17k)</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                (17k)
+                                            </span>
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link
@@ -431,7 +462,10 @@ const DealsOne = () => {
                                                 $28.99
                                             </span>
                                             <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
+                                                $14.99{" "}
+                                                <span className="text-gray-500 fw-normal">
+                                                    /Qty
+                                                </span>{" "}
                                             </span>
                                         </div>
                                         <Link
@@ -461,11 +495,15 @@ const DealsOne = () => {
                                     </Link>
                                     <div className="product-card__content mt-16">
                                         <div className="flex-align gap-6">
-                                            <span className="text-xs fw-medium text-gray-500">4.8</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                4.8
+                                            </span>
                                             <span className="text-15 fw-medium text-warning-600 d-flex">
                                                 <i className="ph-fill ph-star" />
                                             </span>
-                                            <span className="text-xs fw-medium text-gray-500">(17k)</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                (17k)
+                                            </span>
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link
@@ -507,7 +545,10 @@ const DealsOne = () => {
                                                 $28.99
                                             </span>
                                             <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
+                                                $14.99{" "}
+                                                <span className="text-gray-500 fw-normal">
+                                                    /Qty
+                                                </span>{" "}
                                             </span>
                                         </div>
                                         <Link
@@ -537,11 +578,15 @@ const DealsOne = () => {
                                     </Link>
                                     <div className="product-card__content mt-16">
                                         <div className="flex-align gap-6">
-                                            <span className="text-xs fw-medium text-gray-500">4.8</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                4.8
+                                            </span>
                                             <span className="text-15 fw-medium text-warning-600 d-flex">
                                                 <i className="ph-fill ph-star" />
                                             </span>
-                                            <span className="text-xs fw-medium text-gray-500">(17k)</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                (17k)
+                                            </span>
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link
@@ -583,7 +628,10 @@ const DealsOne = () => {
                                                 $28.99
                                             </span>
                                             <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
+                                                $14.99{" "}
+                                                <span className="text-gray-500 fw-normal">
+                                                    /Qty
+                                                </span>{" "}
                                             </span>
                                         </div>
                                         <Link
@@ -613,11 +661,15 @@ const DealsOne = () => {
                                     </Link>
                                     <div className="product-card__content mt-16">
                                         <div className="flex-align gap-6">
-                                            <span className="text-xs fw-medium text-gray-500">4.8</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                4.8
+                                            </span>
                                             <span className="text-15 fw-medium text-warning-600 d-flex">
                                                 <i className="ph-fill ph-star" />
                                             </span>
-                                            <span className="text-xs fw-medium text-gray-500">(17k)</span>
+                                            <span className="text-xs fw-medium text-gray-500">
+                                                (17k)
+                                            </span>
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link
@@ -659,7 +711,10 @@ const DealsOne = () => {
                                                 $28.99
                                             </span>
                                             <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
+                                                $14.99{" "}
+                                                <span className="text-gray-500 fw-normal">
+                                                    /Qty
+                                                </span>{" "}
                                             </span>
                                         </div>
                                         <Link
@@ -677,8 +732,7 @@ const DealsOne = () => {
                 </div>
             </div>
         </section>
+    );
+};
 
-    )
-}
-
-export default DealsOne
+export default DealsOne;

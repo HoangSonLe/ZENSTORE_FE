@@ -1,8 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { IBanner } from "../../apis/banner/banner.interface";
 
-const PromotionalTwo = () => {
-    return (
+interface IProps {
+    bannerList: IBanner[];
+}
+
+const PromotionalTwo = ({ bannerList }: IProps) => {
+    return bannerList ? (
         <section className="promotional-banner mt-32">
             <div className="container container-lg">
                 <div className="row gy-4">
@@ -28,7 +32,11 @@ const PromotionalTwo = () => {
                                     </Link>
                                 </div>
                                 <div className="pe-xxl-4">
-                                    <img src="assets/images/thumbs/promo-img1.png" alt="" />
+                                    <img
+                                        style={{ width: "98px", height: "115px" }}
+                                        src={bannerList[0]?.bannerImage}
+                                        alt={bannerList[0]?.bannerImage}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -55,7 +63,11 @@ const PromotionalTwo = () => {
                                     </Link>
                                 </div>
                                 <div className="pe-xxl-4">
-                                    <img src="assets/images/thumbs/promo-img2.png" alt="" />
+                                    <img
+                                        style={{ width: "98px", height: "115px" }}
+                                        src={bannerList[1]?.bannerImage}
+                                        alt={bannerList[1]?.bannerImage}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -69,7 +81,9 @@ const PromotionalTwo = () => {
                             />
                             <div className="flex-between flex-wrap gap-16">
                                 <div className="">
-                                    <span className="text-heading text-sm mb-8">Start From $250</span>
+                                    <span className="text-heading text-sm mb-8">
+                                        Start From $250
+                                    </span>
                                     <h6 className="mb-0">Airpod Headphone</h6>
                                     <Link
                                         to="/shop"
@@ -82,7 +96,11 @@ const PromotionalTwo = () => {
                                     </Link>
                                 </div>
                                 <div className="pe-xxl-4">
-                                    <img src="assets/images/thumbs/promo-img3.png" alt="" />
+                                    <img
+                                        style={{ width: "98px", height: "115px" }}
+                                        src={bannerList[2]?.bannerImage}
+                                        alt={bannerList[2]?.bannerImage}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -90,8 +108,7 @@ const PromotionalTwo = () => {
                 </div>
             </div>
         </section>
+    ) : null;
+};
 
-    )
-}
-
-export default PromotionalTwo
+export default PromotionalTwo;

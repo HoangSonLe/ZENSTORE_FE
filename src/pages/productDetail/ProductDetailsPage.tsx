@@ -1,7 +1,5 @@
-import React from "react";
 import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
-import ShippingOne from "../../components/footer/ShippingOne";
-import NewsletterTwo from "../../components/footer/NewsletterTwo";
+import Shipping from "../../components/footer/Shipping";
 import ProductDetailsTwo from "../../components/productDetail/ProductDetailsTwo";
 
 const ProductDetailsPage = () => {
@@ -15,7 +13,7 @@ const ProductDetailsPage = () => {
             <ProductDetailsTwo />
 
             {/* ShippingOne */}
-            <ShippingOne />
+            <Shipping />
 
          
         </>

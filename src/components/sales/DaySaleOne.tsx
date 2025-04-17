@@ -1,7 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { IBanner } from "../../apis/banner/banner.interface";
 
-const DaySaleOne = () => {
+interface IProps {
+    bannerList: IBanner[];
+}
+
+const DaySaleOne = ({ bannerList }: IProps) => {
     return (
         <section className="day-sale">
             <div className="container container-lg">
@@ -12,7 +16,11 @@ const DaySaleOne = () => {
                         className="position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100 cover-img"
                     />
                     <div className="d-xl-block d-none">
-                        <img src="assets/images/thumbs/day-sale-img1.png" alt="" />
+                        <img
+                            style={{ width: "431px", height: "372px" }}
+                            src={bannerList[0]?.bannerImage}
+                            alt={bannerList[0]?.bannerImage}
+                        />
                     </div>
                     <div className="day-sale-box__content d-block w-100 text-start py-32 ps-lg-0 ps-24">
                         <h3 className="text-white fw-medium mb-24">CYBER MONDAY SALE</h3>
@@ -29,13 +37,16 @@ const DaySaleOne = () => {
                         </Link>
                     </div>
                     <div className="d-md-block d-none pe-xxl-5 pe-md-4">
-                        <img src="assets/images/thumbs/day-sale-img2.png" alt="" />
+                        <img
+                            style={{ width: "607px", height: "303px" }}
+                            src={bannerList[0]?.bannerImage}
+                            alt={bannerList[0]?.bannerImage}
+                        />
                     </div>
                 </div>
             </div>
         </section>
+    );
+};
 
-    )
-}
-
-export default DaySaleOne
+export default DaySaleOne;

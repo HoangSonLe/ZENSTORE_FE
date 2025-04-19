@@ -24,8 +24,6 @@ const MainLayout = () => {
                 <Outlet /> {/* This is where child routes will be rendered */}
             </main>
             <footer>
-                {/* NewsletterOne */}
-                <NewsletterTwo />
                 <Footer />
                 {/* BottomFooter */}
                 <BottomFooter />

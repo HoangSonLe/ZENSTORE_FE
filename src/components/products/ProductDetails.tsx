@@ -16,7 +16,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
         await getProductDetail(
             {
                 params: {
-                    productId: 1,
+                    productId: productId,
                 },
             },
             (response) => {
@@ -46,7 +46,6 @@ const ProductDetails = ({ productId }: { productId: number }) => {
         slidesToScroll: 1,
         focusOnSelect: true,
     };
-    console.log(productData);
     return productData ? (
         <section className="product-details py-80">
             <div className="container container-lg">
@@ -116,9 +115,17 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                     </div>
                                     <span className="mt-32 pt-32 text-gray-700 border-top border-gray-100 d-block" />
                                     <p className="text-gray-700 text-xl">
-                                        {productData.productShortDetail}
+                                        {
+                                            <div
+                                                dangerouslySetInnerHTML={{
+                                                    __html: productData.productShortDetail,
+                                                }}
+                                            />
+                                        }
                                     </p>
-                                    {productData.productPrice !== productData.productPriceSale ? (
+                                    {productData.productPrice !== productData.productPriceSale &&
+                                    productData.productPrice &&
+                                    productData.productPriceSale ? (
                                         <div className="my-32 flex-align gap-16 flex-wrap">
                                             <div className="flex-align gap-8">
                                                 <div className="flex-align gap-8 text-main-two-600">
@@ -138,7 +145,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                     ) : (
                                         <div className="my-32 flex-align gap-16 flex-wrap">
                                             <div className="flex-align gap-8">
-                                                <h6 className="text-xl text-gray-400 mb-0 fw-medium text-decoration-line-through">
+                                                <h6 className="mb-0">
                                                     {formatVND(productData.productPrice)}
                                                 </h6>
                                             </div>

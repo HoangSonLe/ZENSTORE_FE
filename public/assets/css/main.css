@@ -1,4 +1,4 @@
-/*====================== CSS Index Here =======================*/
+/*====================== CSS Index =======================*/
 /*
 01. Abstracts
     1.1. Classes
@@ -8175,7 +8175,6 @@ input:focus-visible {
 .common-dropdown__link::before {
     position: absolute;
 }
-
 /* Submenu End */
 /* Header Menu and Submenu Css End */
 /* Category Submenus Submenu Css Start */

@@ -6,7 +6,7 @@ import { IProduct, IProductQuery } from "./product.interface";
 export default {
     getProductList(
         params: IApiRequestParams<null, IProductQuery, null>
-    ): Promise<IApiResponseTable<IProduct[]>> {
+    ): Promise<IApiResponseTable<IProduct>> {
         return apiService({ url: "/Product/GetProductList", ...params });
     },
     getProductDetail(

@@ -19,8 +19,10 @@ const PromotionalTwo = ({ bannerList }: IProps) => {
                             />
                             <div className="flex-between flex-wrap gap-16">
                                 <div className="">
-                                    <span className="text-heading text-sm mb-8">Latest Deal</span>
-                                    <h6 className="mb-0">iPhone 15 Pro Max</h6>
+                                    <span className="text-heading text-sm mb-8">
+                                        {bannerList[0]?.bannerSubTitle}
+                                    </span>
+                                    <h6 className="mb-0">{bannerList[0]?.bannerTitle}</h6>
                                     <Link
                                         to="/shop"
                                         className="d-inline-flex align-items-center gap-8 mt-16 text-heading text-md fw-medium border border-top-0 border-end-0 border-start-0 border-gray-900 hover-text-main-two-600 hover-border-main-two-600"
@@ -50,8 +52,10 @@ const PromotionalTwo = ({ bannerList }: IProps) => {
                             />
                             <div className="flex-between flex-wrap gap-16">
                                 <div className="">
-                                    <span className="text-heading text-sm mb-8">Get 60% Off</span>
-                                    <h6 className="mb-0">Instax Mini 11 Camera</h6>
+                                    <span className="text-heading text-sm mb-8">
+                                        {bannerList[1]?.bannerSubTitle}
+                                    </span>
+                                    <h6 className="mb-0">{bannerList[1]?.bannerTitle}</h6>
                                     <Link
                                         to="/shop"
                                         className="d-inline-flex align-items-center gap-8 mt-16 text-heading text-md fw-medium border border-top-0 border-end-0 border-start-0 border-gray-900 hover-text-main-two-600 hover-border-main-two-600"
@@ -82,9 +86,9 @@ const PromotionalTwo = ({ bannerList }: IProps) => {
                             <div className="flex-between flex-wrap gap-16">
                                 <div className="">
                                     <span className="text-heading text-sm mb-8">
-                                        Start From $250
+                                        {bannerList[2]?.bannerSubTitle}
                                     </span>
-                                    <h6 className="mb-0">Airpod Headphone</h6>
+                                    <h6 className="mb-0">{bannerList[2]?.bannerTitle}</h6>
                                     <Link
                                         to="/shop"
                                         className="d-inline-flex align-items-center gap-8 mt-16 text-heading text-md fw-medium border border-top-0 border-end-0 border-start-0 border-gray-900 hover-text-main-two-600 hover-border-main-two-600"

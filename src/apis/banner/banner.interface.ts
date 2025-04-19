@@ -2,7 +2,7 @@ import { EBannerOrder } from "../../constants/enum";
 
 export interface IBanner {
     bannerId: number;
-    bannerSubTitle: string;
+    bannerSubTitle: string | null;
     bannerTitle: string;
     bannerCode: string;
     bannerName: string;

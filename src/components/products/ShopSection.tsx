@@ -7,16 +7,35 @@ import { EProductStatus } from "../../constants/enum";
 import { useApi } from "../../hooks";
 import { formatVND, getRandomFloat, getRandomInteger } from "../../utils/numberUtils";
 import Filter from "./Filter";
-import Pagination from "./Pagination";
+import Pagination from "../pagination/Pagination";
 import { Link } from "react-router-dom";
-
+export interface IProductCustomQuery extends IProductQuery {
+    statusCode: string;
+}
+export const getTagCssClass = (status: EProductStatus | string) => {
+    switch (status) {
+        case EProductStatus.NEW:
+            return "bg-primary-600";
+        case EProductStatus.BEST_SELL:
+            return "bg-warning-600";
+        case EProductStatus.OUT_STOCK:
+            return "bg-gray-600";
+        default:
+            return "bg-danger-600";
+    }
+};
 const ShopSection = () => {
-    const { register, handleSubmit, watch, setValue, getValues, control } = useForm<IProductQuery>({
-        defaultValues: {
-            pageNumber: 1,
-            pageSize: 20,
-        },
-    });
+    const { register, handleSubmit, watch, setValue, getValues, control } =
+        useForm<IProductCustomQuery>({
+            defaultValues: {
+                colorCode: EProductStatus.ALL,
+                seriCode: EProductStatus.ALL,
+                spaceCode: EProductStatus.ALL,
+                statusCode: EProductStatus.ALL,
+                pageNumber: 1,
+                pageSize: 20,
+            },
+        });
     const pageNumber = watch("pageNumber");
 
     const [productTableData, setProductTableData] = useState<IApiTable<IProduct>>();
@@ -40,6 +59,7 @@ const ShopSection = () => {
             {
                 params: {
                     ...formValues,
+                    statusCodes: [...formValues.statusCode],
                 },
             },
             (response) => {
@@ -61,19 +81,7 @@ const ShopSection = () => {
         setValue("pageNumber", page);
         getProductData();
     };
-    const getTagCssClass = (status: EProductStatus | string) => {
-        switch (status) {
-            case EProductStatus.NEW:
-                return "bg-primary-600";
-            case EProductStatus.BEST_SELL:
-                return "bg-warning-600";
-            case EProductStatus.SOLD:
-            case EProductStatus.OUT_STOCK:
-                return "bg-gray-600";
-            default:
-                return "bg-danger-600";
-        }
-    };
+
     return (
         <section className="shop py-80">
             <div className={`side-overlay ${active && "show"}`}></div>
@@ -131,80 +139,80 @@ const ShopSection = () => {
                         {/* Top End */}
                         <div className={`list-grid-wrapper ${grid && "list-view"}`}>
                             {productTableData && productTableData.data?.length > 0 ? (
-                                <>
-                                    {productTableData.data.map((i) => (
-                                        <Link
-                                            to={`/product-details/${i.productId}`}
-                                            key={i.productId}
-                                            className="product-card h-100 p-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2 cursor-pointer"
-                                        >
-                                            <div className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative">
+                                productTableData.data.map((i) => (
+                                    <Link
+                                        to={`/product-details/${i.productId}`}
+                                        key={i.productId}
+                                        className="product-card h-100 p-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2 cursor-pointer"
+                                    >
+                                        <div className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative">
+                                            <Link
+                                                to={`/product-details/${i.productId}`}
+                                                className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative"
+                                            >
+                                                <img
+                                                    style={{ width: "232px", height: "180px" }}
+                                                    src={i.listImage[0]}
+                                                    alt={i.listImage[0]}
+                                                    className="w-auto max-w-unset"
+                                                />
+                                                <span
+                                                    className={`product-card__badge ${getTagCssClass(
+                                                        i.productStatusCode
+                                                    )} px-8 py-4 text-sm text-white position-absolute inset-inline-start-0 inset-block-start-0`}
+                                                >
+                                                    {i.productStatusName}
+                                                </span>
+                                            </Link>
+                                        </div>
+                                        <div className="product-card__content flex-fill mt-16">
+                                            <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                                 <Link
                                                     to={`/product-details/${i.productId}`}
-                                                    className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative"
+                                                    className="link text-line-2"
+                                                    tabIndex={0}
                                                 >
-                                                    <img
-                                                        style={{ width: "232px", height: "180px" }}
-                                                        src={i.listImage[0]}
-                                                        alt=""
-                                                        className="w-auto max-w-unset"
-                                                    />
-                                                    <span
-                                                        className={`product-card__badge ${getTagCssClass(
-                                                            i.productStatusCode
-                                                        )} px-8 py-4 text-sm text-white position-absolute inset-inline-start-0 inset-block-start-0`}
-                                                    >
-                                                        {i.productStatusName}
-                                                    </span>
+                                                    {i.productName}
                                                 </Link>
+                                            </h6>
+                                            <div className="flex-align mb-20 mt-16 gap-6">
+                                                <span className="text-xs fw-medium text-gray-500">
+                                                    {getRandomFloat(3.5, 5)}
+                                                </span>
+                                                <span className="text-15 fw-medium text-warning-600 d-flex">
+                                                    <i className="ph-fill ph-star" />
+                                                </span>
+                                                <span className="text-xs fw-medium text-gray-500">
+                                                    ({getRandomInteger(1, 5)}k)
+                                                </span>
                                             </div>
-                                            <div className="product-card__content mt-16">
-                                                <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                                    <Link
-                                                        to="/product-details-two"
-                                                        className="link text-line-2"
-                                                        tabIndex={0}
-                                                    >
-                                                        {i.productName}
-                                                    </Link>
-                                                </h6>
-                                                <div className="flex-align mb-20 mt-16 gap-6">
-                                                    <span className="text-xs fw-medium text-gray-500">
-                                                        {getRandomFloat(3.5, 5)}
-                                                    </span>
-                                                    <span className="text-15 fw-medium text-warning-600 d-flex">
-                                                        <i className="ph-fill ph-star" />
-                                                    </span>
-                                                    <span className="text-xs fw-medium text-gray-500">
-                                                        ({getRandomInteger(1, 5)}k)
-                                                    </span>
-                                                </div>
-                                                <div className="product-card__price my-20">
-                                                    <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                                        {formatVND(i.productPrice)}
-                                                    </span>
-                                                    <span className="text-heading text-md fw-semibold px-3">
-                                                        {formatVND(i.productPriceSale)}
-                                                    </span>
-                                                </div>
+                                            <div className="product-card__price my-20">
+                                                <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
+                                                    {formatVND(i.productPrice)}
+                                                </span>
+                                                <span className="text-heading text-md fw-semibold px-3">
+                                                    {formatVND(i.productPriceSale)}
+                                                </span>
                                             </div>
-                                        </Link>
-                                    ))}
-                                    <div style={{ gridColumn: "span 4" }}>
-                                        {/* Pagination Start */}
-                                        <Pagination
-                                            total={productTableData?.total ?? 0}
-                                            currentPage={productTableData?.pageNumber ?? 0}
-                                            onPageChange={onPageChange}
-                                            pageSize={productTableData?.pageSize ?? 0}
-                                        />
-                                        {/* Pagination End */}
-                                    </div>
-                                </>
+                                        </div>
+                                    </Link>
+                                ))
                             ) : (
                                 <label className="form-check-label">Không có sản phẩm nào</label>
                             )}
                         </div>
+                        {productTableData && productTableData.data?.length > 0 ? (
+                            <div style={{ gridColumn: "span 4" }}>
+                                {/* Pagination Start */}
+                                <Pagination
+                                    total={productTableData?.total ?? 0}
+                                    currentPage={productTableData?.pageNumber ?? 0}
+                                    onPageChange={onPageChange}
+                                    pageSize={productTableData?.pageSize ?? 0}
+                                />
+                                {/* Pagination End */}
+                            </div>
+                        ) : null}
                     </div>
                     {/* Content End */}
                 </div>

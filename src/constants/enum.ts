@@ -1,8 +1,12 @@
 export enum EProductStatus {
+    ALL = 'ALL',
     NEW = "NEW",
     BEST_SELL = "BEST_SELL",
-    SOLD = "SOLD",
     OUT_STOCK = "OUT_STOCK",
+    SALE = "SALE",
+    SALE10 = "SALE10",
+    SALE20 = "SALE20",
+    SALE30 = "SALE30",
 }
 export enum ECategoryType {
     STATUS = "STATUS",

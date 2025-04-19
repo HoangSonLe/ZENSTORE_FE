@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
 import query from "jquery";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import SearchBox from "./SearchBox";
+import SearchBoxMobile from "./SearchBoxMobile";
+
 const Header = (category: any) => {
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
@@ -35,6 +38,7 @@ const Header = (category: any) => {
     // Search control support
     const [activeSearch, setActiveSearch] = useState(false);
     const handleSearchToggle = () => {
+        console.log("d");
         setActiveSearch(!activeSearch);
     };
 
@@ -44,30 +48,8 @@ const Header = (category: any) => {
             <div className={`side-overlay ${menuActive && "show"}`} />
             {/* ==================== Search Box Start Here ==================== */}
 
-            <form action="#" className={`search-box ${activeSearch && "active"}`}>
-                <button
-                    onClick={handleSearchToggle}
-                    type="button"
-                    className="search-box__close position-absolute inset-block-start-0 inset-inline-end-0 m-16 w-48 h-48 border border-gray-100 rounded-circle flex-center text-white hover-text-gray-800 hover-bg-white text-2xl transition-1"
-                >
-                    <i className="ph ph-x" />
-                </button>
-                <div className="container">
-                    <div className="position-relative">
-                        <input
-                            type="text"
-                            className="form-control py-16 px-24 text-xl rounded-pill pe-64"
-                            placeholder="Tìm kiếm ..."
-                        />
-                        <button
-                            type="submit"
-                            className="w-48 h-48 bg-main-600 rounded-circle flex-center text-xl text-white position-absolute top-50 translate-middle-y inset-inline-end-0 me-8"
-                        >
-                            <i className="ph ph-magnifying-glass" />
-                        </button>
-                    </div>
-                </div>
-            </form>
+            <SearchBoxMobile activeSearch={activeSearch} handleSearchToggle={handleSearchToggle} />
+
             {/* ==================== Search Box End Here ==================== */}
             {/* ==================== Mobile Menu Start Here ==================== */}
             <div className={`mobile-menu scroll-sm d-lg-none d-block ${menuActive && "active"}`}>
@@ -155,25 +137,7 @@ const Header = (category: any) => {
                         </div>
                         {/* Logo End  */}
                         {/* form Category Start */}
-                        <div className="flex-align gap-16">
-                            <form action="#" className="flex-align flex-wrap form-location-wrapper">
-                                <div className="search-category style-two d-flex h-48 search-form d-sm-flex d-none">
-                                    <div className="search-form__wrapper position-relative">
-                                        <input
-                                            type="text"
-                                            className="search-form__input common-input py-13 ps-16 pe-18 rounded-0 border-0"
-                                            placeholder="Tìm kiếm ..."
-                                        />
-                                    </div>
-                                    <button
-                                        type="submit"
-                                        className="bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none"
-                                    >
-                                        <i className="ph ph-magnifying-glass" />
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        <SearchBox />
                         {/* form Category start */}
                         {/* Header Middle Right start */}
                         <div className="header-right flex-align d-lg-block d-none"></div>

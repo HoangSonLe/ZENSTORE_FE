@@ -2,7 +2,7 @@ import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 import Shipping from "../../components/footer/Shipping";
 import ShopSection from "../../components/products/ShopSection";
 
-const ShopPage = () => {
+const ProductPage = () => {
     return (
         <>
             {/* Breadcrumb */}
@@ -16,4 +16,4 @@ const ShopPage = () => {
     );
 };
 
-export default ShopPage;
+export default ProductPage;

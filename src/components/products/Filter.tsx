@@ -5,16 +5,16 @@ import { ISelectOption } from "../../apis/base/base.interface";
 import categoryApi from "../../apis/category/category.api";
 import { ICategory } from "../../apis/category/category.interface";
 import { IApiResponseTable } from "../../apis/interface";
-import { IProductQuery } from "../../apis/product/product.interface";
-import { useApi, useAsyncEffect } from "../../hooks";
 import { ECategoryType } from "../../constants/enum";
+import { useApi, useAsyncEffect } from "../../hooks";
+import { IProductCustomQuery } from "./ShopSection";
 
 interface IProps {
     activeClass: boolean;
     sidebarController: () => void;
-    register: UseFormRegister<IProductQuery>;
-    control: Control<IProductQuery>;
-    watch: UseFormWatch<IProductQuery>;
+    register: UseFormRegister<IProductCustomQuery>;
+    control: Control<IProductCustomQuery>;
+    watch: UseFormWatch<IProductCustomQuery>;
     onChangeFilter: () => void;
 }
 const Filter = ({ activeClass, sidebarController, register, watch, onChangeFilter }: IProps) => {
@@ -62,7 +62,7 @@ const Filter = ({ activeClass, sidebarController, register, watch, onChangeFilte
                         {seriesCodeDataOptions
                             ?.filter((i) => i.type === ECategoryType.STATUS)
                             .map((i) => (
-                                <li className="mb-24">
+                                <li key={i.value} className="mb-24">
                                     <div className="form-check common-check common-radio">
                                         <input
                                             className="form-check-input"
@@ -87,7 +87,7 @@ const Filter = ({ activeClass, sidebarController, register, watch, onChangeFilte
                         {seriesCodeDataOptions
                             ?.filter((i) => i.type === ECategoryType.SERIES)
                             .map((i) => (
-                                <li className="mb-24">
+                                <li key={i.value} className="mb-24">
                                     <div className="form-check common-check common-radio">
                                         <input
                                             className="form-check-input"
@@ -112,7 +112,7 @@ const Filter = ({ activeClass, sidebarController, register, watch, onChangeFilte
                         {seriesCodeDataOptions
                             ?.filter((i) => i.type === ECategoryType.COLOR)
                             .map((i) => (
-                                <li className="mb-24">
+                                <li key={i.value} className="mb-24">
                                     <div className="form-check common-check common-radio">
                                         <input
                                             className="form-check-input"
@@ -137,7 +137,7 @@ const Filter = ({ activeClass, sidebarController, register, watch, onChangeFilte
                         {seriesCodeDataOptions
                             ?.filter((i) => i.type === ECategoryType.SPACE)
                             .map((i) => (
-                                <li className="mb-24">
+                                <li key={i.value} className="mb-24">
                                     <div className="form-check common-check common-radio">
                                         <input
                                             className="form-check-input"

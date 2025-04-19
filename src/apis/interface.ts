@@ -139,6 +139,7 @@ export interface IApiResponseList<T> {
 }
 
 export interface IPagingQuery {
+    searchString?: string;
     pageNumber: number;
     pageSize?: number;
     sorter?: number;

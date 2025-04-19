@@ -107,9 +107,11 @@ const SearchBox = () => {
                                     <div
                                         key={item.productId}
                                         className="search-result-item d-flex align-items-center px-6 py-4 mb-4 w-100 w-md-48 w-lg-23 rounded bg-light hover-bg-light-100 cursor-pointer transition-all duration-200"
-                                        onClick={() =>
-                                            navigate(`/product-details/${item.productId}`)
-                                        }
+                                        onClick={() => {
+                                            setShowResults(false);
+                                            setInput("");
+                                            navigate(`/product-details/${item.productId}`);
+                                        }}
                                         style={{
                                             boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
                                             borderRadius: "8px",

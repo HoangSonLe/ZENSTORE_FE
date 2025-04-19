@@ -129,9 +129,11 @@ const SearchBoxMobile = ({
                                         <div
                                             key={item.productId}
                                             className="d-flex align-items-center p-4 mb-2 w-100 w-md-48 w-lg-23 rounded bg-light hover-bg-light cursor-pointer transition-all duration-200"
-                                            onClick={() =>
-                                                navigate(`/product-details/${item.productId}`)
-                                            }
+                                            onClick={() => {
+                                                setShowResults(false);
+                                                setInput("");
+                                                navigate(`/product-details/${item.productId}`);
+                                            }}
                                             style={{
                                                 boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
                                                 borderRadius: "8px",

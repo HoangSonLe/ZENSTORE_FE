@@ -12,7 +12,7 @@
         padding: 40px clampCal(32, 100, 1199, 1599) 40px;
     }
     &-wrapper {
-        margin: 32px;
+        margin: 32px 0;
         margin-inline-end: 0;
         @include md-screen {
             margin-inline-start: 0;

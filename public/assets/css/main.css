@@ -9395,7 +9395,8 @@ input:focus-visible {
 }
 
 .banner-item-two-wrapper {
-    margin: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     margin-inline-end: 0;
 }
 

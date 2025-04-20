@@ -21,7 +21,7 @@ const Filter = ({ activeClass, sidebarController, register, watch, onChangeFilte
     const [seriesCodeDataOptions, setSeriesCodeDataOptions] = useState<ISelectOption[]>();
     const { request: getSeriesCodeDataOptions } = useApi(categoryApi.getCategoryDataOptions);
     const selectedSeriCode = watch("seriCode");
-    const selectedStatus = watch("statusCode");
+    const selectedStatus = watch("statusCodeSingle");
     const selectedColor = watch("colorCode");
     const selectedSpace = watch("spaceCode");
 
@@ -69,7 +69,7 @@ const Filter = ({ activeClass, sidebarController, register, watch, onChangeFilte
                                             type="radio"
                                             value={i.value}
                                             id={i.value}
-                                            {...register("statusCode")}
+                                            {...register("statusCodeSingle")}
                                         />
                                         <label className="form-check-label" htmlFor={i.value}>
                                             {i.label}

@@ -34,7 +34,7 @@ const HomePage = () => {
                 params: {
                     pageNumber: 1,
                     pageSize: 10,
-                    statusCodes: [
+                    statusCode: [
                         EProductStatus.NEW,
                         EProductStatus.SALE,
                         EProductStatus.SALE10,
@@ -57,14 +57,14 @@ const HomePage = () => {
     }, []);
     const dealProductList = useMemo(
         () =>
-            productList?.data.filter(
+            productList?.data?.filter(
                 (i) => i.productStatusCode !== (EProductStatus.BEST_SELL as string)
             ),
         [productList]
     );
     const topProductList = useMemo(
         () =>
-            productList?.data.filter(
+            productList?.data?.filter(
                 (i) => i.productStatusCode === (EProductStatus.BEST_SELL as string)
             ),
         [productList]

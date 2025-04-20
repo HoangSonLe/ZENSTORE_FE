@@ -10,7 +10,7 @@ import Filter from "./Filter";
 import Pagination from "../pagination/Pagination";
 import { Link } from "react-router-dom";
 export interface IProductCustomQuery extends IProductQuery {
-    statusCode: string;
+    statusCodeSingle: string;
 }
 export const getTagCssClass = (status: EProductStatus | string) => {
     switch (status) {
@@ -31,7 +31,7 @@ const ShopSection = () => {
                 colorCode: EProductStatus.ALL,
                 seriCode: EProductStatus.ALL,
                 spaceCode: EProductStatus.ALL,
-                statusCode: EProductStatus.ALL,
+                statusCodeSingle: EProductStatus.ALL,
                 pageNumber: 1,
                 pageSize: 20,
             },
@@ -59,7 +59,7 @@ const ShopSection = () => {
             {
                 params: {
                     ...formValues,
-                    statusCodes: [...formValues.statusCode],
+                    statusCode: [formValues.statusCodeSingle],
                 },
             },
             (response) => {

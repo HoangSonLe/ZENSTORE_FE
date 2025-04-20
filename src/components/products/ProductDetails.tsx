@@ -5,8 +5,9 @@ import productApi from "../../apis/product/product.api";
 import { IProduct } from "../../apis/product/product.interface";
 import Preloader from "../../helper/Preloader";
 import { useApi } from "../../hooks";
-import { formatVND } from "../../utils/numberUtils";
+import { formatVND, getRandomFloat } from "../../utils/numberUtils";
 import CountDown from "./CountDown";
+import { EProductStatus } from "../../constants/enum";
 
 const ProductDetails = ({ productId }: { productId: number }) => {
     const [productData, setProductData] = useState<IProduct>();
@@ -37,10 +38,10 @@ const ProductDetails = ({ productId }: { productId: number }) => {
     );
 
     const [mainImage, setMainImage] = useState(productImages?.length > 0 ? productImages[0] : "");
-
+    const slidesToShow = Math.min(productImages.length, 4);
     const settingsThumbs = {
         dots: false,
-        infinite: true,
+        infinite: productImages.length > slidesToShow,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -106,10 +107,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                 </span>
                                             </div>
                                             <span className="text-sm fw-medium text-neutral-600">
-                                                4.7 Sao
-                                            </span>
-                                            <span className="text-sm fw-medium text-gray-500">
-                                                (21,671)
+                                                {getRandomFloat(3.5, 5)} Sao
                                             </span>
                                         </div>
                                     </div>
@@ -128,10 +126,14 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                     productData.productPriceSale ? (
                                         <div className="my-32 flex-align gap-16 flex-wrap">
                                             <div className="flex-align gap-8">
-                                                <div className="flex-align gap-8 text-main-two-600">
-                                                    <i className="ph-fill ph-seal-percent text-xl" />
-                                                    -10%
-                                                </div>
+                                                {productData.productStatusCode.startsWith(
+                                                    EProductStatus.SALE
+                                                ) ? (
+                                                    <div className="flex-align gap-8 text-main-two-600">
+                                                        <i className="ph-fill ph-seal-percent text-xl" />
+                                                        {productData.productStatusName}
+                                                    </div>
+                                                ) : null}
                                                 <h6 className="mb-0">
                                                     {formatVND(productData.productPriceSale)}
                                                 </h6>

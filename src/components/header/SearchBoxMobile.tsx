@@ -124,7 +124,7 @@ const SearchBoxMobile = ({
                             }}
                         >
                             <div className="d-flex flex-wrap justify-content-between px-3 py-2">
-                                {results.length > 0 ? (
+                                {results?.length > 0 ? (
                                     results.map((item) => (
                                         <div
                                             key={item.productId}

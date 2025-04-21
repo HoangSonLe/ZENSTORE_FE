@@ -102,7 +102,7 @@ const SearchBox = () => {
                         }}
                     >
                         <div className="d-flex flex-wrap justify-content-between">
-                            {results.length > 0 ? (
+                            {results?.length > 0 ? (
                                 results.map((item) => (
                                     <div
                                         key={item.productId}

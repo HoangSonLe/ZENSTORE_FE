@@ -78,7 +78,7 @@ const HomePage = () => {
 
             {/* PromotionalTwo */}
             <PromotionalTwo
-                bannerList={bannerList?.data.filter((i) => i.bannerTypeCode === EBannerOrder.ROW_1)}
+                bannerList={bannerList?.data.filter((i) => i.bannerTypeCode === EBannerOrder.ROW_2)}
             />
 
             {/* DealsOne */}

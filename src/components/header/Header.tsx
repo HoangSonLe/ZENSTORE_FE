@@ -126,7 +126,7 @@ const Header = (category: any) => {
             </div>
             {/* ==================== Mobile Menu End Here ==================== */}
             {/* ======================= Middle Header Two Start ========================= */}
-            <header className="header-middle style-two bg-color-neutral">
+            <header className="header-middle style-two bg-zenStore-100">
                 <div className="container container-lg">
                     <nav className="header-inner flex-between">
                         {/* Logo Start */}

@@ -39,8 +39,8 @@ const DaySaleOne = ({ bannerList }: IProps) => {
                     <div className="d-md-block d-none pe-xxl-5 pe-md-4">
                         <img
                             style={{ width: "607px", height: "303px" }}
-                            src={bannerList[0]?.bannerImage}
-                            alt={bannerList[0]?.bannerImage}
+                            src={bannerList[1]?.bannerImage}
+                            alt={bannerList[1]?.bannerImage}
                         />
                     </div>
                 </div>

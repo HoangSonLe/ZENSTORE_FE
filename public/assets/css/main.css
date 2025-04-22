@@ -275,6 +275,7 @@
     --tertiary-50: #d1c8ff;
     --tertiary-100: #c2b6ff;
     --tertiary-600: #3c23b5;
+    --zenStore-100: #ce2f3e;
     --font-xs: 0.75rem;
     --font-sm: 0.875rem;
     --font-md: 1rem;
@@ -6737,6 +6738,14 @@ input:focus-visible {
 
 .bg-tertiary-600 {
     background-color: var(--tertiary-600) !important;
+}
+
+.bg-zenStore-100 {
+    background-color: var(--zenStore) !important;
+}
+
+.hover-bg-zenStore-100:hover {
+    background-color: var(--zenStore) !important;
 }
 
 .hover-bg-main-50:hover {

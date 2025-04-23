@@ -6,6 +6,7 @@ import { IProduct, IProductQuery } from "../../apis/product/product.interface";
 import { EProductStatus } from "../../constants/enum";
 import { useApi } from "../../hooks";
 import { formatVND, getRandomFloat, getRandomInteger } from "../../utils/numberUtils";
+import { extractSalePercentage } from "../../utils/productUtils";
 import Filter from "./Filter";
 import Pagination from "../pagination/Pagination";
 import { Link } from "react-router-dom";
@@ -192,15 +193,18 @@ const ShopSection = () => {
                                                         <span className="text-danger-600 text-md fw-semibold d-block">
                                                             {formatVND(i.productPriceSale)}
                                                         </span>
-                                                        <div className="d-flex flex-sm-row flex-column align-items-sm-center align-items-start gap-2">
+                                                        <div className="d-flex flex-wrap align-items-baseline gap-2">
                                                             <span className="text-gray-900 text-md fw-semibold text-decoration-line-through">
                                                                 {formatVND(i.productPrice)}
                                                             </span>
                                                             {String(i.productStatusCode).startsWith(
                                                                 EProductStatus.SALE
                                                             ) && (
-                                                                <span className="text-danger-600 text-md fw-semibold ps-sm-3">
-                                                                    {i.productStatusName}
+                                                                <span className="text-danger-600 text-md fw-semibold ps-2">
+                                                                    {extractSalePercentage(
+                                                                        String(i.productStatusCode),
+                                                                        i.productStatusName
+                                                                    )}
                                                                 </span>
                                                             )}
                                                         </div>

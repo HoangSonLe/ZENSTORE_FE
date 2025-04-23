@@ -3,6 +3,7 @@ import { formatVND, getRandomFloat, getRandomInteger } from "../../../utils/numb
 import { IProduct } from "../../../apis/product/product.interface";
 import { getTagCssClass } from "../../../components/products/ShopSection";
 import { EProductStatus } from "../../../constants/enum";
+import { extractSalePercentage } from "../../../utils/productUtils";
 
 const ProductItem = ({ product }: { product: IProduct }) => {
     return (
@@ -54,15 +55,18 @@ const ProductItem = ({ product }: { product: IProduct }) => {
                             <span className="text-danger-600 text-md fw-semibold d-block">
                                 {formatVND(product.productPriceSale)}
                             </span>
-                            <div className="d-flex flex-sm-row flex-column align-items-sm-center align-items-start gap-2">
+                            <div className="d-flex flex-wrap align-items-baseline gap-2">
                                 <span className="text-gray-900 text-md fw-semibold text-decoration-line-through">
                                     {formatVND(product.productPrice)}
                                 </span>
                                 {String(product.productStatusCode).startsWith(
                                     EProductStatus.SALE
                                 ) && (
-                                    <span className="text-danger-600 text-md fw-semibold ps-sm-3">
-                                        {product.productStatusName}
+                                    <span className="text-danger-600 text-md fw-semibold ps-2">
+                                        {extractSalePercentage(
+                                            String(product.productStatusCode),
+                                            product.productStatusName
+                                        )}
                                     </span>
                                 )}
                             </div>

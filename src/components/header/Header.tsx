@@ -84,7 +84,7 @@ const Header = (category: any) => {
                                     activeIndex === 1 ? "d-block" : ""
                                 }`}
                             >
-                                <Link to="#" className="nav-menu__link">
+                                <Link to="/shop" className="nav-menu__link">
                                     Sản phẩm
                                 </Link>
                             </li>

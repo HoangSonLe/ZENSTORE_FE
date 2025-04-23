@@ -187,12 +187,29 @@ const ShopSection = () => {
                                                 </span>
                                             </div>
                                             <div className="product-card__price my-20">
-                                                <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                                    {formatVND(i.productPrice)}
-                                                </span>
-                                                <span className="text-heading text-md fw-semibold px-3">
-                                                    {formatVND(i.productPriceSale)}
-                                                </span>
+                                                {i.productPriceSale !== i.productPrice ? (
+                                                    <>
+                                                        <span className="text-danger-600 text-md fw-semibold d-block">
+                                                            {formatVND(i.productPriceSale)}
+                                                        </span>
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <span className="text-gray-900 text-md fw-semibold text-decoration-line-through">
+                                                                {formatVND(i.productPrice)}
+                                                            </span>
+                                                            {String(i.productStatusCode).startsWith(
+                                                                EProductStatus.SALE
+                                                            ) && (
+                                                                <span className="text-danger-600 text-md fw-semibold ps-3">
+                                                                    {i.productStatusName}
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                    </>
+                                                ) : (
+                                                    <span className="text-gray-900 text-md fw-semibold">
+                                                        {formatVND(i.productPrice)}
+                                                    </span>
+                                                )}
                                             </div>
                                         </div>
                                     </Link>

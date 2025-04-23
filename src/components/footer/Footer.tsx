@@ -51,12 +51,22 @@ const Footer = () => {
                         <h6 className="text-white">Shop on The Go</h6>
                         <p className="text-white mb-16">Marketpro App is available. Get it now</p>
                         <div className="flex-align gap-8 my-32">
-                            <Link to="/https://www.apple.com/store" className="">
-                                <img src="/assets/images/thumbs/store-img1.png" alt="" />
-                            </Link>
-                            <Link to="/https://play.google.com/store/apps?hl=en" className="">
-                                <img src="/assets/images/thumbs/store-img2.png" alt="" />
-                            </Link>
+                            <div className="">
+                                <img
+                                    style={{ width: "138px", height: "40px" }}
+                                    src="/assets/images/bg/footer1.png"
+                                    alt=""
+                                    // className="img-fluid rounded"
+                                />
+                            </div>
+                            <div className="">
+                                <img
+                                    style={{ width: "138px", height: "40px" }}
+                                    src="/assets/images/bg/footer2.png"
+                                    alt=""
+                                    // className="img-fluid rounded"
+                                />
+                            </div>
                         </div>
                         <ul className="flex-align gap-16">
                             <li>

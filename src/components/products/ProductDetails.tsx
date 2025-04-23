@@ -36,6 +36,9 @@ const ProductDetails = ({ productId }: { productId: number }) => {
         () => (productData && productData.listImage ? productData.listImage : []),
         [productData]
     );
+    useEffect(() => {
+        setMainImage(productImages?.length > 0 ? productImages[0] : "");
+    }, [productData]);
 
     const [mainImage, setMainImage] = useState(productImages?.length > 0 ? productImages[0] : "");
     const slidesToShow = Math.min(productImages.length, 4);
@@ -134,7 +137,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                         {productData.productStatusName}
                                                     </div>
                                                 ) : null}
-                                                <h6 className="mb-0">
+                                                <h6 className="mb-0 text-danger-600">
                                                     {formatVND(productData.productPriceSale)}
                                                 </h6>
                                             </div>

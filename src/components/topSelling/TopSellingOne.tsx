@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { IProduct } from "../../apis/product/product.interface";
 import ProductItem from "../../pages/homePage/component/ProductItem";
+import { IBanner } from "../../apis/banner/banner.interface";
 
 interface IProps {
     productList: IProduct[];
+    bannerList: IBanner[];
 }
-const TopSellingOne = ({ productList }: IProps) => {
+const TopSellingOne = ({ productList, bannerList }: IProps) => {
     function SampleNextArrow(props: any) {
         const { className, onClick } = props;
         return (
@@ -86,9 +88,11 @@ const TopSellingOne = ({ productList }: IProps) => {
                                 />
                                 <div className="py-xl-2">
                                     <h6 className="mb-4 fw-semibold">
-                                        Polaroid Now+ Gen 2 - White
+                                        {bannerList[0].bannerSubTitle}
                                     </h6>
-                                    <h5 className="mb-20 fw-semibold">Fresh Vegetables</h5>
+                                    <h5 className="mb-20 fw-semibold">
+                                        {bannerList[0].bannerTitle}
+                                    </h5>
                                     <Link
                                         to="/shop"
                                         className="btn text-heading border-neutral-600 hover-bg-neutral-600 hover-text-white py-16 px-24 flex-center d-inline-flex rounded-pill gap-8 fw-medium"
@@ -100,9 +104,9 @@ const TopSellingOne = ({ productList }: IProps) => {
                                 </div>
                                 <div className="d-md-block d-none">
                                     <img
-                                        style={{ height: "180px" }}
-                                        src="/assets/images/thumbs/deal-img.png"
-                                        alt=""
+                                        style={{ height: "213px", width: "303px" }}
+                                        alt={bannerList[0].bannerImage}
+                                        src={bannerList[0].bannerImage}
                                     />
                                 </div>
                             </div>

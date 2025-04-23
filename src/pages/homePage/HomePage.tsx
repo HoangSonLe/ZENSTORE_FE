@@ -93,7 +93,12 @@ const HomePage = () => {
 
             {/* TopSellingOne */}
             {topProductList && topProductList.length > 0 && (
-                <TopSellingOne productList={topProductList} />
+                <TopSellingOne
+                    productList={topProductList}
+                    bannerList={bannerList?.data.filter(
+                        (i) => i.bannerTypeCode === EBannerOrder.ROW_4
+                    )}
+                />
             )}
 
             {/* DaySaleOne */}

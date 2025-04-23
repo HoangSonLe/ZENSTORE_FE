@@ -8,7 +8,7 @@ interface IProps {
 const BannerTwo = ({ bannerList }: IProps) => {
     const settings = {
         dots: true,
-        infinite: true,
+        // infinite: true,
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -21,57 +21,16 @@ const BannerTwo = ({ bannerList }: IProps) => {
             <div className="container container-lg">
                 <div className="banner-two-wrapper d-flex align-items-start">
                     <div className="banner-item-two-wrapper rounded-24 overflow-hidden position-relative arrow-center flex-grow-1 mb-0">
-                        <img
-                            src="/assets/images/bg/banner-two-bg.png"
-                            alt=""
-                            className="banner-img position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 z-n1 object-fit-cover rounded-24"
-                        />
                         <div className="banner-item-two__slider">
                             <Slider {...settings}>
-                                <div className="banner-item-two">
-                                    <div className="banner-item-two__content">
-                                        <h4 className="banner-item-two__title bounce text-white">
-                                            {bannerList[0].bannerTitle}
-                                        </h4>
-                                        <Link
-                                            to="/shop"
-                                            className="btn btn-outline-white d-inline-flex align-items-center rounded-pill gap-8 mt-48"
-                                        >
-                                            Mua ngay
-                                            <span className="icon text-xl d-flex">
-                                                <i className="ph ph-shopping-cart-simple" />
-                                            </span>
-                                        </Link>
-                                    </div>
-                                    <div className="banner-item-two__thumb position-absolute bottom-0">
+                                {bannerList.map((item, index) => {
+                                    return (
                                         <img
-                                            src={bannerList[0].bannerImage}
-                                            alt={bannerList[0].bannerImage}
+                                            src={item.bannerImage}
+                                            className="banner-img inset-block-start-0 inset-inline-start-0 w-100 h-100 z-n1 object-fit-cover rounded-24"
                                         />
-                                    </div>
-                                </div>
-                                <div className="banner-item-two">
-                                    <div className="banner-item-two__content">
-                                        <h4 className="banner-item-two__title bounce text-white">
-                                            {bannerList[1].bannerTitle}
-                                        </h4>
-                                        <Link
-                                            to="/shop"
-                                            className="btn btn-outline-white d-inline-flex align-items-center rounded-pill gap-8 mt-48"
-                                        >
-                                            Mua ngay
-                                            <span className="icon text-xl d-flex">
-                                                <i className="ph ph-shopping-cart-simple" />
-                                            </span>
-                                        </Link>
-                                    </div>
-                                    <div className="banner-item-two__thumb position-absolute bottom-0">
-                                        <img
-                                            src={bannerList[1].bannerImage}
-                                            alt={bannerList[1].bannerImage}
-                                        />
-                                    </div>
-                                </div>
+                                    );
+                                })}
                             </Slider>
                         </div>
                     </div>

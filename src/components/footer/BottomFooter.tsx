@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const BottomFooter = () => {
     return (
-        <div className="bottom-footer bg-color-one py-8">
+        <div className="bottom-footer bg-gray-100 py-8">
             <div className="container container-lg">
                 <div className="bottom-footer__inner flex-between flex-wrap gap-16 py-16">
                     <p className="bottom-footer__text ">
-                        Copyright © 2025. All Rights Reserved{" "}
+                        Sản phẩm được thực hiện bởi team 3TS. Số hotline:{" "}
+                        <a href="tel:0782065079">0782065079</a>
                     </p>
                 </div>
             </div>
         </div>
+    );
+};
 
-    )
-}
-
-export default BottomFooter
+export default BottomFooter;

@@ -8,6 +8,7 @@ const BottomFooter = () => {
                     <p className="bottom-footer__text ">
                         Sản phẩm được thực hiện bởi team 3TS. Số hotline:{" "}
                         <a href="tel:0782065079">0782065079</a>
+                        &nbsp;mr.Tuấn
                     </p>
                 </div>
             </div>

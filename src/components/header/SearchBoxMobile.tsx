@@ -93,7 +93,7 @@ const SearchBoxMobile = ({
                         <input
                             type="text"
                             className="form-control py-16 px-24 text-xl rounded-pill pe-64"
-                            placeholder="Tìm kiếm ..."
+                            placeholder="Bạn cần tìm sản phẩm gì?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             id="searchInputMobile"

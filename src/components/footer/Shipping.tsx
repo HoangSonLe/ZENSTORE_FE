@@ -9,8 +9,8 @@ const Shipping = () => {
                                 <i className="ph-fill ph-car-profile" />
                             </span>
                             <div className="">
-                                <h6 className="mb-0">Phí vận chuyển</h6>
-                                <span className="text-sm text-heading">Miễn phí toàn quốc</span>
+                                <h6 className="mb-0">Vận chuyển</h6>
+                                <span className="text-sm text-heading">Ship nội thành trong 2h</span>
                             </div>
                         </div>
                     </div>

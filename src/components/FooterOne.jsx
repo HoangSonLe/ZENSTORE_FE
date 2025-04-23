@@ -205,8 +205,8 @@ const FooterOne = () => {
                         </ul>
                     </div>
                     <div className="footer-item">
-                        <h6 className="">Shop on The Go</h6>
-                        <p className="mb-16">Marketpro App is available. Get it now</p>
+                        <h6 className="">Kết nối với ZenStore</h6>
+                        <p className="mb-16">Chúng tôi luôn chào đón bạn.</p>
                         <div className="flex-align gap-8 my-32">
                             <Link to="/https://www.apple.com/store" className="">
                                 <img src="/assets/images/thumbs/store-img1.png" alt="" />
@@ -218,7 +218,7 @@ const FooterOne = () => {
                         <ul className="flex-align gap-16">
                             <li>
                                 <Link
-                                    to="/https://www.facebook.com"
+                                    to="/https://www.facebook.com/profile.php?id=100084516681157"
                                     className="w-44 h-44 flex-center bg-main-100 text-main-600 text-xl rounded-circle hover-bg-main-600 hover-text-white"
                                 >
                                     <i className="ph-fill ph-facebook-logo" />
@@ -232,22 +232,8 @@ const FooterOne = () => {
                                     <i className="ph-fill ph-twitter-logo" />
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    to="/https://www.linkedin.com"
-                                    className="w-44 h-44 flex-center bg-main-100 text-main-600 text-xl rounded-circle hover-bg-main-600 hover-text-white"
-                                >
-                                    <i className="ph-fill ph-instagram-logo" />
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/https://www.pinterest.com"
-                                    className="w-44 h-44 flex-center bg-main-100 text-main-600 text-xl rounded-circle hover-bg-main-600 hover-text-white"
-                                >
-                                    <i className="ph-fill ph-linkedin-logo" />
-                                </Link>
-                            </li>
+                           
+                           
                         </ul>
                     </div>
                 </div>

@@ -80,39 +80,13 @@ const Header = (category: any) => {
                             </li>
                             <li
                                 onClick={() => handleMenuClick(1)}
-                                className={`on-hover-item nav-menu__item has-submenu ${
+                                className={`on-hover-item nav-menu__item ${
                                     activeIndex === 1 ? "d-block" : ""
                                 }`}
                             >
                                 <Link to="#" className="nav-menu__link">
-                                    Shop
+                                    Sản phẩm
                                 </Link>
-                                <ul
-                                    className={`on-hover-dropdown common-dropdown nav-submenu scroll-sm ${
-                                        activeIndex === 1 ? "open" : ""
-                                    }`}
-                                >
-                                    <li className="common-dropdown__item nav-submenu__item">
-                                        <Link
-                                            onClick={() => setActiveIndex(null)}
-                                            to="/shop"
-                                            className="common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                        >
-                                            {" "}
-                                            Shop
-                                        </Link>
-                                    </li>
-                                    <li className="common-dropdown__item nav-submenu__item">
-                                        <Link
-                                            onClick={() => setActiveIndex(null)}
-                                            to="/product-details"
-                                            className="common-dropdown__link nav-submenu__link hover-bg-neutral-100"
-                                        >
-                                            {" "}
-                                            Shop Details
-                                        </Link>
-                                    </li>
-                                </ul>
                             </li>
                             <li className="on-hover-item nav-menu__item">
                                 <Link to="/blog" className="nav-menu__link">

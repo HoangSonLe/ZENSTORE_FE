@@ -23,15 +23,54 @@
     }
 }
 
+// Thêm styles cho social media icons
+.bg-facebook {
+    background-color: #1877F2 !important;
+}
+
+.bg-tiktok {
+    background-color: #000000 !important;
+}
+
+.hover-opacity-80 {
+    transition: opacity 0.3s ease;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// Các utility classes
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.w-44 {
+    width: 44px;
+}
+
+.h-44 {
+    height: 44px;
+}
+
+.rounded-8 {
+    border-radius: 8px;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
 .body-bottom-bg {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: -1;
 }
+
 .fb-customerchat {
-    bottom: 80px !important; /* Moves it up */
+    bottom: 80px !important;
     right: 20px !important;
-  }
-  
+}
 /* ============= Footer End Here ======================= */

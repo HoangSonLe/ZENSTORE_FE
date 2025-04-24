@@ -23,11 +23,9 @@ const DaySaleOne = ({ bannerList }: IProps) => {
                         />
                     </div>
                     <div className="day-sale-box__content d-block w-100 text-start py-32 ps-lg-0 ps-24">
-                        <h3 className="text-white fw-medium mb-24">CYBER MONDAY SALE</h3>
-                        <h6 className="text-white fw-medium mb-8">UP TO 30% OFF</h6>
-                        <h6 className="text-white fw-medium mb-0">
-                            COMPUTER &amp; MOBILE ACCESSORIES
-                        </h6>
+                        <h3 className="text-white fw-medium mb-24">
+                             {bannerList[0].bannerTitle}
+                        </h3>
                         <Link
                             to="/shop"
                             className="btn btn-outline-white flex-align d-inline-flex rounded-pill gap-8 mt-28"

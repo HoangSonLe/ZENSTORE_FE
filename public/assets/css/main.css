@@ -2349,6 +2349,18 @@ input:focus-visible {
     margin-inline-start: var(--size-30) !important;
 }
 
+.bg-facebook {
+    background-color: #1877F2 !important;
+}
+
+.bg-tiktok {
+    background-color: #000000 !important;
+}
+
+.hover-opacity-80:hover {
+    opacity: 0.8 !important;
+}
+
 .ms-32 {
     margin-inline-start: var(--size-32) !important;
 }

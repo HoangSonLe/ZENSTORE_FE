@@ -26,7 +26,7 @@ const Footer = () => {
                             >
                                 0777999908
                             </a>
-                            <span className="text-white mx-1">hoặc</span>
+                            <span className="text-white">-</span>
                             <a
                                 href="tel:+0865508888"
                                 className="text-md text-white hover-text-main-600"
@@ -61,19 +61,19 @@ const Footer = () => {
                                     href="https://www.facebook.com/profile.php?id=100084516681157"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-44 h-44 flex-center bg-main-two-50 text-main-two-600 text-xl rounded-8 hover-bg-main-two-600 hover-text-white"
+                                    className="w-44 h-44 flex-center bg-facebook text-white text-xl rounded-8 hover-opacity-80"
                                 >
                                     <i className="ph-fill ph-facebook-logo" />
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="https://www.twitter.com"
+                                    href="https://www.tiktok.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-44 h-44 flex-center bg-main-two-50 text-main-two-600 text-xl rounded-8 hover-bg-main-two-600 hover-text-white"
+                                    className="w-44 h-44 flex-center bg-tiktok text-white text-xl rounded-8 hover-opacity-80"
                                 >
-                                    <i className="ph-fill ph-twitter-logo" />
+                                    <i className="ph-fill ph-tiktok-logo" />
                                 </a>
                             </li>
                         </ul>

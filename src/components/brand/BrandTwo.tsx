@@ -78,7 +78,7 @@ const BrandTwo = () => {
         ],
     };
     return (
-        <div className="top-brand py-80">
+        <div>
             <div className="container container-lg">
                 <div className="border border-gray-100 p-24 rounded-16">
                     <div className="section-heading mb-24">

@@ -1,8 +1,8 @@
 // src/layouts/MainLayout.jsx
 import { Outlet } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
-import BottomFooter from "../../components/footer/BottomFooter";
-import Footer from "../../components/footer/Footer";
+import EnhancedBottomFooter from "../../components/footer/EnhancedBottomFooter";
+import EnhancedFooter from "../../components/footer/EnhancedFooter";
 import Header from "../../components/header/Header";
 import ColorInit from "../../helper/ColorInit";
 import Preloader from "../../helper/Preloader";
@@ -23,9 +23,9 @@ const MainLayout = () => {
                 <Outlet /> {/* This is where child routes will be rendered */}
             </main>
             <footer>
-                <Footer />
+                <EnhancedFooter />
                 {/* BottomFooter */}
-                <BottomFooter />
+                <EnhancedBottomFooter />
             </footer>
         </div>
     );

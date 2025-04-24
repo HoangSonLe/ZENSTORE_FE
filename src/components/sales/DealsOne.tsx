@@ -85,14 +85,25 @@ const DealsOne = ({ bannerList, productList }: IProps) => {
                         </div>
                     </div>
                     <div className="deal-week-box rounded-16 overflow-hidden position-relative z-1 mb-24">
-                        <div style={{ height: "140px" }}>
+                        <div style={{
+                            height: "140px",
+                            position: "relative",
+                            overflow: "hidden"
+                        }}>
                             <img
-                                src={bannerList[0]?.bannerImage}
+                                src={bannerList[0]?.bannerImage || "/assets/images/bg/week-sale-bg.jpg"}
                                 alt="Weekly sale background"
                                 style={{
                                     width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover"
+                                    height: "auto",
+                                    minHeight: "100%",
+                                    maxWidth: "100%",
+                                    display: "block",
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: "0",
+                                    transform: "translateY(-50%)",
+                                    WebkitTransform: "translateY(-50%)"
                                 }}
                             />
                         </div>

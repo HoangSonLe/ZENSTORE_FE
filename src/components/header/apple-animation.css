@@ -27,6 +27,8 @@
 
 .apple-bite {
   fill: #8a7a70; /* Match the background color */
+  transform-origin: center;
+  animation: bitePulse 1s infinite alternate;
 }
 
 /* Apple that eats the text */
@@ -198,6 +200,16 @@
   }
 }
 
+/* Bite pulse animation */
+@keyframes bitePulse {
+  0% {
+    r: 18;
+  }
+  100% {
+    r: 22;
+  }
+}
+
 /* Text being eaten animation */
 .being-eaten span {
   animation: disappear 0.15s forwards;
@@ -311,23 +323,31 @@
 @keyframes eatText {
   0% {
     left: -15px;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(1);
   }
   5% {
-    left: 0px; /* Pause slightly at the beginning of text */
-    transform: translateY(-50%);
+    left: -5px; /* Closer to the first character */
+    transform: translateY(-50%) scale(1.1);
+  }
+  10% {
+    left: 0px; /* At the first character */
+    transform: translateY(-50%) scale(1.2);
+  }
+  85% {
+    left: calc(100% - 20px); /* Stop slightly before the end */
+    transform: translateY(-50%) scale(1.2);
   }
   90% {
-    left: calc(100% - 10px); /* Stop slightly before the end */
-    transform: translateY(-50%);
+    left: calc(100% - 10px); /* Almost at the end */
+    transform: translateY(-50%) scale(1.1);
   }
   95% {
-    left: calc(100% + 20px);
-    transform: translateY(-50%);
+    left: calc(100% + 10px); /* Past the end */
+    transform: translateY(-50%) scale(1);
   }
   100% {
     left: -15px;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(1);
   }
 }
 
@@ -341,19 +361,23 @@
 @keyframes disappear {
   0% {
     opacity: 1;
-    transform: scale(1) translateX(0);
+    transform: scale(1) translateX(0) rotate(0deg);
   }
-  40% {
-    opacity: 0.8;
-    transform: scale(0.9) translateX(-2px);
+  30% {
+    opacity: 0.9;
+    transform: scale(0.95) translateX(-3px) rotate(-5deg);
   }
-  70% {
-    opacity: 0.4;
-    transform: scale(0.5) translateX(-4px);
+  60% {
+    opacity: 0.6;
+    transform: scale(0.7) translateX(-6px) rotate(-10deg);
+  }
+  80% {
+    opacity: 0.3;
+    transform: scale(0.4) translateX(-9px) rotate(-15deg);
   }
   100% {
     opacity: 0;
-    transform: scale(0) translateX(-6px);
+    transform: scale(0) translateX(-12px) rotate(-20deg);
   }
 }
 

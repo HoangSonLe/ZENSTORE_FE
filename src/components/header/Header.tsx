@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import SearchBoxMobile from "./SearchBoxMobile";
+import AppleAnimation from "./AppleAnimation";
 import "./MobileMenuStyles.css"; // Import custom mobile menu styles
 import "./LogoStyles.css"; // Import custom logo styles
 

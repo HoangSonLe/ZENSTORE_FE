@@ -22,7 +22,7 @@ const AppleAnimation: React.FC = () => {
     <div className="apple-animation-container d-flex align-items-center" style={{ marginLeft: "30px", position: "relative", overflow: "visible", width: "350px" }}>
       {/* Apple logo that will eat the text */}
       <div className={`apple-eater ${animationActive ? 'active' : ''}`}>
-        <svg width="40" height="40" viewBox="0 0 170 195" className="apple-logo">
+        <svg width="30" height="30" viewBox="0 0 170 195" className="apple-logo">
           {/* Apple body */}
           <path
             className="apple-body"
@@ -40,7 +40,7 @@ const AppleAnimation: React.FC = () => {
 
       {/* Static apple for when not animating */}
       <div className={`apple-logo-wrapper ${animationActive ? 'hidden' : ''}`}>
-        <svg width="30" height="30" viewBox="0 0 170 195" className="apple-logo">
+        <svg width="40" height="40" viewBox="0 0 170 195" className="apple-logo">
           {/* Apple body */}
           <path
             className="apple-body"

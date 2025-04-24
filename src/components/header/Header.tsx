@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import SearchBoxMobile from "./SearchBoxMobile";
+import AppleAnimation from "./AppleAnimation";
 
 const Header = (category: any) => {
     const [scroll, setScroll] = useState(false);
@@ -111,7 +112,26 @@ const Header = (category: any) => {
                         </div>
                         {/* Logo End  */}
                         {/* form Category Start */}
-                        <SearchBox />
+                        <div className="d-flex align-items-center">
+                            <SearchBox />
+                            <div className="contact-info d-flex d-none d-lg-flex" style={{ marginLeft: "50px" }}>
+                                <div className="hotline d-flex align-items-center me-4">
+                                    <i className="ph ph-phone text-white me-4" style={{ fontSize: "28px" }}></i>
+                                    <div className="d-flex flex-column">
+                                        <span className="text-white" style={{ fontSize: "18px", fontWeight: "500" }}>Hotline liên hệ</span>
+                                        <span className="text-white" style={{ fontSize: "16px", fontWeight: "700" }}>0777999908</span>
+                                    </div>
+                                </div>
+                                <div className="store-system d-flex align-items-center">
+                                    <i className="ph ph-map-pin text-white me-4" style={{ fontSize: "28px" }}></i>
+                                    <div className="d-flex flex-column">
+                                        <span className="text-white" style={{ fontSize: "18px", fontWeight: "500" }}>Hệ thống</span>
+                                        <span className="text-white" style={{ fontSize: "16px", fontWeight: "700" }}>02 cửa hàng</span>
+                                    </div>
+                                </div>
+                                <AppleAnimation />
+                            </div>
+                        </div>
                         {/* form Category start */}
                         {/* Header Middle Right start */}
                         <div className="header-right flex-align d-lg-block d-none"></div>

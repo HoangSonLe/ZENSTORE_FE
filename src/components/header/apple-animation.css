@@ -1,0 +1,392 @@
+.apple-logo-wrapper {
+  position: relative;
+  margin-top: 5px;
+  z-index: 1;
+}
+
+.apple-logo-wrapper.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.apple-logo {
+  fill: white;
+  transform-origin: center;
+  animation: pulse 2s infinite alternate;
+}
+
+.apple-body {
+  fill: white;
+}
+
+.apple-leaf {
+  fill: white;
+  transform-origin: bottom center;
+  animation: leafWiggle 3s infinite ease-in-out;
+}
+
+.apple-bite {
+  fill: #8a7a70; /* Match the background color */
+}
+
+/* Apple that eats the text */
+.apple-eater {
+  position: absolute;
+  left: -15px; /* Moved slightly to the left to start closer to text */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Animation settings for the apple eater */
+
+/* Animated text styles */
+.animated-text-container {
+  line-height: 1.2;
+  width: 300px;
+  overflow: visible;
+}
+
+.animated-text {
+  display: inline-block;
+  white-space: nowrap !important;
+  letter-spacing: 0.5px;
+  overflow: visible;
+}
+
+.animated-text span {
+  display: inline-block;
+  animation: colorChange 8s infinite;
+  animation-delay: calc(var(--char-index, 0) * 0.1s);
+}
+
+/* Set different animation delays for each character */
+.animated-text span:nth-child(1) { --char-index: 1; }
+.animated-text span:nth-child(2) { --char-index: 2; }
+.animated-text span:nth-child(3) { --char-index: 3; }
+.animated-text span:nth-child(4) { --char-index: 4; }
+.animated-text span:nth-child(5) { --char-index: 5; }
+.animated-text span:nth-child(6) { --char-index: 6; }
+.animated-text span:nth-child(7) { --char-index: 7; }
+.animated-text span:nth-child(8) { --char-index: 8; }
+.animated-text span:nth-child(9) { --char-index: 9; }
+.animated-text span:nth-child(10) { --char-index: 10; }
+.animated-text span:nth-child(11) { --char-index: 11; }
+.animated-text span:nth-child(12) { --char-index: 12; }
+.animated-text span:nth-child(13) { --char-index: 13; }
+.animated-text span:nth-child(14) { --char-index: 14; }
+.animated-text span:nth-child(15) { --char-index: 15; }
+.animated-text span:nth-child(16) { --char-index: 16; }
+.animated-text span:nth-child(17) { --char-index: 17; }
+.animated-text span:nth-child(18) { --char-index: 18; }
+.animated-text span:nth-child(19) { --char-index: 19; }
+.animated-text span:nth-child(20) { --char-index: 20; }
+.animated-text span:nth-child(21) { --char-index: 21; }
+.animated-text span:nth-child(22) { --char-index: 22; }
+.animated-text span:nth-child(23) { --char-index: 23; }
+.animated-text span:nth-child(24) { --char-index: 24; }
+.animated-text span:nth-child(25) { --char-index: 25; }
+.animated-text span:nth-child(26) { --char-index: 26; }
+.animated-text span:nth-child(27) { --char-index: 27; }
+.animated-text span:nth-child(28) { --char-index: 28; }
+.animated-text span:nth-child(29) { --char-index: 29; }
+.animated-text span:nth-child(30) { --char-index: 30; }
+.animated-text span:nth-child(31) { --char-index: 31; }
+.animated-text span:nth-child(32) { --char-index: 32; }
+.animated-text span:nth-child(33) { --char-index: 33; }
+.animated-text span:nth-child(34) { --char-index: 34; }
+.animated-text span:nth-child(35) { --char-index: 35; }
+.animated-text span:nth-child(36) { --char-index: 36; }
+.animated-text span:nth-child(37) { --char-index: 37; }
+.animated-text span:nth-child(38) { --char-index: 38; }
+.animated-text span:nth-child(39) { --char-index: 39; }
+.animated-text span:nth-child(40) { --char-index: 40; }
+.animated-text span:nth-child(41) { --char-index: 41; }
+.animated-text span:nth-child(42) { --char-index: 42; }
+.animated-text span:nth-child(43) { --char-index: 43; }
+.animated-text span:nth-child(44) { --char-index: 44; }
+.animated-text span:nth-child(45) { --char-index: 45; }
+.animated-text span:nth-child(46) { --char-index: 46; }
+.animated-text span:nth-child(47) { --char-index: 47; }
+.animated-text span:nth-child(48) { --char-index: 48; }
+.animated-text span:nth-child(49) { --char-index: 49; }
+.animated-text span:nth-child(50) { --char-index: 50; }
+.animated-text span:nth-child(51) { --char-index: 51; }
+.animated-text span:nth-child(52) { --char-index: 52; }
+.animated-text span:nth-child(53) { --char-index: 53; }
+.animated-text span:nth-child(54) { --char-index: 54; }
+.animated-text span:nth-child(55) { --char-index: 55; }
+.animated-text span:nth-child(56) { --char-index: 56; }
+.animated-text span:nth-child(57) { --char-index: 57; }
+.animated-text span:nth-child(58) { --char-index: 58; }
+.animated-text span:nth-child(59) { --char-index: 59; }
+.animated-text span:nth-child(60) { --char-index: 60; }
+.animated-text span:nth-child(61) { --char-index: 61; }
+.animated-text span:nth-child(62) { --char-index: 62; }
+.animated-text span:nth-child(63) { --char-index: 63; }
+.animated-text span:nth-child(64) { --char-index: 64; }
+.animated-text span:nth-child(65) { --char-index: 65; }
+.animated-text span:nth-child(66) { --char-index: 66; }
+.animated-text span:nth-child(67) { --char-index: 67; }
+.animated-text span:nth-child(68) { --char-index: 68; }
+.animated-text span:nth-child(69) { --char-index: 69; }
+.animated-text span:nth-child(70) { --char-index: 70; }
+.animated-text span:nth-child(71) { --char-index: 71; }
+.animated-text span:nth-child(72) { --char-index: 72; }
+.animated-text span:nth-child(73) { --char-index: 73; }
+.animated-text span:nth-child(74) { --char-index: 74; }
+.animated-text span:nth-child(75) { --char-index: 75; }
+.animated-text span:nth-child(76) { --char-index: 76; }
+.animated-text span:nth-child(77) { --char-index: 77; }
+.animated-text span:nth-child(78) { --char-index: 78; }
+.animated-text span:nth-child(79) { --char-index: 79; }
+.animated-text span:nth-child(80) { --char-index: 80; }
+.animated-text span:nth-child(81) { --char-index: 81; }
+.animated-text span:nth-child(82) { --char-index: 82; }
+.animated-text span:nth-child(83) { --char-index: 83; }
+.animated-text span:nth-child(84) { --char-index: 84; }
+.animated-text span:nth-child(85) { --char-index: 85; }
+.animated-text span:nth-child(86) { --char-index: 86; }
+.animated-text span:nth-child(87) { --char-index: 87; }
+.animated-text span:nth-child(88) { --char-index: 88; }
+.animated-text span:nth-child(89) { --char-index: 89; }
+.animated-text span:nth-child(90) { --char-index: 90; }
+.animated-text span:nth-child(91) { --char-index: 91; }
+.animated-text span:nth-child(92) { --char-index: 92; }
+.animated-text span:nth-child(93) { --char-index: 93; }
+.animated-text span:nth-child(94) { --char-index: 94; }
+.animated-text span:nth-child(95) { --char-index: 95; }
+.animated-text span:nth-child(96) { --char-index: 96; }
+.animated-text span:nth-child(97) { --char-index: 97; }
+.animated-text span:nth-child(98) { --char-index: 98; }
+.animated-text span:nth-child(99) { --char-index: 99; }
+.animated-text span:nth-child(100) { --char-index: 100; }
+.animated-text span:nth-child(101) { --char-index: 101; }
+
+/* Pulse animation for the whole apple */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Wiggle animation for the leaf */
+@keyframes leafWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Bite animation */
+@keyframes biteTaken {
+  0%, 10% {
+    r: 0;
+  }
+  20%, 100% {
+    r: 20;
+  }
+}
+
+/* Text being eaten animation */
+.being-eaten span {
+  animation: disappear 0.15s forwards;
+  transform-origin: left center;
+}
+
+/* Set different disappear delays for each character */
+.being-eaten span:nth-child(1) { animation-delay: 0.1s; }
+.being-eaten span:nth-child(2) { animation-delay: 0.15s; }
+.being-eaten span:nth-child(3) { animation-delay: 0.2s; }
+.being-eaten span:nth-child(4) { animation-delay: 0.25s; }
+.being-eaten span:nth-child(5) { animation-delay: 0.3s; }
+.being-eaten span:nth-child(6) { animation-delay: 0.35s; }
+.being-eaten span:nth-child(7) { animation-delay: 0.4s; }
+.being-eaten span:nth-child(8) { animation-delay: 0.45s; }
+.being-eaten span:nth-child(9) { animation-delay: 0.5s; }
+.being-eaten span:nth-child(10) { animation-delay: 0.55s; }
+.being-eaten span:nth-child(11) { animation-delay: 0.6s; }
+.being-eaten span:nth-child(12) { animation-delay: 0.65s; }
+.being-eaten span:nth-child(13) { animation-delay: 0.7s; }
+.being-eaten span:nth-child(14) { animation-delay: 0.75s; }
+.being-eaten span:nth-child(15) { animation-delay: 0.8s; }
+.being-eaten span:nth-child(16) { animation-delay: 0.85s; }
+.being-eaten span:nth-child(17) { animation-delay: 0.9s; }
+.being-eaten span:nth-child(18) { animation-delay: 0.95s; }
+.being-eaten span:nth-child(19) { animation-delay: 1s; }
+.being-eaten span:nth-child(20) { animation-delay: 1.05s; }
+.being-eaten span:nth-child(21) { animation-delay: 1.1s; }
+.being-eaten span:nth-child(22) { animation-delay: 1.15s; }
+.being-eaten span:nth-child(23) { animation-delay: 1.2s; }
+.being-eaten span:nth-child(24) { animation-delay: 1.25s; }
+.being-eaten span:nth-child(25) { animation-delay: 1.3s; }
+.being-eaten span:nth-child(26) { animation-delay: 1.35s; }
+.being-eaten span:nth-child(27) { animation-delay: 1.4s; }
+.being-eaten span:nth-child(28) { animation-delay: 1.45s; }
+.being-eaten span:nth-child(29) { animation-delay: 1.5s; }
+.being-eaten span:nth-child(30) { animation-delay: 1.55s; }
+.being-eaten span:nth-child(31) { animation-delay: 1.6s; }
+.being-eaten span:nth-child(32) { animation-delay: 1.65s; }
+.being-eaten span:nth-child(33) { animation-delay: 1.7s; }
+.being-eaten span:nth-child(34) { animation-delay: 1.75s; }
+.being-eaten span:nth-child(35) { animation-delay: 1.8s; }
+.being-eaten span:nth-child(36) { animation-delay: 1.85s; }
+.being-eaten span:nth-child(37) { animation-delay: 1.9s; }
+.being-eaten span:nth-child(38) { animation-delay: 1.95s; }
+.being-eaten span:nth-child(39) { animation-delay: 2s; }
+.being-eaten span:nth-child(40) { animation-delay: 2.05s; }
+.being-eaten span:nth-child(41) { animation-delay: 2.1s; }
+.being-eaten span:nth-child(42) { animation-delay: 2.15s; }
+.being-eaten span:nth-child(43) { animation-delay: 2.2s; }
+.being-eaten span:nth-child(44) { animation-delay: 2.25s; }
+.being-eaten span:nth-child(45) { animation-delay: 2.3s; }
+.being-eaten span:nth-child(46) { animation-delay: 2.35s; }
+.being-eaten span:nth-child(47) { animation-delay: 2.4s; }
+.being-eaten span:nth-child(48) { animation-delay: 2.45s; }
+.being-eaten span:nth-child(49) { animation-delay: 2.5s; }
+.being-eaten span:nth-child(50) { animation-delay: 2.55s; }
+.being-eaten span:nth-child(51) { animation-delay: 2.6s; }
+.being-eaten span:nth-child(52) { animation-delay: 2.65s; }
+.being-eaten span:nth-child(53) { animation-delay: 2.7s; }
+.being-eaten span:nth-child(54) { animation-delay: 2.75s; }
+.being-eaten span:nth-child(55) { animation-delay: 2.8s; }
+.being-eaten span:nth-child(56) { animation-delay: 2.85s; }
+.being-eaten span:nth-child(57) { animation-delay: 2.9s; }
+.being-eaten span:nth-child(58) { animation-delay: 2.95s; }
+.being-eaten span:nth-child(59) { animation-delay: 3s; }
+.being-eaten span:nth-child(60) { animation-delay: 3.05s; }
+.being-eaten span:nth-child(61) { animation-delay: 3.1s; }
+.being-eaten span:nth-child(62) { animation-delay: 3.15s; }
+.being-eaten span:nth-child(63) { animation-delay: 3.2s; }
+.being-eaten span:nth-child(64) { animation-delay: 3.25s; }
+.being-eaten span:nth-child(65) { animation-delay: 3.3s; }
+.being-eaten span:nth-child(66) { animation-delay: 3.35s; }
+.being-eaten span:nth-child(67) { animation-delay: 3.4s; }
+.being-eaten span:nth-child(68) { animation-delay: 3.45s; }
+.being-eaten span:nth-child(69) { animation-delay: 3.5s; }
+.being-eaten span:nth-child(70) { animation-delay: 3.55s; }
+.being-eaten span:nth-child(71) { animation-delay: 3.6s; }
+.being-eaten span:nth-child(72) { animation-delay: 3.65s; }
+.being-eaten span:nth-child(73) { animation-delay: 3.7s; }
+.being-eaten span:nth-child(74) { animation-delay: 3.75s; }
+.being-eaten span:nth-child(75) { animation-delay: 3.8s; }
+.being-eaten span:nth-child(76) { animation-delay: 3.85s; }
+.being-eaten span:nth-child(77) { animation-delay: 3.9s; }
+.being-eaten span:nth-child(78) { animation-delay: 3.95s; }
+.being-eaten span:nth-child(79) { animation-delay: 4s; }
+.being-eaten span:nth-child(80) { animation-delay: 4.05s; }
+.being-eaten span:nth-child(81) { animation-delay: 4.1s; }
+.being-eaten span:nth-child(82) { animation-delay: 4.15s; }
+.being-eaten span:nth-child(83) { animation-delay: 4.2s; }
+.being-eaten span:nth-child(84) { animation-delay: 4.25s; }
+.being-eaten span:nth-child(85) { animation-delay: 4.3s; }
+.being-eaten span:nth-child(86) { animation-delay: 4.35s; }
+.being-eaten span:nth-child(87) { animation-delay: 4.4s; }
+.being-eaten span:nth-child(88) { animation-delay: 4.45s; }
+.being-eaten span:nth-child(89) { animation-delay: 4.5s; }
+.being-eaten span:nth-child(90) { animation-delay: 4.55s; }
+.being-eaten span:nth-child(91) { animation-delay: 4.6s; }
+.being-eaten span:nth-child(92) { animation-delay: 4.65s; }
+.being-eaten span:nth-child(93) { animation-delay: 4.7s; }
+.being-eaten span:nth-child(94) { animation-delay: 4.75s; }
+.being-eaten span:nth-child(95) { animation-delay: 4.8s; }
+.being-eaten span:nth-child(96) { animation-delay: 4.85s; }
+.being-eaten span:nth-child(97) { animation-delay: 4.9s; }
+.being-eaten span:nth-child(98) { animation-delay: 4.95s; }
+.being-eaten span:nth-child(99) { animation-delay: 5s; }
+.being-eaten span:nth-child(100) { animation-delay: 5.05s; }
+.being-eaten span:nth-child(101) { animation-delay: 5.1s; }
+
+/* Apple eating animation */
+@keyframes eatText {
+  0% {
+    left: -15px;
+    transform: translateY(-50%);
+  }
+  5% {
+    left: 0px; /* Pause slightly at the beginning of text */
+    transform: translateY(-50%);
+  }
+  90% {
+    left: calc(100% - 10px); /* Stop slightly before the end */
+    transform: translateY(-50%);
+  }
+  95% {
+    left: calc(100% + 20px);
+    transform: translateY(-50%);
+  }
+  100% {
+    left: -15px;
+    transform: translateY(-50%);
+  }
+}
+
+.apple-eater.active {
+  opacity: 1;
+  visibility: visible;
+  animation: eatText 6s forwards;
+}
+
+/* Character disappear animation */
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+  40% {
+    opacity: 0.8;
+    transform: scale(0.9) translateX(-2px);
+  }
+  70% {
+    opacity: 0.4;
+    transform: scale(0.5) translateX(-4px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateX(-6px);
+  }
+}
+
+/* Random color change animation */
+@keyframes colorChange {
+  0%, 100% {
+    color: white;
+  }
+  10% {
+    color: #ff9f43; /* Orange */
+  }
+  20% {
+    color: #ff6b6b; /* Red */
+  }
+  30% {
+    color: #48dbfb; /* Light Blue */
+  }
+  40% {
+    color: #1dd1a1; /* Green */
+  }
+  50% {
+    color: #feca57; /* Yellow */
+  }
+  60% {
+    color: #54a0ff; /* Blue */
+  }
+  70% {
+    color: #5f27cd; /* Purple */
+  }
+  80% {
+    color: #ff9ff3; /* Pink */
+  }
+  90% {
+    color: #00d2d3; /* Teal */
+  }
+}

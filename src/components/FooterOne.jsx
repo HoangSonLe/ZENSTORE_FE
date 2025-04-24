@@ -226,10 +226,10 @@ const FooterOne = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="/https://www.twitter.com"
+                                    to="/https://www.tiktok.com/@zenstore_gvap"
                                     className="w-44 h-44 flex-center bg-main-100 text-main-600 text-xl rounded-circle hover-bg-main-600 hover-text-white"
                                 >
-                                    <i className="ph-fill ph-twitter-logo" />
+                                    <i className="ph-fill ph-tiktok-logo" />
                                 </Link>
                             </li>
                            

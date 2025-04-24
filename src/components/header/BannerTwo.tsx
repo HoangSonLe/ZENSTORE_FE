@@ -9,7 +9,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
     const settings = {
         dots: true,
         // infinite: true,
-        speed: 1000,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 0,

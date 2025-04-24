@@ -71,7 +71,7 @@ const SearchBox = () => {
                         <input
                             type="text"
                             className="search-form__input common-input py-13 ps-16 pe-18 rounded-0 border-0"
-                            placeholder="Tìm kiếm ..."
+                            placeholder="Bạn cần tìm sản phẩm gì?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             id="searchInput"

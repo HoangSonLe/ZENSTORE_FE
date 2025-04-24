@@ -43,7 +43,7 @@ const BlogDetails = ({ blogId }: { blogId: number }) => {
     }, [blogId]);
 
     return blogData ? (
-        <section className="blog-details py-80">
+        <section className="blog-details py-50">
             <div className="container container-lg">
                 <div className="row gy-5">
                     <div className="col-lg-8 pe-xl-4">
@@ -82,7 +82,10 @@ const BlogDetails = ({ blogId }: { blogId: number }) => {
                                 Bài viết gần đây
                             </h6>
                             {blogTableData?.data.slice(0, 5).map((i) => (
-                                <div key={i.newsId} className="d-flex align-items-center flex-sm-nowrap flex-wrap gap-24 mb-16">
+                                <div
+                                    key={i.newsId}
+                                    className="d-flex align-items-center flex-sm-nowrap flex-wrap gap-24 mb-16"
+                                >
                                     <Link
                                         to={`/blog-details/${i.newsId}`}
                                         className="w-100 h-100 rounded-4 overflow-hidden w-120 h-120 flex-shrink-0"

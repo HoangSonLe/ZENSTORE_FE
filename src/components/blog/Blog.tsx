@@ -44,7 +44,7 @@ const Blog = () => {
     };
 
     return (
-        <section className="blog py-80">
+        <section className="blog py-60">
             <div className="container container-lg">
                 <div className="row gy-5">
                     <div className="col-lg-8 pe-xl-4">

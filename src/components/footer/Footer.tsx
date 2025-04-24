@@ -13,36 +13,33 @@ const Footer = () => {
                             </Link>
                         </div>
                         <p className="text-white mb-24">
-                            Sản phẩm được khách hàng tin dùng khắp cả nước. Mang lại giá trị và trải nghiệm tuyệt vời dành cho bạn. 
+                            Sản phẩm được khách hàng tin dùng khắp cả nước. Mang lại giá trị và trải
+                            nghiệm tuyệt vời dành cho bạn.
                         </p>
                         <div className="flex-align gap-16 mb-16">
                             <span className="w-32 h-32 flex-center rounded-circle border border-gray-100 text-main-two-600 text-md flex-shrink-0">
                                 <i className="ph-fill ph-phone-call" />
                             </span>
-                            <Link
-                                to="/tel:+00123456789"
+                            <a
+                                href="tel:+0777999908"
                                 className="text-md text-white hover-text-main-600"
                             >
-                                0777999908 hoặc 0865508888
-                            </Link>
-                        </div>
-                        <div className="flex-align gap-16 mb-16">
-                            <span className="w-32 h-32 flex-center rounded-circle border border-gray-100 text-main-two-600 text-md flex-shrink-0">
-                                <i className="ph-fill ph-envelope" />
-                            </span>
-                            <Link
-                                to="/mailto:support24@marketpro.com"
+                                0777999908
+                            </a>
+                            <span className="text-white mx-1">hoặc</span>
+                            <a
+                                href="tel:+0865508888"
                                 className="text-md text-white hover-text-main-600"
                             >
-                                support24@marketpro.com
-                            </Link>
+                                0865508888
+                            </a>
                         </div>
                         <div className="flex-align gap-16 mb-16">
                             <span className="w-32 h-32 flex-center rounded-circle border border-gray-100 text-main-two-600 text-md flex-shrink-0">
                                 <i className="ph-fill ph-map-pin" />
                             </span>
                             <span className="text-md text-white ">
-                              CN1: 796 Kha Vạn Cân - P.Linh Đông - TP. Thủ Đức
+                                CN1: 796 Kha Vạn Cân - P.Linh Đông - TP. Thủ Đức
                             </span>
                         </div>
                         <div className="flex-align gap-16 mb-16">
@@ -50,35 +47,35 @@ const Footer = () => {
                                 <i className="ph-fill ph-map-pin" />
                             </span>
                             <span className="text-md text-white ">
-                             CN2: 1207 Phan Văn Trị - P.10 - Q. Gò Vấp
+                                CN2: 1207 Phan Văn Trị - P.10 - Q. Gò Vấp
                             </span>
                         </div>
                     </div>
                     <div className="footer-item max-w-40">
                         <h6 className="text-white">Kết nối với ZenStore</h6>
                         <p className="text-white mb-16">Chúng tôi luôn chào đón bạn.</p>
-                       
+
                         <ul className="flex-align gap-16">
                             <li>
                                 <a
                                     href="https://www.facebook.com/profile.php?id=100084516681157"
                                     target="_blank"
-                                    rel="noopener noreferrer" 
+                                    rel="noopener noreferrer"
                                     className="w-44 h-44 flex-center bg-main-two-50 text-main-two-600 text-xl rounded-8 hover-bg-main-two-600 hover-text-white"
                                 >
                                     <i className="ph-fill ph-facebook-logo" />
                                 </a>
                             </li>
                             <li>
-                                <Link
-                                    to="/https://www.twitter.com"
+                                <a
+                                    href="https://www.twitter.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-44 h-44 flex-center bg-main-two-50 text-main-two-600 text-xl rounded-8 hover-bg-main-two-600 hover-text-white"
                                 >
                                     <i className="ph-fill ph-twitter-logo" />
-                                </Link>
+                                </a>
                             </li>
-                          
-                          
                         </ul>
                         <div className="flex-align gap-8 my-32">
                             <div className="">

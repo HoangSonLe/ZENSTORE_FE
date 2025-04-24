@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 import BottomFooter from "../../components/footer/BottomFooter";
 import Footer from "../../components/footer/Footer";
-import NewsletterTwo from "../../components/footer/NewsletterTwo";
 import Header from "../../components/header/Header";
 import ColorInit from "../../helper/ColorInit";
 import Preloader from "../../helper/Preloader";
@@ -18,7 +17,7 @@ const MainLayout = () => {
                 <Preloader />
 
                 {/* HeaderTwo */}
-                <Header category={false} />
+                <Header />
             </header>
             <main>
                 <Outlet /> {/* This is where child routes will be rendered */}

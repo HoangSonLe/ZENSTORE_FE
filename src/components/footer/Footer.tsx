@@ -17,7 +17,7 @@ const Footer = () => {
                             nghiệm tuyệt vời dành cho bạn.
                         </p>
                         <div className="flex-align gap-16 mb-16">
-                            <span className="w-32 h-32 flex-center rounded-circle border border-gray-100 text-main-two-600 text-md flex-shrink-0">
+                            <span className="w-32 h-32 flex-center rounded-circle border border-white text-white text-md flex-shrink-0">
                                 <i className="ph-fill ph-phone-call" />
                             </span>
                             <a
@@ -35,7 +35,7 @@ const Footer = () => {
                             </a>
                         </div>
                         <div className="flex-align gap-16 mb-16">
-                            <span className="w-32 h-32 flex-center rounded-circle border border-gray-100 text-main-two-600 text-md flex-shrink-0">
+                            <span className="w-32 h-32 flex-center rounded-circle border border-white text-white text-md flex-shrink-0">
                                 <i className="ph-fill ph-map-pin" />
                             </span>
                             <span className="text-md text-white ">
@@ -43,7 +43,7 @@ const Footer = () => {
                             </span>
                         </div>
                         <div className="flex-align gap-16 mb-16">
-                            <span className="w-32 h-32 flex-center rounded-circle border border-gray-100 text-main-two-600 text-md flex-shrink-0">
+                            <span className="w-32 h-32 flex-center rounded-circle border border-white text-white text-md flex-shrink-0">
                                 <i className="ph-fill ph-map-pin" />
                             </span>
                             <span className="text-md text-white ">

@@ -4,10 +4,11 @@ import { IProduct } from "../../../apis/product/product.interface";
 import { getTagCssClass } from "../../../components/products/ShopSection";
 import { EProductStatus } from "../../../constants/enum";
 import { extractSalePercentage } from "../../../utils/productUtils";
+import "./ProductItemStyles.css"; // Import custom styles
 
 const ProductItem = ({ product }: { product: IProduct }) => {
     return (
-        <div className="product-card h-100 p-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+        <div className="product-card">
             <Link
                 to={`/product-details/${product.productId}`}
                 className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative"
@@ -20,49 +21,44 @@ const ProductItem = ({ product }: { product: IProduct }) => {
                     {product.productStatusName}
                 </span>
                 <img
-                    style={{ width: "232px", height: "180px" }}
                     src={product.listImage[0]}
-                    alt={product.listImage[0]}
-                    className="w-auto max-w-unset"
+                    alt={product.productName || "Product image"}
+                    className="product-image"
                 />
             </Link>
             <div className="product-card__content mt-16">
-                <div className="flex-align gap-6">
-                    <span className="text-xs fw-medium text-gray-500">
-                        {getRandomFloat(3.5, 5)}
-                    </span>
-                    <span className="text-15 fw-medium text-warning-600 d-flex">
+                <div className="rating-container">
+                    <span className="rating-score">{getRandomFloat(3.5, 5)}</span>
+                    <span className="star-icon">
                         <i className="ph-fill ph-star" />
                     </span>
-                    <span className="text-xs fw-medium text-gray-500">
-                        ({getRandomInteger(1, 5)}k)
-                    </span>
+                    <span className="rating-count">({getRandomInteger(1, 5)}k)</span>
                 </div>
-                <h6 className="title text-lg fw-semibold mt-12 mb-8">
+                <h6 className="product-title">
                     <Link
                         to={`/product-details/${product.productId}`}
-                        className="link text-line-2"
+                        className="product-link"
                         tabIndex={0}
                     >
                         {product.productName}
                     </Link>
                 </h6>
-                <div className="product-card__price my-20">
+                <div className="product-card__price">
                     {product.productPrice !== product.productPriceSale &&
                     product.productPrice &&
                     product.productPriceSale ? (
                         <>
-                            <span className="text-danger-600 text-md fw-semibold d-block">
+                            <span className="sale-price">
                                 {formatVND(product.productPriceSale)}
                             </span>
-                            <div className="d-flex flex-wrap align-items-baseline gap-2">
-                                <span className="text-gray-900 text-md fw-semibold text-decoration-line-through">
+                            <div className="price-info">
+                                <span className="original-price">
                                     {formatVND(product.productPrice)}
                                 </span>
                                 {String(product.productStatusCode).startsWith(
                                     EProductStatus.SALE
                                 ) && (
-                                    <span className="text-danger-600 text-md fw-semibold ps-2">
+                                    <span className="discount-tag">
                                         {extractSalePercentage(
                                             String(product.productStatusCode),
                                             product.productStatusName
@@ -72,9 +68,7 @@ const ProductItem = ({ product }: { product: IProduct }) => {
                             </div>
                         </>
                     ) : (
-                        <span className="text-gray-900 text-md fw-semibold">
-                            {formatVND(product.productPrice)}
-                        </span>
+                        <span className="regular-price">{formatVND(product.productPrice)}</span>
                     )}
                 </div>
             </div>

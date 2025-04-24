@@ -17,6 +17,13 @@ const SearchBoxMobile = ({
     const [showResults, setShowResults] = useState(false);
     const { request: getProductList } = useApi(productApi.getProductList);
 
+    // Custom styles for the search input
+    const searchInputStyle = {
+        border: "2px solid #ce2f3e",
+        boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+        fontSize: "16px",
+    };
+
     const searchBoxRef = useRef<HTMLFormElement | null>(null); // Ref for the search box
     const navigate = useNavigate();
 
@@ -79,13 +86,15 @@ const SearchBoxMobile = ({
             onSubmit={handleSearch}
             className={`search-box ${activeSearch && "active"}`}
             ref={searchBoxRef}
+            style={{ background: "rgba(0, 0, 0, 0.85)" }} // Semi-transparent background
         >
             <button
                 onClick={handleSearchToggle}
                 type="button"
-                className="search-box__close position-absolute inset-block-start-0 inset-inline-end-0 m-16 w-48 h-48 border border-gray-100 rounded-circle flex-center text-white hover-text-gray-800 hover-bg-white text-2xl transition-1"
+                className="search-box__close position-absolute inset-block-start-0 inset-inline-end-0 m-16 w-36 h-36 border-2 border-zenStore-100 bg-white rounded-circle flex-center text-zenStore-100 hover-bg-zenStore-100 hover-text-white text-xl transition-1"
+                style={{ boxShadow: "0 0 10px rgba(0,0,0,0.3)", top: "10px", right: "10px" }}
             >
-                <i className="ph ph-x" />
+                <i className="ph ph-x-circle" />
             </button>
             <div className="container">
                 <div className="container position-relative">
@@ -98,10 +107,11 @@ const SearchBoxMobile = ({
                             onChange={(e) => setInput(e.target.value)}
                             id="searchInputMobile"
                             aria-label="Search input"
+                            style={searchInputStyle}
                         />
                         <button
                             type="submit"
-                            className="w-48 h-48 bg-main-600 rounded-circle flex-center text-xl text-white position-absolute top-50 translate-middle-y inset-inline-end-0 me-16"
+                            className="w-48 h-48 bg-zenStore-100 rounded-circle flex-center text-xl text-white position-absolute top-50 translate-middle-y inset-inline-end-0 me-16"
                             aria-label="Search button"
                         >
                             <i className="ph ph-magnifying-glass" />
@@ -119,8 +129,9 @@ const SearchBoxMobile = ({
                                 maxHeight: "300px", // Limit height to allow scrolling
                                 overflowY: "auto", // Enable vertical scrolling
                                 borderRadius: "12px", // Rounded corners
-                                boxShadow: "0 4px 10px rgba(0,0,0,0.1)", // Soft shadow
+                                boxShadow: "0 4px 15px rgba(206, 47, 62, 0.2)", // Red-tinted shadow
                                 padding: "8px 0", // Space around the result items
+                                border: "1px solid #ce2f3e", // Red border
                             }}
                         >
                             <div className="d-flex flex-wrap justify-content-between px-3 py-2">

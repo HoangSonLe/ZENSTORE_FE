@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import SearchBoxMobile from "./SearchBoxMobile";
-import AppleAnimation from "./AppleAnimation";
+import "./MobileMenuStyles.css"; // Import custom mobile menu styles
+import "./LogoStyles.css"; // Import custom logo styles
 
-const Header = (category: any) => {
+const Header = () => {
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
         window.onscroll = () => {
@@ -73,7 +74,9 @@ const Header = (category: any) => {
                         <ul className="nav-menu flex-align nav-menu--mobile">
                             <li
                                 onClick={() => handleMenuClick(0)}
-                                className={`on-hover-item nav-menu__item`}
+                                className={`on-hover-item nav-menu__item ${
+                                    activeIndex === 0 ? "active" : ""
+                                }`}
                             >
                                 <Link to="/" className="nav-menu__link">
                                     Trang chủ
@@ -82,14 +85,19 @@ const Header = (category: any) => {
                             <li
                                 onClick={() => handleMenuClick(1)}
                                 className={`on-hover-item nav-menu__item ${
-                                    activeIndex === 1 ? "d-block" : ""
+                                    activeIndex === 1 ? "active" : ""
                                 }`}
                             >
                                 <Link to="/shop" className="nav-menu__link">
                                     Sản phẩm
                                 </Link>
                             </li>
-                            <li className="on-hover-item nav-menu__item">
+                            <li
+                                onClick={() => handleMenuClick(2)}
+                                className={`on-hover-item nav-menu__item ${
+                                    activeIndex === 2 ? "active" : ""
+                                }`}
+                            >
                                 <Link to="/blog" className="nav-menu__link">
                                     Tin tức
                                 </Link>
@@ -182,7 +190,7 @@ const Header = (category: any) => {
                                         type="button"
                                         className="flex-align search-icon d-lg-none d-flex gap-4 item-hover-two"
                                     >
-                                        <span className="text-2xl text-white d-flex position-relative item-hover__text">
+                                        <span className="text-2xl text-zenStore-100 d-flex position-relative item-hover__text">
                                             <i className="ph ph-magnifying-glass" />
                                         </span>
                                     </button>

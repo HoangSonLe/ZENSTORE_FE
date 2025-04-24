@@ -85,13 +85,18 @@ const DealsOne = ({ bannerList, productList }: IProps) => {
                         </div>
                     </div>
                     <div className="deal-week-box rounded-16 overflow-hidden position-relative z-1 mb-24">
-                        <div style={{
-                            height: "140px",
-                            position: "relative",
-                            overflow: "hidden"
-                        }}>
+                        <div
+                            style={{
+                                height: "140px",
+                                position: "relative",
+                                overflow: "hidden",
+                            }}
+                        >
                             <img
-                                src={bannerList[0]?.bannerImage || "/assets/images/bg/week-sale-bg.jpg"}
+                                src={
+                                    bannerList[0]?.bannerImage ||
+                                    "/assets/images/bg/week-sale-bg.jpg"
+                                }
                                 alt="Weekly sale background"
                                 style={{
                                     width: "100%",
@@ -103,12 +108,12 @@ const DealsOne = ({ bannerList, productList }: IProps) => {
                                     top: "50%",
                                     left: "0",
                                     transform: "translateY(-50%)",
-                                    WebkitTransform: "translateY(-50%)"
+                                    WebkitTransform: "translateY(-50%)",
                                 }}
                             />
                         </div>
                     </div>
-                    <div className="deals-week-slider arrow-style-two">
+                    <div className="arrow-style-two">
                         <Slider {...settings}>
                             {productList.map((i) => (
                                 <div key={i.productId}>

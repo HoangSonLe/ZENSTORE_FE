@@ -7,9 +7,10 @@ import { IApiResponseTable, IApiTable } from "../../apis/interface";
 import { IBlog, IBlogQuery } from "../../apis/blog/blog.interface";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
+import "./BlogStyles.css";
 
 const Blog = () => {
-    const { register, handleSubmit, watch, setValue, getValues, control } = useForm<IBlogQuery>({
+    const { setValue, getValues } = useForm<IBlogQuery>({
         defaultValues: {
             pageNumber: 1,
             pageSize: 10,
@@ -36,6 +37,7 @@ const Blog = () => {
     };
     useEffect(() => {
         getBlogData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const onPageChange = (page: number) => {
@@ -44,56 +46,52 @@ const Blog = () => {
     };
 
     return (
-        <section className="blog py-60">
+        <section className="blog">
             <div className="container container-lg">
                 <div className="row gy-5">
                     <div className="col-lg-8 pe-xl-4">
                         <div className="blog-item-wrapper">
                             {blogTableData && blogTableData.data?.length > 0 ? (
-                                blogTableData.data.map((i) => (
-                                    <div className="d-flex align-items-center flex-sm-nowrap flex-wrap gap-24 mb-16 p-16 rounded-3 border border-gray-100">
-                                        <Link
-                                            to={`/blog-details/${i.newsId}`}
-                                            className="w-100 h-100 rounded-4 overflow-hidden w-120 h-120 flex-shrink-0"
-                                        >
-                                            <img
-                                                src={
-                                                    i.newsThumbnail ??
-                                                    "/assets/images/thumbs/recent-post1.png"
-                                                }
-                                                alt={i.newsThumbnail}
-                                                className="cover-img"
-                                            />
-                                        </Link>
-                                        <div className="flex-grow-1">
-                                            <h6 className="text-lg">
-                                                <Link
-                                                    to={`/blog-details/${i.newsId}`}
-                                                    className="text-line-3"
-                                                >
-                                                    {i.newsTitle}
+                                blogTableData.data.map((blog, index) => (
+                                    <div className="blog-item" key={blog.newsId || index}>
+                                        <div className="blog-image">
+                                            <Link to={`/blog-details/${blog.newsId}`}>
+                                                <img
+                                                    src={
+                                                        blog.newsThumbnail ??
+                                                        "/assets/images/thumbs/recent-post1.png"
+                                                    }
+                                                    alt={blog.newsTitle || "Blog thumbnail"}
+                                                    loading="lazy"
+                                                />
+                                            </Link>
+                                        </div>
+                                        <div className="blog-content">
+                                            <h3 className="blog-title">
+                                                <Link to={`/blog-details/${blog.newsId}`}>
+                                                    {blog.newsTitle}
                                                 </Link>
-                                            </h6>
-                                            <p className="text-gray-700 text-line-2">
-                                                {i.newsShortContent}
+                                            </h3>
+                                            <p className="blog-description">
+                                                {blog.newsShortContent}
                                             </p>
-                                            <div className="flex-align flex-wrap gap-8">
-                                                <span className="text-lg text-main-600">
+                                            <div className="blog-meta">
+                                                <span className="blog-meta-icon">
                                                     <i className="ph ph-calendar-dots" />
                                                 </span>
-                                                <span className="text-sm text-gray-500">
-                                                    <div className="text-gray-500 hover-text-main-600">
-                                                        {dayjs(i.createdAt).format(
-                                                            "HH:mm:ss DD/MM/YYYY"
-                                                        )}
-                                                    </div>
+                                                <span className="blog-meta-text">
+                                                    {dayjs(blog.createdAt).format(
+                                                        "HH:mm:ss DD/MM/YYYY"
+                                                    )}
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 ))
                             ) : (
-                                <label className="form-check-label">Không có bài viết nào</label>
+                                <div className="blog-empty">
+                                    <p className="blog-empty-text">No blog posts found</p>
+                                </div>
                             )}
                         </div>
                     </div>

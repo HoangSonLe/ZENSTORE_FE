@@ -231,6 +231,79 @@
     text-decoration: underline;
 }
 
+/* Bottom footer left section */
+.bottom-footer__left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Contact number in bottom footer */
+.bottom-footer__contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact-number {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contact-number:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-number__icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(206, 47, 62, 0.1);
+    color: #ce2f3e;
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-number:hover .contact-number__icon {
+    background-color: #ce2f3e;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.contact-number__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-number__label {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.contact-number__value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-number:hover .contact-number__value {
+    color: #ce2f3e;
+}
+
 /* Responsive styles */
 @media (max-width: 1200px) {
     .footer {
@@ -299,12 +372,27 @@
     }
 
     .bottom-footer {
-        padding: 12px 0;
+        padding: 15px 0;
+    }
+
+    .bottom-footer__inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bottom-footer__left {
+        align-items: center;
+        text-align: center;
     }
 
     .bottom-footer__text {
         text-align: center;
         width: 100%;
+    }
+
+    .contact-number {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -339,6 +427,25 @@
     .app-badge {
         max-width: 120px;
         height: 35px;
+    }
+
+    .contact-number {
+        padding: 6px 12px;
+        gap: 10px;
+    }
+
+    .contact-number__icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .contact-number__label {
+        font-size: 11px;
+    }
+
+    .contact-number__value {
+        font-size: 14px;
     }
 }
 

@@ -5,24 +5,24 @@ import productApi from "../../apis/product/product.api";
 import { IProduct, IProductQuery } from "../../apis/product/product.interface";
 import { EProductStatus } from "../../constants/enum";
 import { useApi } from "../../hooks";
-import { formatVND, getRandomFloat, getRandomInteger } from "../../utils/numberUtils";
-import { extractSalePercentage } from "../../utils/productUtils";
 import Filter from "./Filter";
 import Pagination from "../pagination/Pagination";
-import { Link } from "react-router-dom";
+import "./EnhancedShopStyles.css";
+import CompactProductItem from "../../pages/homePage/component/CompactProductItem";
+import ProductItem from "../../pages/homePage/component/ProductItem";
 export interface IProductCustomQuery extends IProductQuery {
     statusCodeSingle: string;
 }
 export const getTagCssClass = (status: EProductStatus | string) => {
     switch (status) {
         case EProductStatus.NEW:
-            return "bg-primary-600";
+            return "badge-new";
         case EProductStatus.BEST_SELL:
-            return "bg-warning-600";
+            return "badge-best";
         case EProductStatus.OUT_STOCK:
-            return "bg-gray-600";
+            return "badge-out";
         default:
-            return "bg-danger-600";
+            return "badge-sale";
     }
 };
 const ShopSection = () => {
@@ -72,6 +72,7 @@ const ShopSection = () => {
     };
     useEffect(() => {
         getProductData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const onChangeFilter = () => {
@@ -84,7 +85,7 @@ const ShopSection = () => {
     };
 
     return (
-        <section className="shop py-80">
+        <section className="shop-section">
             <div className={`side-overlay ${active && "show"}`}></div>
             <div className="container container-lg">
                 <div className="row">
@@ -101,29 +102,25 @@ const ShopSection = () => {
                     {/* Content Start */}
                     <div className="col-lg-9">
                         {/* Top Start */}
-                        <div className="flex-between gap-16 flex-wrap mb-40 ">
-                            <span className="text-gray-900">
-                                {start}-{end} of {total} sản phẩm
+                        <div className="shop-top">
+                            <span className="product-count">
+                                {start}-{end} of {total} products
                             </span>
-                            <div className="position-relative flex-align gap-16 flex-wrap">
-                                <div className="list-grid-btns flex-align gap-16">
+                            <div className="view-options">
+                                <div className="view-toggle">
                                     <button
                                         onClick={() => setGrid(true)}
                                         type="button"
-                                        className={`w-44 h-44 flex-center border rounded-6 text-2xl list-btn border-gray-100 ${
-                                            grid === true &&
-                                            "border-main-600 text-white bg-main-600"
-                                        }`}
+                                        className={`view-btn ${grid === true ? "active" : ""}`}
+                                        aria-label="List view"
                                     >
                                         <i className="ph-bold ph-list-dashes" />
                                     </button>
                                     <button
                                         onClick={() => setGrid(false)}
                                         type="button"
-                                        className={`w-44 h-44 flex-center border rounded-6 text-2xl grid-btn border-gray-100 ${
-                                            grid === false &&
-                                            "border-main-600 text-white bg-main-600"
-                                        }`}
+                                        className={`view-btn ${grid === false ? "active" : ""}`}
+                                        aria-label="Grid view"
                                     >
                                         <i className="ph ph-squares-four" />
                                     </button>
@@ -131,99 +128,27 @@ const ShopSection = () => {
                                 <button
                                     onClick={sidebarController}
                                     type="button"
-                                    className="w-44 h-44 d-lg-none d-flex flex-center border border-gray-100 rounded-6 text-2xl sidebar-btn"
+                                    className="filter-btn d-lg-none d-flex"
+                                    aria-label="Show filters"
                                 >
                                     <i className="ph-bold ph-funnel" />
                                 </button>
                             </div>
                         </div>
                         {/* Top End */}
-                        <div className={`list-grid-wrapper ${grid && "list-view"}`}>
+                        <div className={`product-container ${grid ? "list-view" : ""}`}>
                             {productTableData && productTableData.data?.length > 0 ? (
-                                productTableData.data.map((i) => (
-                                    <Link
-                                        to={`/product-details/${i.productId}`}
-                                        key={i.productId}
-                                        className="product-card h-100 p-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2 cursor-pointer"
-                                    >
-                                        <div className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative">
-                                            <Link
-                                                to={`/product-details/${i.productId}`}
-                                                className="product-card__thumb flex-center rounded-8 bg-gray-50 position-relative"
-                                            >
-                                                <img
-                                                    style={{ width: "232px", height: "180px" }}
-                                                    src={i.listImage[0]}
-                                                    alt={i.listImage[0]}
-                                                    className="w-auto max-w-unset"
-                                                />
-                                                <span
-                                                    className={`product-card__badge ${getTagCssClass(
-                                                        i.productStatusCode
-                                                    )} px-8 py-4 text-sm text-white position-absolute inset-inline-start-0 inset-block-start-0`}
-                                                >
-                                                    {i.productStatusName}
-                                                </span>
-                                            </Link>
-                                        </div>
-                                        <div className="product-card__content flex-fill mt-16">
-                                            <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                                <Link
-                                                    to={`/product-details/${i.productId}`}
-                                                    className="link text-line-2"
-                                                    tabIndex={0}
-                                                >
-                                                    {i.productName}
-                                                </Link>
-                                            </h6>
-                                            <div className="flex-align mb-20 mt-16 gap-6">
-                                                <span className="text-xs fw-medium text-gray-500">
-                                                    {getRandomFloat(3.5, 5)}
-                                                </span>
-                                                <span className="text-15 fw-medium text-warning-600 d-flex">
-                                                    <i className="ph-fill ph-star" />
-                                                </span>
-                                                <span className="text-xs fw-medium text-gray-500">
-                                                    ({getRandomInteger(1, 5)}k)
-                                                </span>
-                                            </div>
-                                            <div className="product-card__price my-20">
-                                                {i.productPriceSale !== i.productPrice ? (
-                                                    <>
-                                                        <span className="text-danger-600 text-md fw-semibold d-block">
-                                                            {formatVND(i.productPriceSale)}
-                                                        </span>
-                                                        <div className="d-flex flex-wrap align-items-baseline gap-2">
-                                                            <span className="text-gray-900 text-md fw-semibold text-decoration-line-through">
-                                                                {formatVND(i.productPrice)}
-                                                            </span>
-                                                            {String(i.productStatusCode).startsWith(
-                                                                EProductStatus.SALE
-                                                            ) && (
-                                                                <span className="text-danger-600 text-md fw-semibold ps-2">
-                                                                    {extractSalePercentage(
-                                                                        String(i.productStatusCode),
-                                                                        i.productStatusName
-                                                                    )}
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    </>
-                                                ) : (
-                                                    <span className="text-gray-900 text-md fw-semibold">
-                                                        {formatVND(i.productPrice)}
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </Link>
+                                productTableData.data.map((product) => (
+                                    <ProductItem key={product.productId} product={product} />
                                 ))
                             ) : (
-                                <label className="form-check-label">Không có sản phẩm nào</label>
+                                <div className="empty-state">
+                                    <p className="empty-state-text">No products found</p>
+                                </div>
                             )}
                         </div>
                         {productTableData && productTableData.data?.length > 0 ? (
-                            <div style={{ gridColumn: "span 4" }}>
+                            <div className="pagination-container">
                                 {/* Pagination Start */}
                                 <Pagination
                                     total={productTableData?.total ?? 0}

@@ -6,39 +6,39 @@ import Breadcrumb from "../components/Breadcrumb";
 import FooterTwo from "../components/FooterTwo";
 import BottomFooter from "../components/BottomFooter";
 import ShippingOne from "../components/ShippingOne";
-import Contact from "../../components/Contact";
+import EnhancedContact from "../../components/EnhancedContact";
 import ScrollToTop from "react-scroll-to-top";
 const ContactPage = () => {
-  return (
-    <>
-      {/* ColorInit */}
-      <ColorInit color={true} />
+    return (
+        <>
+            {/* ColorInit */}
+            <ColorInit color={true} />
 
-      {/* ScrollToTop */}
-      <ScrollToTop smooth color="#FA6400" />
+            {/* ScrollToTop */}
+            <ScrollToTop smooth color="#FA6400" />
 
-      {/* Preloader */}
-      <Preloader />
+            {/* Preloader */}
+            <Preloader />
 
-      {/* HeaderTwo */}
-      <HeaderTwo category={true} />
+            {/* HeaderTwo */}
+            <HeaderTwo category={true} />
 
-      {/* Breadcrumb */}
-      <Breadcrumb title={"Contact"} />
+            {/* Breadcrumb */}
+            <Breadcrumb title={"Contact"} />
 
-      {/* Contact */}
-      <Contact />
+            {/* Contact */}
+            <EnhancedContact />
 
-      {/* ShippingOne */}
-      <ShippingOne />
+            {/* ShippingOne */}
+            <ShippingOne />
 
-      {/* FooterTwo */}
-      <FooterTwo />
+            {/* FooterTwo */}
+            <FooterTwo />
 
-      {/* BottomFooter */}
-      <BottomFooter />
-    </>
-  );
+            {/* BottomFooter */}
+            <BottomFooter />
+        </>
+    );
 };
 
 export default ContactPage;

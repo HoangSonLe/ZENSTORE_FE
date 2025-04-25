@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./ContactStyles.css";
 
 const Contact = () => {
     return (
@@ -17,7 +18,9 @@ const Contact = () => {
                                             className="flex-align gap-4 text-sm font-heading-two text-gray-900 fw-semibold mb-4"
                                         >
                                             Full Name{" "}
-                                            <span className="text-danger text-xl line-height-1">*</span>{" "}
+                                            <span className="text-danger text-xl line-height-1">
+                                                *
+                                            </span>{" "}
                                         </label>
                                         <input
                                             type="text"
@@ -32,7 +35,9 @@ const Contact = () => {
                                             className="flex-align gap-4 text-sm font-heading-two text-gray-900 fw-semibold mb-4"
                                         >
                                             Email Address{" "}
-                                            <span className="text-danger text-xl line-height-1">*</span>{" "}
+                                            <span className="text-danger text-xl line-height-1">
+                                                *
+                                            </span>{" "}
                                         </label>
                                         <input
                                             type="email"
@@ -47,7 +52,9 @@ const Contact = () => {
                                             className="flex-align gap-4 text-sm font-heading-two text-gray-900 fw-semibold mb-4"
                                         >
                                             Phone Number
-                                            <span className="text-danger text-xl line-height-1">*</span>{" "}
+                                            <span className="text-danger text-xl line-height-1">
+                                                *
+                                            </span>{" "}
                                         </label>
                                         <input
                                             type="number"
@@ -160,8 +167,7 @@ const Contact = () => {
                 </div>
             </div>
         </section>
+    );
+};
 
-    )
-}
-
-export default Contact
+export default Contact;

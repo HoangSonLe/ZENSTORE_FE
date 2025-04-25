@@ -7,12 +7,28 @@ const EnhancedBottomFooter = () => {
         <div className="bottom-footer">
             <div className="container container-lg">
                 <div className="bottom-footer__inner">
-                    <p className="bottom-footer__text">
-                        © {new Date().getFullYear()} ZenStore. All rights reserved.
-                    </p>
-                    <p className="bottom-footer__text">
-                        Designed and developed by <Link to="/">ZenStore Team</Link>
-                    </p>
+                    <div className="bottom-footer__left">
+                        <p className="bottom-footer__text">
+                            © {new Date().getFullYear()} Team 3TS.
+                        </p>
+                        <p className="bottom-footer__text">
+                            Phần mềm được thiết kế và phát triển bởi <Link to="/">3TS Team</Link>
+                        </p>
+                    </div>
+
+                    <div className="bottom-footer__contact">
+                        <div className="contact-number">
+                            <span className="contact-number__icon">
+                                <i className="ph ph-phone"></i>
+                            </span>
+                            <div className="contact-number__content">
+                                <p className="contact-number__label">Số hotline:</p>
+                                <a href="tel:+84123456789" className="contact-number__value">
+                                    0782065079
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

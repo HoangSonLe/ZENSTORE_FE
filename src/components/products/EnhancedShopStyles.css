@@ -34,16 +34,51 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
     z-index: 990;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
 }
 
+/* Apply backdrop filter with browser prefixes for better compatibility */
+@supports ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
+    .side-overlay {
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        background-color: rgba(0, 0, 0, 0.5); /* Slightly more transparent when blur is supported */
+    }
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
+    .side-overlay {
+        background-color: rgba(0, 0, 0, 0.75); /* Darker background when blur is not supported */
+    }
+}
+
 .side-overlay.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* Shop sidebar styles */
+.shop-sidebar {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Scrollable content area */
+.shop-sidebar__content {
+    flex: 1;
+    overflow-y: auto;
 }
 
 /* Top section with filters and view options */
@@ -320,6 +355,7 @@
     text-decoration: none;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     transition: color 0.3s ease;
@@ -455,6 +491,7 @@
 
 .list-view .product-title a {
     -webkit-line-clamp: 1;
+    line-clamp: 1;
 }
 
 .list-view .rating-container {
@@ -515,6 +552,108 @@
 }
 
 @media (max-width: 991px) {
+    /* Mobile sidebar styles */
+    .shop-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 320px;
+        max-width: 85%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 999;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 60px 0 0;
+        transition: left 0.3s ease;
+        border-radius: 0 !important;
+        box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .shop-sidebar.active {
+        left: 0;
+    }
+
+    /* Prevent body scrolling when sidebar is open */
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    /* Close button styling */
+    .shop-sidebar__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+    }
+
+    /* Sidebar box styling for mobile */
+    .shop-sidebar__box {
+        border-radius: 0 !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+        margin-bottom: 0 !important;
+        padding: 15px 20px !important;
+    }
+
+    /* Reset filter container for mobile */
+    .reset-filter-container {
+        position: fixed;
+        bottom: 0;
+        left: -100%;
+        width: 320px;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        background-color: #fff;
+        border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px !important;
+        border-radius: 0 !important;
+    }
+
+    /* Reset filter button styling for mobile */
+    .reset-filter-btn {
+        background-color: #dc3545 !important;
+        border-color: #dc3545 !important;
+        color: white !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 44px !important;
+        box-shadow: 0 2px 5px rgba(220, 53, 69, 0.2) !important;
+        gap: 10px !important;
+    }
+
+    .reset-filter-btn:hover {
+        background-color: #c82333 !important;
+        border-color: #bd2130 !important;
+        box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3) !important;
+        transform: translateY(-1px) !important;
+    }
+
+    .reset-filter-btn:active {
+        background-color: #bd2130 !important;
+        border-color: #b21f2d !important;
+        box-shadow: 0 1px 3px rgba(220, 53, 69, 0.2) !important;
+        transform: translateY(1px) !important;
+    }
+
+    .reset-filter-btn i {
+        font-size: 18px !important;
+    }
+
+    .reset-filter-btn span {
+        font-size: 15px !important;
+    }
+
+    .shop-sidebar.active .reset-filter-container {
+        left: 0;
+    }
+
+    /* Product grid styles */
     .product-container {
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
@@ -668,6 +807,59 @@
     .discount-tag {
         padding: 2px 6px;
     }
+}
+
+/* Reset filter container - Always at bottom */
+.reset-filter-container {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    margin-top: auto;
+    border-radius: 0 0 16px 16px;
+}
+
+/* Global reset filter button styling */
+.reset-filter-btn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.2);
+    gap: 10px;
+}
+
+.reset-filter-btn:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+    transform: translateY(-1px);
+}
+
+.reset-filter-btn:active {
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    box-shadow: 0 1px 3px rgba(220, 53, 69, 0.2);
+    transform: translateY(1px);
+}
+
+.reset-filter-btn i {
+    font-size: 18px;
+}
+
+.reset-filter-btn span {
+    font-size: 15px;
 }
 
 /* Animation */

@@ -116,7 +116,7 @@
 }
 
 /* Fix for the overlay */
-.side-overlay.show {
+.side-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -124,6 +124,15 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 990;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: pointer;
+}
+
+.side-overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Mobile menu toggle button */

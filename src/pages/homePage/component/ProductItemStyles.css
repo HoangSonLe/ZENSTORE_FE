@@ -13,20 +13,39 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
     border: 1px solid #eee;
     border-radius: 16px;
     padding: 16px;
     position: relative;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
 
 .product-card:hover {
     border-color: #ce2f3e;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+}
+
+/* Add subtle gradient background on hover */
+.product-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(206, 47, 62, 0.03) 0%, rgba(255, 255, 255, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.product-card:hover::before {
+    opacity: 1;
 }
 
 /* Add a subtle gradient overlay on hover */
@@ -76,17 +95,39 @@
 .product-image {
     width: auto;
     height: auto;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 85%;
+    max-height: 85%;
     object-fit: contain;
     transition: all 0.5s ease;
     padding: 10px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+    z-index: 1;
+    position: relative;
 }
 
 .product-card:hover .product-image {
-    transform: scale(1.08);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    transform: scale(1.08) translateY(-5px);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Add subtle reflection effect */
+.product-image::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0.5;
+    filter: blur(2px);
+    transition: all 0.5s ease;
+}
+
+.product-card:hover .product-image::after {
+    opacity: 0.7;
+    width: 80%;
 }
 
 /* Add a subtle shine effect on hover */
@@ -201,9 +242,13 @@
     color: #ce2f3e;
     font-weight: 700;
     font-size: 18px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     display: inline-block;
     position: relative;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background-color: rgba(206, 47, 62, 0.08);
+    transition: all 0.3s ease;
 }
 
 /* Add a subtle highlight effect to sale price */
@@ -211,12 +256,17 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: -2px;
-    right: -2px;
+    left: 0;
+    right: 0;
     height: 6px;
     background-color: rgba(206, 47, 62, 0.1);
     z-index: -1;
-    border-radius: 2px;
+    border-radius: 0 0 6px 6px;
+}
+
+.product-card:hover .sale-price {
+    background-color: rgba(206, 47, 62, 0.12);
+    transform: translateY(-1px);
 }
 
 /* Original price (with strikethrough) */
@@ -225,6 +275,12 @@
     color: #777;
     font-size: 14px;
     position: relative;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .original-price {
+    color: #666;
 }
 
 /* Regular price (when not on sale) */
@@ -233,6 +289,10 @@
     font-weight: 700;
     font-size: 18px;
     position: relative;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
 }
 
 /* Add a subtle highlight effect to regular price */
@@ -240,12 +300,17 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: -2px;
-    right: -2px;
+    left: 0;
+    right: 0;
     height: 6px;
-    background-color: rgba(51, 51, 51, 0.06);
+    background-color: rgba(0, 0, 0, 0.05);
     z-index: -1;
-    border-radius: 2px;
+    border-radius: 0 0 6px 6px;
+}
+
+.product-card:hover .regular-price {
+    background-color: rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
 }
 
 /* Contact price */
@@ -281,17 +346,39 @@
     font-weight: 600;
     font-size: 13px;
     white-space: nowrap;
-    background-color: #ce2f3e;
-    padding: 3px 8px;
-    border-radius: 12px;
+    background: linear-gradient(135deg, #ce2f3e 0%, #b82a37 100%);
+    padding: 3px 10px;
+    border-radius: 20px;
     display: inline-block;
-    box-shadow: 0 2px 4px rgba(206, 47, 62, 0.2);
+    box-shadow: 0 2px 6px rgba(206, 47, 62, 0.25);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.discount-tag:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(206, 47, 62, 0.3);
+.discount-tag::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transition: all 0.6s ease;
+}
+
+.product-card:hover .discount-tag {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(206, 47, 62, 0.35);
+}
+
+.product-card:hover .discount-tag::after {
+    left: 100%;
 }
 
 /* Responsive adjustments */

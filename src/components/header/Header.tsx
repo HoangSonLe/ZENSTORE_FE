@@ -1,5 +1,5 @@
 import query from "jquery";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import SearchBoxMobile from "./SearchBoxMobile";
@@ -31,12 +31,42 @@ const Header = () => {
     // Mobile menu support
     const [menuActive, setMenuActive] = useState(false);
     const [activeIndex, setActiveIndex] = useState(null);
+    const mobileMenuRef = useRef<HTMLDivElement>(null);
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
+
     const handleMenuClick = (index: any) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
+
     const handleMenuToggle = () => {
         setMenuActive(!menuActive);
     };
+
+    // Handle click outside to close mobile menu
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            // Check if menu is active and click is outside menu and not on the toggle button
+            if (
+                menuActive &&
+                mobileMenuRef.current &&
+                !mobileMenuRef.current.contains(event.target as Node) &&
+                menuButtonRef.current &&
+                !menuButtonRef.current.contains(event.target as Node)
+            ) {
+                setMenuActive(false);
+            }
+        };
+
+        // Add event listener when menu is active
+        if (menuActive) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        // Cleanup
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [menuActive]);
 
     // Search control support
     const [activeSearch, setActiveSearch] = useState(false);
@@ -48,14 +78,20 @@ const Header = () => {
     return (
         <>
             <div className="overlay" />
-            <div className={`side-overlay ${menuActive && "show"}`} />
+            <div
+                className={`side-overlay ${menuActive && "show"}`}
+                onClick={() => menuActive && setMenuActive(false)}
+            />
             {/* ==================== Search Box Start Here ==================== */}
 
             <SearchBoxMobile activeSearch={activeSearch} handleSearchToggle={handleSearchToggle} />
 
             {/* ==================== Search Box End Here ==================== */}
             {/* ==================== Mobile Menu Start Here ==================== */}
-            <div className={`mobile-menu scroll-sm d-lg-none d-block ${menuActive && "active"}`}>
+            <div
+                ref={mobileMenuRef}
+                className={`mobile-menu scroll-sm d-lg-none d-block ${menuActive && "active"}`}
+            >
                 <button
                     onClick={() => {
                         handleMenuToggle();
@@ -235,6 +271,7 @@ const Header = () => {
                                 </div>
                             </div>
                             <button
+                                ref={menuButtonRef}
                                 onClick={handleMenuToggle}
                                 type="button"
                                 className="toggle-mobileMenu d-lg-none ms-3n text-gray-800 text-4xl d-flex"

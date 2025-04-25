@@ -26,7 +26,7 @@ export const getTagCssClass = (status: EProductStatus | string) => {
     }
 };
 const ShopSection = () => {
-    const { register, handleSubmit, watch, setValue, getValues, control } =
+    const { register, handleSubmit, watch, setValue, getValues, control, reset } =
         useForm<IProductCustomQuery>({
             defaultValues: {
                 colorCode: EProductStatus.ALL,
@@ -51,7 +51,30 @@ const ShopSection = () => {
     let [grid, setGrid] = useState(false);
     let [active, setActive] = useState(false);
     let sidebarController = () => {
-        setActive(!active);
+        // Use functional update to ensure we're working with the latest state
+        setActive((prevActive) => {
+            const newActiveState = !prevActive;
+
+            // Toggle body class to prevent background scrolling
+            if (newActiveState) {
+                document.body.classList.add("sidebar-open");
+            } else {
+                document.body.classList.remove("sidebar-open");
+            }
+
+            return newActiveState;
+        });
+    };
+
+    // Close sidebar when clicking on overlay
+    const handleOverlayClick = () => {
+        setActive((prevActive) => {
+            if (prevActive) {
+                document.body.classList.remove("sidebar-open");
+                return false;
+            }
+            return prevActive;
+        });
     };
 
     const getProductData = async () => {
@@ -60,7 +83,7 @@ const ShopSection = () => {
             {
                 params: {
                     ...formValues,
-                    statusCode: [formValues.statusCodeSingle],
+                    statusCodes: [formValues.statusCodeSingle],
                 },
             },
             (response) => {
@@ -72,6 +95,11 @@ const ShopSection = () => {
     };
     useEffect(() => {
         getProductData();
+
+        // Cleanup function to remove body class when component unmounts
+        return () => {
+            document.body.classList.remove("sidebar-open");
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -86,7 +114,7 @@ const ShopSection = () => {
 
     return (
         <section className="shop-section">
-            <div className={`side-overlay ${active && "show"}`}></div>
+            <div className={`side-overlay ${active && "show"}`} onClick={handleOverlayClick}></div>
             <div className="container container-lg">
                 <div className="row">
                     {/* Sidebar Start */}
@@ -97,6 +125,8 @@ const ShopSection = () => {
                         control={control}
                         watch={watch}
                         onChangeFilter={onChangeFilter}
+                        reset={reset}
+                        setValue={setValue}
                     />
                     {/* Sidebar End */}
                     {/* Content Start */}
@@ -104,7 +134,7 @@ const ShopSection = () => {
                         {/* Top Start */}
                         <div className="shop-top">
                             <span className="product-count">
-                                {start}-{end} of {total} products
+                                {start}-{end} của {total} sản phẩm
                             </span>
                             <div className="view-options">
                                 <div className="view-toggle">
@@ -143,7 +173,10 @@ const ShopSection = () => {
                                 ))
                             ) : (
                                 <div className="empty-state">
-                                    <p className="empty-state-text">No products found</p>
+                                    <p className="empty-state-text">
+                                        <i className="ph ph-magnifying-glass me-2"></i>
+                                        Không tìm thấy sản phẩm nào
+                                    </p>
                                 </div>
                             )}
                         </div>

@@ -27,53 +27,56 @@ const PremiumProductItem: React.FC<ProductItemProps> = ({ product }) => {
     // Generate random rating data
     const rating = getRandomFloat(3.5, 5);
     const reviewCount = getRandomInteger(1, 5);
-    
+
     // Check if product is on sale
-    const isOnSale = product.productPrice !== product.productPriceSale && 
-                    product.productPrice && 
-                    product.productPriceSale;
-    
+    const isOnSale =
+        product.productPrice !== product.productPriceSale &&
+        product.productPrice &&
+        product.productPriceSale;
+
     // Check if product has a status badge
-    const hasBadge = product.productStatusName && product.productStatusName.trim() !== '';
-    
+    const hasBadge = product.productStatusName && product.productStatusName.trim() !== "";
+
     // Check if product has a sale discount
-    const hasSaleDiscount = isOnSale && 
-                          String(product.productStatusCode).startsWith(EProductStatus.SALE);
+    const hasSaleDiscount =
+        isOnSale && String(product.productStatusCode).startsWith(EProductStatus.SALE);
 
     return (
         <div className="premium-product">
             {/* Product Image Section */}
             <div className="premium-product__image-container">
-                <img 
-                    src={product.listImage[0]} 
-                    alt={product.productName || "Product image"} 
+                <img
+                    src={product.listImage[0]}
+                    alt={product.productName || "Product image"}
                     className="premium-product__image"
                     loading="lazy"
                 />
                 <div className="premium-product__image-overlay"></div>
-                
+
                 {/* Product Badge */}
                 {hasBadge && (
-                    <span 
-                        className={`premium-product__badge ${getBadgeClass(product.productStatusCode)}`}
+                    <span
+                        className={`premium-product__badge ${getBadgeClass(
+                            product.productStatusCode
+                        )}`}
                     >
                         {product.productStatusName}
                     </span>
                 )}
             </div>
-            
+
             {/* Product Content Section */}
             <div className="premium-product__content">
                 {/* Product Title */}
                 <h3 className="premium-product__title">
-                    <Link 
-                        to={`/product-details/${product.productId}`} 
+                    <Link
+                        to={`/product-details/${product.productId}`}
                         className="premium-product__title-link"
                     >
                         {product.productName}
                     </Link>
                 </h3>
-                
+
                 {/* Product Rating */}
                 <div className="premium-product__rating">
                     <span className="premium-product__rating-score">{rating.toFixed(1)}</span>
@@ -82,10 +85,12 @@ const PremiumProductItem: React.FC<ProductItemProps> = ({ product }) => {
                     </span>
                     <span className="premium-product__rating-count">({reviewCount}k)</span>
                 </div>
-                
+
                 {/* Product Price */}
                 <div className="premium-product__price-container">
-                    {isOnSale ? (
+                    {product.productPrice == 0 ? (
+                        <span className="premium-product__contact-price">Giá liên hệ</span>
+                    ) : isOnSale ? (
                         <>
                             <span className="premium-product__sale-price">
                                 {formatVND(product.productPriceSale)}

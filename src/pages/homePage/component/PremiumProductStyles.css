@@ -228,6 +228,26 @@
     border-radius: 4px;
 }
 
+/* Contact price */
+.premium-product__contact-price {
+    color: #ce2f3e;
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    background-color: rgba(206, 47, 62, 0.1);
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(206, 47, 62, 0.1);
+}
+
+.premium-product:hover .premium-product__contact-price {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(206, 47, 62, 0.15);
+    background-color: rgba(206, 47, 62, 0.15);
+}
+
 /* Discount tag */
 .premium-product__discount {
     color: #fff;
@@ -284,8 +304,13 @@
     }
 
     .premium-product__sale-price,
-    .premium-product__regular-price {
+    .premium-product__regular-price,
+    .premium-product__contact-price {
         font-size: 20px;
+    }
+
+    .premium-product__contact-price {
+        padding: 7px 14px;
     }
 
     .premium-product__original-price {
@@ -338,8 +363,13 @@
     }
 
     .premium-product__sale-price,
-    .premium-product__regular-price {
+    .premium-product__regular-price,
+    .premium-product__contact-price {
         font-size: 18px;
+    }
+
+    .premium-product__contact-price {
+        padding: 6px 12px;
     }
 
     .premium-product__original-price {
@@ -392,8 +422,13 @@
     }
 
     .premium-product__sale-price,
-    .premium-product__regular-price {
+    .premium-product__regular-price,
+    .premium-product__contact-price {
         font-size: 16px;
+    }
+
+    .premium-product__contact-price {
+        padding: 5px 10px;
     }
 
     .premium-product__original-price {

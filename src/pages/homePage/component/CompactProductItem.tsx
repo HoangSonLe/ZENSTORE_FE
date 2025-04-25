@@ -27,15 +27,15 @@ const CompactProductItem: React.FC<CompactProductItemProps> = ({ product }) => {
     // Generate random rating data
     const rating = getRandomFloat(3.5, 5);
     const reviewCount = getRandomInteger(1, 5);
-    
+
     return (
         <div className="compact-product">
             {/* Product Image Section */}
             <div className="compact-product__thumb">
                 <Link to={`/product-details/${product.productId}`}>
-                    <img 
-                        src={product.listImage[0]} 
-                        alt={product.productName || "Product image"} 
+                    <img
+                        src={product.listImage[0]}
+                        alt={product.productName || "Product image"}
                         className="compact-image"
                         loading="lazy"
                     />
@@ -50,7 +50,7 @@ const CompactProductItem: React.FC<CompactProductItemProps> = ({ product }) => {
                     </span>
                 )}
             </div>
-            
+
             {/* Product Content Section */}
             <div className="compact-product__content">
                 {/* Rating */}
@@ -61,22 +61,21 @@ const CompactProductItem: React.FC<CompactProductItemProps> = ({ product }) => {
                     </span>
                     <span className="compact-rating-count">({reviewCount}k)</span>
                 </div>
-                
+
                 {/* Product Title */}
                 <h6 className="compact-title">
-                    <Link 
-                        to={`/product-details/${product.productId}`} 
-                        className="compact-link"
-                    >
+                    <Link to={`/product-details/${product.productId}`} className="compact-link">
                         {product.productName}
                     </Link>
                 </h6>
-                
+
                 {/* Product Price */}
                 <div className="compact-product__price">
-                    {product.productPrice !== product.productPriceSale &&
-                    product.productPrice &&
-                    product.productPriceSale ? (
+                    {product.productPrice == 0 ? (
+                        <span className="compact-contact-price">Giá liên hệ</span>
+                    ) : product.productPrice !== product.productPriceSale &&
+                      product.productPrice &&
+                      product.productPriceSale ? (
                         <>
                             <span className="compact-sale-price">
                                 {formatVND(product.productPriceSale)}

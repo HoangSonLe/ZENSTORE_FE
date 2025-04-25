@@ -248,6 +248,25 @@
     border-radius: 2px;
 }
 
+/* Contact price */
+.contact-price {
+    color: #ce2f3e;
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    background-color: rgba(206, 47, 62, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.contact-price:hover {
+    background-color: rgba(206, 47, 62, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(206, 47, 62, 0.1);
+}
+
 /* Price info container */
 .price-info {
     display: flex;
@@ -325,8 +344,13 @@
     }
 
     .sale-price,
-    .regular-price {
+    .regular-price,
+    .contact-price {
         font-size: 16px;
+    }
+
+    .contact-price {
+        padding: 4px 10px;
     }
 
     .sale-price::before,
@@ -370,8 +394,13 @@
     }
 
     .sale-price,
-    .regular-price {
+    .regular-price,
+    .contact-price {
         font-size: 15px;
+    }
+
+    .contact-price {
+        padding: 3px 8px;
     }
 
     .sale-price::before,

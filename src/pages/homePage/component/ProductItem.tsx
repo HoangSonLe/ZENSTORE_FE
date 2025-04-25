@@ -44,9 +44,11 @@ const ProductItem = ({ product }: { product: IProduct }) => {
                     </Link>
                 </h6>
                 <div className="product-card__price">
-                    {product.productPrice !== product.productPriceSale &&
-                    product.productPrice &&
-                    product.productPriceSale ? (
+                    {product.productPrice == 0 ? (
+                        <span className="contact-price">Giá liên hệ</span>
+                    ) : product.productPrice !== product.productPriceSale &&
+                      product.productPrice &&
+                      product.productPriceSale ? (
                         <>
                             <span className="sale-price">
                                 {formatVND(product.productPriceSale)}

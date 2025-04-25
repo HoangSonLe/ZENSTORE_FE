@@ -1,0 +1,266 @@
+/* CountDown component styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Apply font to all elements */
+.countdown-container * {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main container */
+.countdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: #ce2f3e;
+    background-image: linear-gradient(135deg, #ce2f3e 0%, #e74c3c 100%);
+    border-radius: 12px;
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 20px rgba(206, 47, 62, 0.25);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: nowrap;
+}
+
+/* Background pattern */
+.countdown-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 1;
+    z-index: -1;
+}
+
+/* Special offer text */
+.special-offer {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Countdown component */
+.countdown {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+/* Countdown list */
+.countdown-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Countdown item */
+.countdown-list__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0 6px;
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    min-width: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.countdown-list__item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.countdown-list__item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+/* Time unit label */
+.countdown-list__item span {
+    font-size: 12px;
+    color: #555;
+    font-weight: 500;
+    margin-left: 2px;
+    display: inline-block;
+}
+
+/* End text */
+.end-text {
+    color: #fff;
+    font-size: 13px;
+    opacity: 0.95;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.countdown-list__item:nth-child(4) {
+    animation: pulse 1.5s infinite;
+}
+
+.countdown-container {
+    animation: glow 3s infinite;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+    .countdown-container {
+        padding: 14px 20px;
+        gap: 12px;
+    }
+
+    .special-offer {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .countdown-list {
+        gap: 6px;
+    }
+
+    .countdown-list__item {
+        height: 34px;
+        font-size: 15px;
+        min-width: 65px;
+        padding: 0 8px;
+    }
+
+    .countdown-list__item span {
+        font-size: 11px;
+    }
+
+    .end-text {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+}
+
+@media (max-width: 767px) {
+    .countdown-container {
+        padding: 12px 16px;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: nowrap;
+    }
+
+    .special-offer {
+        font-size: 13px;
+    }
+
+    .countdown-list {
+        gap: 6px;
+    }
+
+    .countdown-list__item {
+        height: 32px;
+        font-size: 14px;
+        min-width: 60px;
+        padding: 0 6px;
+    }
+
+    .countdown-list__item span {
+        font-size: 10px;
+    }
+
+    .end-text {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 575px) {
+    .countdown-container {
+        padding: 10px;
+        gap: 8px;
+        margin-bottom: 16px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .special-offer {
+        font-size: 11px;
+        flex-shrink: 0;
+    }
+
+    .countdown {
+        margin: 0 5px;
+    }
+
+    .countdown-list {
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .countdown-list__item {
+        height: 28px;
+        font-size: 12px;
+        min-width: 45px;
+        padding: 0 4px;
+    }
+
+    .countdown-list__item span {
+        font-size: 9px;
+    }
+
+    .end-text {
+        font-size: 10px;
+        flex-shrink: 0;
+    }
+}

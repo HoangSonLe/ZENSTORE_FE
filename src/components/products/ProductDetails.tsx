@@ -6,8 +6,9 @@ import { IProduct } from "../../apis/product/product.interface";
 import Preloader from "../../helper/Preloader";
 import { useApi } from "../../hooks";
 import { formatVND, getRandomFloat } from "../../utils/numberUtils";
-import CountDown from "./CountDown";
+import InlineCountDown from "./InlineCountDown";
 import { EProductStatus } from "../../constants/enum";
+import "./ProductDetailsStyles.css";
 
 const ProductDetails = ({ productId }: { productId: number }) => {
     const [productData, setProductData] = useState<IProduct>();
@@ -30,6 +31,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
 
     useEffect(() => {
         getProductData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productId]);
 
     const productImages = useMemo(
@@ -38,6 +40,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
     );
     useEffect(() => {
         setMainImage(productImages?.length > 0 ? productImages[0] : "");
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productData]);
 
     const [mainImage, setMainImage] = useState(productImages?.length > 0 ? productImages[0] : "");
@@ -75,7 +78,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                         onClick={() => setMainImage(image)}
                                                     >
                                                         <img
-                                                            className="thum"
+                                                            className="thumb"
                                                             src={image}
                                                             alt={`Thumbnail ${index}`}
                                                         />
@@ -88,7 +91,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                             </div>
                             <div className="col-xl-6">
                                 <div className="product-details__content">
-                                    <CountDown />
+                                    <InlineCountDown />
                                     <h5 className="mb-12">{productData.productName}</h5>
                                     <div className="flex-align flex-wrap gap-12">
                                         <div className="flex-align gap-12 flex-wrap">
@@ -124,9 +127,15 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                             />
                                         }
                                     </p>
-                                    {productData.productPrice !== productData.productPriceSale &&
-                                    productData.productPrice &&
-                                    productData.productPriceSale ? (
+                                    {productData.productPrice == 0 ? (
+                                        <div className="my-32 flex-align gap-16 flex-wrap">
+                                            <div className="flex-align gap-8">
+                                                <h6 className="mb-0 contact-price">Giá liên hệ</h6>
+                                            </div>
+                                        </div>
+                                    ) : productData.productPrice !== productData.productPriceSale &&
+                                      productData.productPrice &&
+                                      productData.productPriceSale ? (
                                         <div className="my-32 flex-align gap-16 flex-wrap">
                                             <div className="flex-align gap-8">
                                                 {productData.productStatusCode.startsWith(

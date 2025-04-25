@@ -69,7 +69,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://www.tiktok.com/@zenstore_gvap"
+                                    href="https://www.tiktok.com/@zenstore796khavancan"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-44 h-44 flex-center bg-tiktok text-white text-xl rounded-8 hover-opacity-80"

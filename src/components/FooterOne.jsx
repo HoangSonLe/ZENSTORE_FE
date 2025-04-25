@@ -226,7 +226,7 @@ const FooterOne = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="/https://www.tiktok.com/@zenstore_gvap"
+                                    to="/https://www.tiktok.com/@zenstore796khavancan"
                                     className="w-44 h-44 flex-center bg-main-100 text-main-600 text-xl rounded-circle hover-bg-main-600 hover-text-white"
                                 >
                                     <i className="ph-fill ph-tiktok-logo" />

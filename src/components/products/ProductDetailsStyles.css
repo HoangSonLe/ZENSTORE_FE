@@ -42,12 +42,14 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    height: 450px;
+    height: auto;
+    aspect-ratio: 1/1;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 500px;
+    width: 100%;
 }
 
 .product-details__thumb-slider:hover {
@@ -61,13 +63,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     position: relative;
 }
 
 .product-details__thumb img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 85%;
+    max-height: 85%;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -431,13 +433,32 @@
 }
 
 /* Responsive styles */
-@media (max-width: 1199px) {
+@media (min-width: 1200px) {
+    .product-details__thumb-slider {
+        aspect-ratio: 1/1;
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
     .product-details {
         padding: 60px 0;
     }
 
     .product-details__thumb-slider {
-        height: 400px;
+        aspect-ratio: 1/1;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 999px) {
+    .product-details {
+        padding: 60px 0;
+    }
+
+    .product-details__thumb-slider {
+        aspect-ratio: 1/1;
+        max-width: 400px;
     }
 
     .product-details__content h5 {
@@ -474,7 +495,8 @@
     }
 
     .product-details__thumb-slider {
-        height: 350px;
+        aspect-ratio: 1/1;
+        max-width: 380px;
     }
 
     .product-details__content {
@@ -520,7 +542,8 @@
     }
 
     .product-details__thumb-slider {
-        height: 300px;
+        aspect-ratio: 1/1;
+        max-width: 350px;
         padding: 15px;
     }
 
@@ -595,7 +618,8 @@
     }
 
     .product-details__thumb-slider {
-        height: 250px;
+        aspect-ratio: 1/1;
+        max-width: 300px;
         padding: 10px;
     }
 
@@ -669,5 +693,28 @@
 
     .tab-content {
         font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .product-details__thumb-slider {
+        aspect-ratio: 1/1;
+        max-width: 280px;
+        padding: 8px;
+    }
+
+    .product-details__thumb {
+        padding: 5px;
+    }
+
+    .product-details__thumb img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .product-details__images-slider .center {
+        height: 50px;
+        width: 50px;
+        padding: 4px;
     }
 }

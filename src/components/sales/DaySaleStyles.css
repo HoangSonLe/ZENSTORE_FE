@@ -1,0 +1,72 @@
+/* DaySale component styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Apply font to all elements */
+.day-sale * {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main section styling */
+.day-sale {
+    padding: 40px 0;
+    position: relative;
+}
+
+/* Banner box styling */
+.day-sale-box {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/6;
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Image styling */
+.day-sale-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.day-sale-box:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .day-sale-box {
+        aspect-ratio: 16/7;
+    }
+}
+
+@media (max-width: 991px) {
+    .day-sale {
+        padding: 30px 0;
+    }
+    
+    .day-sale-box {
+        aspect-ratio: 16/8;
+    }
+}
+
+@media (max-width: 767px) {
+    .day-sale {
+        padding: 20px 0;
+    }
+    
+    .day-sale-box {
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (max-width: 575px) {
+    .day-sale-box {
+        aspect-ratio: 16/10;
+    }
+}

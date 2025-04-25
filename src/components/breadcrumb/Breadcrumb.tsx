@@ -12,7 +12,7 @@ const Breadcrumb = ({ title }: { title: string }) => {
                         <li>
                             <Link to="/">
                                 <i className="ph ph-house" />
-                                Home
+                                Trang chủ
                             </Link>
                         </li>
                         <li>

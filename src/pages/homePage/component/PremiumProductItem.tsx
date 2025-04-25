@@ -46,7 +46,11 @@ const PremiumProductItem: React.FC<ProductItemProps> = ({ product }) => {
             {/* Product Image Section */}
             <div className="premium-product__image-container">
                 <img
-                    src={product.listImage[0]}
+                    src={
+                        product.listImage && product.listImage.length > 0
+                            ? product.listImage[0]
+                            : "/assets/images/placeholder/product-placeholder.svg"
+                    }
                     alt={product.productName || "Product image"}
                     className="premium-product__image"
                     loading="lazy"

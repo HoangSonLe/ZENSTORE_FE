@@ -34,7 +34,11 @@ const CompactProductItem: React.FC<CompactProductItemProps> = ({ product }) => {
             <div className="compact-product__thumb">
                 <Link to={`/product-details/${product.productId}`}>
                     <img
-                        src={product.listImage[0]}
+                        src={
+                            product.listImage && product.listImage.length > 0
+                                ? product.listImage[0]
+                                : "/assets/images/placeholder/product-placeholder.svg"
+                        }
                         alt={product.productName || "Product image"}
                         className="compact-image"
                         loading="lazy"

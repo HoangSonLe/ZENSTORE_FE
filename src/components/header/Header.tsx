@@ -67,7 +67,7 @@ const Header = () => {
                     <i className="ph ph-x" />{" "}
                 </button>
                 <div className="mobile-menu__inner">
-                    <Link to="/" className="mobile-menu__logo">
+                    <Link to="/" className="mobile-menu__logo" onClick={handleMenuToggle}>
                         <img src="/assets/images/logo/logo.png" alt="Logo" />
                     </Link>
                     <div className="mobile-menu__menu">
@@ -79,7 +79,7 @@ const Header = () => {
                                     activeIndex === 0 ? "active" : ""
                                 }`}
                             >
-                                <Link to="/" className="nav-menu__link">
+                                <Link to="/" className="nav-menu__link" onClick={handleMenuToggle}>
                                     Trang chủ
                                 </Link>
                             </li>
@@ -89,7 +89,11 @@ const Header = () => {
                                     activeIndex === 1 ? "active" : ""
                                 }`}
                             >
-                                <Link to="/shop" className="nav-menu__link">
+                                <Link
+                                    to="/shop"
+                                    className="nav-menu__link"
+                                    onClick={handleMenuToggle}
+                                >
                                     Sản phẩm
                                 </Link>
                             </li>
@@ -99,7 +103,11 @@ const Header = () => {
                                     activeIndex === 2 ? "active" : ""
                                 }`}
                             >
-                                <Link to="/blog" className="nav-menu__link">
+                                <Link
+                                    to="/blog"
+                                    className="nav-menu__link"
+                                    onClick={handleMenuToggle}
+                                >
                                     Tin tức
                                 </Link>
                             </li>
@@ -123,19 +131,48 @@ const Header = () => {
                         {/* form Category Start */}
                         <div className="d-flex align-items-center">
                             <SearchBox />
-                            <div className="contact-info d-flex d-none d-lg-flex" style={{ marginLeft: "50px" }}>
+                            <div
+                                className="contact-info d-flex d-none d-lg-flex"
+                                style={{ marginLeft: "50px" }}
+                            >
                                 <div className="hotline d-flex align-items-center me-4">
-                                    <i className="ph ph-phone text-white me-4" style={{ fontSize: "28px" }}></i>
+                                    <i
+                                        className="ph ph-phone text-white me-4"
+                                        style={{ fontSize: "28px" }}
+                                    ></i>
                                     <div className="d-flex flex-column">
-                                        <span className="text-white" style={{ fontSize: "18px", fontWeight: "500" }}>Hotline liên hệ</span>
-                                        <span className="text-white" style={{ fontSize: "16px", fontWeight: "700" }}>0777999908</span>
+                                        <span
+                                            className="text-white"
+                                            style={{ fontSize: "18px", fontWeight: "500" }}
+                                        >
+                                            Hotline liên hệ
+                                        </span>
+                                        <span
+                                            className="text-white"
+                                            style={{ fontSize: "16px", fontWeight: "700" }}
+                                        >
+                                            0777999908
+                                        </span>
                                     </div>
                                 </div>
                                 <div className="store-system d-flex align-items-center">
-                                    <i className="ph ph-map-pin text-white me-4" style={{ fontSize: "28px" }}></i>
+                                    <i
+                                        className="ph ph-map-pin text-white me-4"
+                                        style={{ fontSize: "28px" }}
+                                    ></i>
                                     <div className="d-flex flex-column">
-                                        <span className="text-white" style={{ fontSize: "18px", fontWeight: "500" }}>Hệ thống</span>
-                                        <span className="text-white" style={{ fontSize: "16px", fontWeight: "700" }}>02 cửa hàng</span>
+                                        <span
+                                            className="text-white"
+                                            style={{ fontSize: "18px", fontWeight: "500" }}
+                                        >
+                                            Hệ thống
+                                        </span>
+                                        <span
+                                            className="text-white"
+                                            style={{ fontSize: "16px", fontWeight: "700" }}
+                                        >
+                                            02 cửa hàng
+                                        </span>
                                     </div>
                                 </div>
                                 <AppleAnimation />

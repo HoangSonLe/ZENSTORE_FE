@@ -4,6 +4,8 @@ import productApi from "../../apis/product/product.api";
 import { IProduct } from "../../apis/product/product.interface";
 import { IApiResponseTable } from "../../apis/interface";
 import { useApi } from "../../hooks";
+import { formatVND } from "../../utils/numberUtils";
+import "./SearchStyles.css";
 
 const SearchBox = () => {
     const [input, setInput] = useState<string>("");
@@ -70,7 +72,7 @@ const SearchBox = () => {
                     <div className="search-form__wrapper position-relative">
                         <input
                             type="text"
-                            className="search-form__input common-input py-13 ps-16 pe-18 rounded-0 border-0"
+                            className="search-form__input desktop-search-input common-input py-13 ps-16 pe-18 rounded-0 border-0"
                             placeholder="Bạn cần tìm sản phẩm gì?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
@@ -80,7 +82,7 @@ const SearchBox = () => {
                     </div>
                     <button
                         type="submit"
-                        className="bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none"
+                        className="desktop-search-button bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none"
                         aria-label="Submit Search"
                     >
                         <i className="ph ph-magnifying-glass" />
@@ -89,16 +91,13 @@ const SearchBox = () => {
                 {/* Search Result List */}
                 {showResults && (
                     <div
-                        className="position-absolute bg-white border rounded shadow mt-2 z-3"
+                        className="search-result-container position-absolute bg-white border rounded shadow mt-2 z-3"
                         style={{
                             top: "110%",
                             left: 0,
                             width: "100%", // Make the result container width match the input
                             maxHeight: "300px", // Limit height to allow scrolling
                             overflowY: "auto", // Enable vertical scrolling
-                            borderRadius: "12px", // Rounded corners
-                            boxShadow: "0 4px 10px rgba(0,0,0,0.1)", // Soft shadow
-                            padding: "8px 0", // Space around the result items
                         }}
                     >
                         <div className="d-flex flex-wrap justify-content-between">
@@ -106,44 +105,64 @@ const SearchBox = () => {
                                 results.map((item) => (
                                     <div
                                         key={item.productId}
-                                        className="search-result-item d-flex align-items-center px-6 py-4 mb-4 w-100 w-md-48 w-lg-23 rounded bg-light hover-bg-light-100 cursor-pointer transition-all duration-200"
+                                        className="search-result-item d-flex align-items-center px-6 py-4 mb-4 w-100 rounded bg-light hover-bg-light-100 cursor-pointer transition-all duration-200"
                                         onClick={() => {
                                             setShowResults(false);
                                             setInput("");
                                             navigate(`/product-details/${item.productId}`);
                                         }}
-                                        style={{
-                                            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-                                            borderRadius: "8px",
-                                            transition: "transform 0.2s ease-in-out",
-                                        }}
                                     >
                                         <img
-                                            src={item.listImage[0]}
+                                            src={
+                                                item.listImage && item.listImage.length > 0
+                                                    ? item.listImage[0]
+                                                    : "/assets/images/placeholder/product-placeholder.svg"
+                                            }
                                             alt={item.productName}
-                                            width="50"
-                                            height="50"
-                                            className="me-2 rounded"
+                                            className="search-result-image me-3"
                                         />
                                         <div className="d-flex flex-column">
                                             <div
-                                                className="fw-semibold text-truncate"
+                                                className="product-name fw-semibold text-truncate"
                                                 style={{ maxWidth: "180px" }}
                                             >
                                                 {item.productName}
                                             </div>
-                                            <div className="text-muted">
-                                                {item.productPriceSale.toLocaleString()}₫
-                                            </div>
+                                            {item.productPrice == 0 ? (
+                                                <div className="price-contact text-muted">
+                                                    Giá liên hệ
+                                                </div>
+                                            ) : item.productPrice !== item.productPriceSale &&
+                                              item.productPrice &&
+                                              item.productPriceSale ? (
+                                                <div className="d-flex flex-column">
+                                                    <div className="price-sale text-danger">
+                                                        {formatVND(item.productPriceSale)}
+                                                    </div>
+                                                    <div className="d-flex flex-column flex-sm-row align-items-sm-center">
+                                                        <span className="price-original text-muted text-decoration-line-through">
+                                                            {formatVND(item.productPrice)}
+                                                        </span>
+                                                        {String(item.productStatusCode).startsWith(
+                                                            "SALE"
+                                                        ) && (
+                                                            <span className="price-status text-danger ms-0 ms-sm-2 mt-1 mt-sm-0">
+                                                                {item.productStatusName}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <div className="price-regular text-muted">
+                                                    {formatVND(item.productPriceSale)}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 ))
                             ) : (
-                                <div className="d-flex flex-column p-4">
-                                    <div
-                                        className="fw-semibold text-truncate"
-                                        style={{ maxWidth: "200px" }}
-                                    >
+                                <div className="no-results-message d-flex flex-column p-4">
+                                    <div className="fw-semibold text-center">
                                         Không có sản phẩm nào
                                     </div>
                                 </div>

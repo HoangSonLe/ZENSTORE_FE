@@ -21,7 +21,11 @@ const ProductItem = ({ product }: { product: IProduct }) => {
                     {product.productStatusName}
                 </span>
                 <img
-                    src={product.listImage[0]}
+                    src={
+                        product.listImage && product.listImage.length > 0
+                            ? product.listImage[0]
+                            : "/assets/images/placeholder/product-placeholder.svg"
+                    }
                     alt={product.productName || "Product image"}
                     className="product-image"
                 />

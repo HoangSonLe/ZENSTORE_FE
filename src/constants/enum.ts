@@ -1,5 +1,6 @@
 export enum EProductStatus {
     ALL = 'ALL',
+    LIKE_NEW = "LIKE_NEW",
     NEW = "NEW",
     BEST_SELL = "BEST_SELL",
     OUT_STOCK = "OUT_STOCK",

@@ -317,8 +317,12 @@
     letter-spacing: 0.5px;
 }
 
+.badge-like-new {
+    background: linear-gradient(135deg, #4b40dd 0%, #214696 100%);
+}
+
 .badge-new {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #42df4f 0%, #21972b 100%);
 }
 
 .badge-sale {

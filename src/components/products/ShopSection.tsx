@@ -15,6 +15,8 @@ export interface IProductCustomQuery extends IProductQuery {
 }
 export const getTagCssClass = (status: EProductStatus | string) => {
     switch (status) {
+        case EProductStatus.LIKE_NEW:
+            return "badge-like-new";
         case EProductStatus.NEW:
             return "badge-new";
         case EProductStatus.BEST_SELL:

@@ -12,8 +12,8 @@ const AppleAnimation: React.FC = () => {
       // Reset animation after it completes
       setTimeout(() => {
         setAnimationActive(false);
-      }, 6000); // Animation duration is 6 seconds
-    }, 15000); // Trigger every 15 seconds
+      }, 3000); // Animation duration is 6 seconds
+    }, 10000); // Trigger every 15 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -57,7 +57,7 @@ const AppleAnimation: React.FC = () => {
           <span>h</span>
           <span>ấ</span>
           <span>t</span>
-          <span>&nbsp;</span>
+          {/* <span>&nbsp;</span>
           <span>d</span>
           <span>à</span>
           <span>n</span>
@@ -69,7 +69,7 @@ const AppleAnimation: React.FC = () => {
           <span>&nbsp;</span>
           <span>b</span>
           <span>ạ</span>
-          <span>n</span>
+          <span>n</span> */}
         </p>
       </div>
     </div>

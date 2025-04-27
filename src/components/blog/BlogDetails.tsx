@@ -51,15 +51,7 @@ const BlogDetails = ({ blogId }: { blogId: number }) => {
                     <div className="col-lg-8 pe-xl-4">
                         <div className="blog-item-wrapper">
                             <div className="blog-item">
-                                {blogData.newsThumbnail && (
-                                    <div className="blog-featured-image">
-                                        <img
-                                            src={blogData.newsThumbnail}
-                                            alt={blogData.newsTitle || "Blog featured image"}
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                )}
+                               
                                 <div className="blog-item__content">
                                     <div className="blog-meta">
                                         <span className="blog-meta-icon">

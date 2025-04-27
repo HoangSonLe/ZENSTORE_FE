@@ -165,6 +165,20 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                             </div>
                                         </div>
                                     )}
+
+                                    {/* Contact Info Box */}
+                                    <div className="contact-info-box">
+                                        <div className="contact-info-box__icon">
+                                            <i className="ph-fill ph-phone"></i>
+                                        </div>
+                                        <div className="contact-info-box__content">
+                                            <div className="contact-info-box__title">Tư vấn mua hàng miễn phí</div>
+                                            <div className="contact-info-box__phone">𝟎𝟕𝟕𝟕.𝟗𝟗𝟗𝟗.𝟎𝟖 - 𝟎𝟖𝟔.𝟓𝟓𝟎.𝟖𝟖𝟖𝟖</div>
+                                            <div className="contact-info-box__hours">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

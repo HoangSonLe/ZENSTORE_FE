@@ -273,6 +273,97 @@
     box-shadow: 0 4px 10px rgba(206, 47, 62, 0.1);
 }
 
+/* Contact info box */
+.contact-info-box {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.contact-info-box__icon {
+    color: #ce2f3e;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info-box__content {
+    flex: 1;
+}
+
+.contact-info-box__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.contact-info-box__phone {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ce2f3e;
+    margin-bottom: 2px;
+}
+
+.contact-info-box__hours {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 767px) {
+    .contact-info-box {
+        padding: 10px 14px;
+    }
+
+    .contact-info-box__icon {
+        font-size: 20px;
+    }
+
+    .contact-info-box__title {
+        font-size: 14px;
+    }
+
+    .contact-info-box__phone {
+        font-size: 18px;
+    }
+
+    .contact-info-box__hours {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-info-box {
+        padding: 8px 12px;
+    }
+
+    .contact-info-box__icon {
+        font-size: 18px;
+    }
+
+    .contact-info-box__title {
+        font-size: 13px;
+    }
+
+    .contact-info-box__phone {
+        font-size: 16px;
+    }
+
+    .contact-info-box__hours {
+        font-size: 11px;
+    }
+}
+
 /* Product details tabs */
 .product-dContent {
     background-color: #fff;

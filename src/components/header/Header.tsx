@@ -165,7 +165,7 @@ const Header = () => {
                         </div>
                         {/* Logo End  */}
                         {/* form Category Start */}
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center"  style={{ marginLeft: "108px" }}>
                             <SearchBox />
                             <div
                                 className="contact-info d-flex d-none d-lg-flex"
@@ -187,8 +187,9 @@ const Header = () => {
                                             className="text-white"
                                             style={{ fontSize: "16px", fontWeight: "700" }}
                                         >
-                                            0777999908
+                                            𝟎𝟕𝟕𝟕.𝟗𝟗𝟗𝟗.𝟎𝟖
                                         </span>
+                                      
                                     </div>
                                 </div>
                                 <div className="store-system d-flex align-items-center">

@@ -6753,11 +6753,11 @@ input:focus-visible {
 }
 
 .bg-zenStore-100 {
-    background-color: var(--zenStore) !important;
+    background-color: #4b545b !important;
 }
 
 .hover-bg-zenStore-100:hover {
-    background-color: var(--zenStore) !important;
+    background-color: #4b545b !important;
 }
 
 .hover-bg-main-50:hover {
@@ -8533,7 +8533,7 @@ input:focus-visible {
 /* Mobile Menu Sidebar Start */
 .mobile-menu {
     position: fixed;
-    background-color: hsl(var(--white));
+    background-color: #4b545b !important;
     width: 300px;
     height: 100vh;
     overflow-y: auto;

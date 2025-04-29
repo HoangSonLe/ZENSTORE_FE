@@ -168,7 +168,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                    Bao test 01 đổi 01 trong 30 ngày cho tất cả các lỗi do máy phát sinh.
+                                                    01 đổi 01 trong 30 ngày cho tất cả các lỗi do máy phát sinh.
                                                     (07 ngày đối với máy mới).
                                                 </div>
                                             </div>
@@ -177,7 +177,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                    Bảo hành phần cứng mainboard máy 12 tháng. (06 tháng đối với máy 99%).
+                                                Bảo hành pin trọn đời.
                                                 </div>
                                             </div>
                                             <div className="warranty-item">
@@ -185,7 +185,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                    Đổi miễn phí 07 ngày đầu bất kỳ lý do gì (Máy 99%).
+                                                    Bảo hành phần cứng mainboard máy 12 tháng.
                                                 </div>
                                             </div>
                                             <div className="warranty-item">
@@ -193,7 +193,15 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                    Phần mềm bảo hành trọn đời.
+                                                 Bảo hành nâng cấp phần mềm trọn đời.
+                                                </div>
+                                            </div>
+                                            <div className="warranty-item">
+                                                <div className="warranty-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="warranty-item__text">
+                                                Bảo hành phụ kiện suốt thời gian dùng máy.
                                                 </div>
                                             </div>
                                         </div>
@@ -227,7 +235,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="promotion-item__text">
-                                                    Tặng 500.000đ khi Trade-in.
+                                                 Thu cũ đổi mới 95% giá bán tại Web.
                                                 </div>
                                             </div>
                                             <div className="promotion-item">
@@ -235,25 +243,10 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="promotion-item__text">
-                                                    Giảm thêm 5% tối đa 500.000đ khi thanh toán qua Kredivo.
+                                                 Tặng sạc cáp chính hãng , tai nghe.
                                                 </div>
                                             </div>
-                                            <div className="promotion-item">
-                                                <div className="promotion-item__icon">
-                                                    <i className="ph-fill ph-check-circle"></i>
-                                                </div>
-                                                <div className="promotion-item__text">
-                                                    Giảm thêm 1% cho thành viên của Táo Zin Sài Gòn.
-                                                </div>
-                                            </div>
-                                            <div className="promotion-item">
-                                                <div className="promotion-item__icon">
-                                                    <i className="ph-fill ph-check-circle"></i>
-                                                </div>
-                                                <div className="promotion-item__text">
-                                                    Miễn phí giao hàng trên toàn quốc.
-                                                </div>
-                                            </div>
+                                          
                                         </div>
 
                                     </div>

@@ -187,7 +187,7 @@ const Header = () => {
                                             className="text-white"
                                             style={{ fontSize: "16px", fontWeight: "700" }}
                                         >
-                                            𝟎𝟕𝟕𝟕.𝟗𝟗𝟗𝟗.𝟎𝟖
+                                           𝟎𝟖𝟔.𝟓𝟓𝟎.𝟖𝟖𝟖𝟖
                                         </span>
                                       
                                     </div>

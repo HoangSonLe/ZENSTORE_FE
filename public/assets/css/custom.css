@@ -1,0 +1,28 @@
+/* Custom CSS overrides */
+html body .bg-zenStore-100,
+body .bg-zenStore-100,
+.bg-zenStore-100 {
+    background-color: #4b545b !important;
+}
+
+html body .hover-bg-zenStore-100:hover,
+body .hover-bg-zenStore-100:hover,
+.hover-bg-zenStore-100:hover {
+    background-color: #4b545b !important;
+}
+
+/* Alternative class name */
+.bg-zen-store-100 {
+    background-color: #4b545b !important;
+}
+
+.hover-bg-zen-store-100:hover {
+    background-color: #4b545b !important;
+}
+
+/* Mobile menu background color */
+.mobile-menu,
+html body .mobile-menu,
+body .mobile-menu {
+    background-color: #4b545b !important;
+}

@@ -5,7 +5,7 @@ import productApi from "../../apis/product/product.api";
 import { IProduct } from "../../apis/product/product.interface";
 import Preloader from "../../helper/Preloader";
 import { useApi } from "../../hooks";
-import { formatVND, getRandomFloat } from "../../utils/numberUtils";
+import { formatVND } from "../../utils/numberUtils";
 import InlineCountDown from "./InlineCountDown";
 import { EProductStatus } from "../../constants/enum";
 import "./ProductDetailsStyles.css";
@@ -87,47 +87,23 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                             </Slider>
                                         </div>
                                     </div>
+                                    {/* Product Short Description */}
+                                    <div className="product-short-description">
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: productData.productShortDetail,
+                                            }}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-xl-6">
                                 <div className="product-details__content">
                                     <InlineCountDown />
                                     <h5 className="mb-12">{productData.productName}</h5>
-                                    <div className="flex-align flex-wrap gap-12">
-                                        <div className="flex-align gap-12 flex-wrap">
-                                            <div className="flex-align gap-8">
-                                                <span className="text-15 fw-medium text-warning-600 d-flex">
-                                                    <i className="ph-fill ph-star" />
-                                                </span>
-                                                <span className="text-15 fw-medium text-warning-600 d-flex">
-                                                    <i className="ph-fill ph-star" />
-                                                </span>
-                                                <span className="text-15 fw-medium text-warning-600 d-flex">
-                                                    <i className="ph-fill ph-star" />
-                                                </span>
-                                                <span className="text-15 fw-medium text-warning-600 d-flex">
-                                                    <i className="ph-fill ph-star" />
-                                                </span>
-                                                <span className="text-15 fw-medium text-warning-600 d-flex">
-                                                    <i className="ph-fill ph-star" />
-                                                </span>
-                                            </div>
-                                            <span className="text-sm fw-medium text-neutral-600">
-                                                {getRandomFloat(3.5, 5)} Sao
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <span className="mt-32 pt-32 text-gray-700 border-top border-gray-100 d-block" />
-                                    <p className="text-gray-700 text-xl">
-                                        {
-                                            <div
-                                                dangerouslySetInnerHTML={{
-                                                    __html: productData.productShortDetail,
-                                                }}
-                                            />
-                                        }
-                                    </p>
-                                    {productData.productPrice == 0 ? (
+                                    
+                                   
+                                    {productData.productPrice === 0 ? (
                                         <div className="my-32 flex-align gap-16 flex-wrap">
                                             <div className="flex-align gap-8">
                                                 <h6 className="mb-0 contact-price">Giá liên hệ</h6>
@@ -178,6 +154,108 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                 <span></span>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    {/* Warranty Box */}
+                                    <div className="warranty-box">
+                                        <div className="warranty-box__header">
+                                            <i className="ph-fill ph-shield-check"></i>
+                                            BẢO HÀNH
+                                        </div>
+                                        <div className="warranty-box__content">
+                                            <div className="warranty-item">
+                                                <div className="warranty-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="warranty-item__text">
+                                                    Bao test 01 đổi 01 trong 30 ngày cho tất cả các lỗi do máy phát sinh.
+                                                    (07 ngày đối với máy mới).
+                                                </div>
+                                            </div>
+                                            <div className="warranty-item">
+                                                <div className="warranty-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="warranty-item__text">
+                                                    Bảo hành phần cứng mainboard máy 12 tháng. (06 tháng đối với máy 99%).
+                                                </div>
+                                            </div>
+                                            <div className="warranty-item">
+                                                <div className="warranty-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="warranty-item__text">
+                                                    Đổi miễn phí 07 ngày đầu bất kỳ lý do gì (Máy 99%).
+                                                </div>
+                                            </div>
+                                            <div className="warranty-item">
+                                                <div className="warranty-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="warranty-item__text">
+                                                    Phần mềm bảo hành trọn đời.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Promotion Box */}
+                                    <div className="promotion-box">
+                                        <div className="promotion-box__header">
+                                            <i className="ph-fill ph-gift"></i>
+                                            KHUYẾN MÃI
+                                        </div>
+                                        <div className="promotion-box__content">
+                                            <div className="promotion-item">
+                                                <div className="promotion-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="promotion-item__text">
+                                                    Tặng củ, cáp sạc.
+                                                </div>
+                                            </div>
+                                            <div className="promotion-item">
+                                                <div className="promotion-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="promotion-item__text">
+                                                    Tặng 200.000đ khi đặt hàng trước.
+                                                </div>
+                                            </div>
+                                            <div className="promotion-item">
+                                                <div className="promotion-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="promotion-item__text">
+                                                    Tặng 500.000đ khi Trade-in.
+                                                </div>
+                                            </div>
+                                            <div className="promotion-item">
+                                                <div className="promotion-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="promotion-item__text">
+                                                    Giảm thêm 5% tối đa 500.000đ khi thanh toán qua Kredivo.
+                                                </div>
+                                            </div>
+                                            <div className="promotion-item">
+                                                <div className="promotion-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="promotion-item__text">
+                                                    Giảm thêm 1% cho thành viên của Táo Zin Sài Gòn.
+                                                </div>
+                                            </div>
+                                            <div className="promotion-item">
+                                                <div className="promotion-item__icon">
+                                                    <i className="ph-fill ph-check-circle"></i>
+                                                </div>
+                                                <div className="promotion-item__text">
+                                                    Miễn phí giao hàng trên toàn quốc.
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

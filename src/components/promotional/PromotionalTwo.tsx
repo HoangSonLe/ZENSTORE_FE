@@ -79,8 +79,8 @@ const PromotionalTwo = ({ bannerList }: IProps) => {
                     <div className="col-lg-4 col-sm-6">
                         <div className="position-relative rounded-16 overflow-hidden z-1 p-32">
                             <img
-                             
-                                src="/assets/images/bg/promo-bg-img3.png"
+
+                                src={bannerList[2]?.bannerImage}
                                 alt=""
                                 className="position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 object-fit-cover z-n1"
                             />

@@ -18,6 +18,7 @@ import { IProduct } from "../../apis/product/product.interface";
 const HomePage = () => {
     const [bannerList, setBannerList] = useState<IApiTable<IBanner>>();
     const [productList, setProductList] = useState<IApiTable<IProduct>>();
+    const [saleProductList, setSaleProductList] = useState<IProduct[]>();
     const { request: getBannerList } = useApi(bannerApi.getBannerList);
     const { request: getProductList } = useApi(productApi.getProductList);
 
@@ -50,6 +51,20 @@ const HomePage = () => {
                 setProductList(data);
             }
         );
+        await getProductList(
+            {
+                params: {
+                    pageNumber: 1,
+                    pageSize: 10,
+                    statusCodes: [EProductStatus.BEST_SELL],
+                },
+            },
+            (response) => {
+                const { data } = response as IApiResponseTable<IProduct>;
+
+                setSaleProductList(data.data);
+            }
+        );
     };
     useAsyncEffect(async () => {
         await getBannerData();
@@ -59,13 +74,6 @@ const HomePage = () => {
         () =>
             productList?.data?.filter(
                 (i) => i.productStatusCode !== (EProductStatus.BEST_SELL as string)
-            ),
-        [productList]
-    );
-    const topProductList = useMemo(
-        () =>
-            productList?.data?.filter(
-                (i) => i.productStatusCode === (EProductStatus.BEST_SELL as string)
             ),
         [productList]
     );
@@ -92,9 +100,9 @@ const HomePage = () => {
             )}
 
             {/* TopSellingOne */}
-            {topProductList && topProductList.length > 0 && (
+            {saleProductList && saleProductList.length > 0 && (
                 <TopSellingOne
-                    productList={topProductList}
+                    productList={saleProductList}
                     bannerList={bannerList?.data.filter(
                         (i) => i.bannerTypeCode === EBannerOrder.ROW_4
                     )}

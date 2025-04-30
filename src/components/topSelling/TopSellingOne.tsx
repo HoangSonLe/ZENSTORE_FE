@@ -45,7 +45,7 @@ const TopSellingOne = ({ productList, bannerList }: IProps) => {
         arrows: true,
         infinite: (productList ?? []).length > slidesToShow,
         speed: 800,
-        slidesToShow: Math.min(4, slidesToShow), // Limit to 4 slides maximum
+        slidesToShow: Math.min(3, slidesToShow), // Limit to 4 slides maximum
         slidesToScroll: 1,
         initialSlide: 0,
         autoplay: true,

@@ -10,7 +10,6 @@ import BlogDetailsPage from "./pages/blog/BlogDetailsPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SearchProvider } from "./context/SearchContext";
-import ZaloPlugin from "./components/messengerPlugin/ZaloPlugin";
 function App() {
     return (
         <SearchProvider>
@@ -18,7 +17,6 @@ function App() {
                 <ToastContainer position="top-right" autoClose={3000} />
                 <RouteScrollToTop />
                 <PhosphorIconInit />
-                <ZaloPlugin />
 
                 <Routes>
                     <Route path="/" element={<MainLayout />}>

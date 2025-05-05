@@ -51,7 +51,6 @@ const BlogDetails = ({ blogId }: { blogId: number }) => {
                     <div className="col-lg-8 pe-xl-4">
                         <div className="blog-item-wrapper">
                             <div className="blog-item">
-                               
                                 <div className="blog-item__content">
                                     <div className="blog-meta">
                                         <span className="blog-meta-icon">
@@ -78,43 +77,49 @@ const BlogDetails = ({ blogId }: { blogId: number }) => {
                     <div className="col-lg-4 ps-xl-4">
                         {/* Recent Post Start */}
                         <div className="blog-sidebar">
-                            <h3 className="sidebar-title">Recent Posts</h3>
-                            {blogTableData?.data.slice(0, 5).map((post, index) => (
-                                <div className="recent-post" key={post.newsId || index}>
-                                    <div className="recent-post-image">
-                                        <Link to={`/blog-details/${post.newsId}`}>
-                                            <img
-                                                src={
-                                                    post.newsThumbnail ??
-                                                    "/assets/images/thumbs/recent-post1.png"
-                                                }
-                                                alt={post.newsTitle || "Recent post thumbnail"}
-                                                loading="lazy"
-                                            />
-                                        </Link>
-                                    </div>
-                                    <div className="recent-post-content">
-                                        <h4 className="recent-post-title">
+                            <h3 className="sidebar-title">Bài viết gần đây</h3>
+                            {blogTableData?.data
+                                .filter((item) => item.newsId != blogId)
+                                .slice(0, 5)
+                                .map((post, index) => (
+                                    <div className="recent-post" key={post.newsId || index}>
+                                        <div className="recent-post-image">
                                             <Link to={`/blog-details/${post.newsId}`}>
-                                                {post.newsTitle}
+                                                <img
+                                                    src={
+                                                        post.newsThumbnail ??
+                                                        "/assets/images/thumbs/recent-post1.png"
+                                                    }
+                                                    alt={post.newsTitle || "Recent post thumbnail"}
+                                                    loading="lazy"
+                                                />
                                             </Link>
-                                        </h4>
-                                        <p className="recent-post-description">
-                                            {post.newsShortContent}
-                                        </p>
-                                        <div className="recent-post-meta">
-                                            <span className="recent-post-meta-icon">
-                                                <i className="ph ph-calendar-dots" />
-                                            </span>
-                                            <span className="recent-post-meta-text">
-                                                {dayjs(post.createdAt).format(
-                                                    "HH:mm:ss DD/MM/YYYY"
-                                                )}
-                                            </span>
+                                        </div>
+                                        <div className="recent-post-content">
+                                            <h4 className="recent-post-title">
+                                                <Link to={`/blog-details/${post.newsId}`}>
+                                                    {post.newsTitle}
+                                                </Link>
+                                            </h4>
+                                            <div
+                                                className="recent-post-description"
+                                                dangerouslySetInnerHTML={{
+                                                    __html: post.newsShortContent,
+                                                }}
+                                            />
+                                            <div className="recent-post-meta">
+                                                <span className="recent-post-meta-icon">
+                                                    <i className="ph ph-calendar-dots" />
+                                                </span>
+                                                <span className="recent-post-meta-text">
+                                                    {dayjs(post.createdAt).format(
+                                                        "HH:mm:ss DD/MM/YYYY"
+                                                    )}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
                         </div>
                         {/* Recent Post End */}
                     </div>

@@ -72,9 +72,12 @@ const Blog = () => {
                                                     {blog.newsTitle}
                                                 </Link>
                                             </h3>
-                                            <p className="blog-description">
-                                                {blog.newsShortContent}
-                                            </p>
+                                            <div
+                                                className="blog-description"
+                                                dangerouslySetInnerHTML={{
+                                                    __html: blog.newsShortContent,
+                                                }}
+                                            />
                                             <div className="blog-meta">
                                                 <span className="blog-meta-icon">
                                                     <i className="ph ph-calendar-dots" />

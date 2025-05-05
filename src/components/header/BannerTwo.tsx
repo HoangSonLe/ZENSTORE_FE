@@ -146,7 +146,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
         ],
     };
     return bannerList ? (
-        <div className="banner-two">
+        <div className="banner-two pt-12">
             <div className="container container-lg">
                 <div className="banner-two-wrapper">
                     <div

@@ -1,13 +1,14 @@
 import query from "jquery";
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import SearchBoxMobile from "./SearchBoxMobile";
 import AppleAnimation from "./AppleAnimation";
 import "./MobileMenuStyles.css"; // Import custom mobile menu styles
 import "./LogoStyles.css"; // Import custom logo styles
+import "./NavMenuStyles.css"; // Import custom nav menu styles
 
-const Header = () => {
+const Header = ({ logoUrl }: { logoUrl: string }) => {
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
         window.onscroll = () => {
@@ -28,9 +29,20 @@ const Header = () => {
         };
     }, []);
 
+    // Get current location
+    const location = useLocation();
+
+    // Determine active index based on current path
+    const getActiveIndexFromPath = (path: string) => {
+        if (path === "/") return 0;
+        if (path.startsWith("/shop")) return 1;
+        if (path.startsWith("/blog")) return 2;
+        return null;
+    };
+
     // Mobile menu support
     const [menuActive, setMenuActive] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(getActiveIndexFromPath(location.pathname));
     const mobileMenuRef = useRef<HTMLDivElement>(null);
     const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -41,6 +53,11 @@ const Header = () => {
     const handleMenuToggle = () => {
         setMenuActive(!menuActive);
     };
+
+    // Update activeIndex when location changes
+    useEffect(() => {
+        setActiveIndex(getActiveIndexFromPath(location.pathname));
+    }, [location.pathname]);
 
     // Handle click outside to close mobile menu
     useEffect(() => {
@@ -104,7 +121,7 @@ const Header = () => {
                 </button>
                 <div className="mobile-menu__inner">
                     <Link to="/" className="mobile-menu__logo" onClick={handleMenuToggle}>
-                        <img src="/assets/images/logo/logo.png" alt="Logo" />
+                        <img src={logoUrl} alt="Logo" />
                     </Link>
                     <div className="mobile-menu__menu">
                         {/* Nav Menu Start */}
@@ -160,12 +177,12 @@ const Header = () => {
                         {/* Logo Start */}
                         <div className="logo">
                             <Link to="/" className="link">
-                                <img src="/assets/images/logo/logo.png" alt="Logo" />
+                                <img src={logoUrl} alt="Logo" />
                             </Link>
                         </div>
                         {/* Logo End  */}
                         {/* form Category Start */}
-                        <div className="d-flex align-items-center"  style={{ marginLeft: "108px" }}>
+                        <div className="d-flex align-items-center" style={{ marginLeft: "108px" }}>
                             <SearchBox />
                             <div
                                 className="contact-info d-flex d-none d-lg-flex"
@@ -187,9 +204,8 @@ const Header = () => {
                                             className="text-white"
                                             style={{ fontSize: "16px", fontWeight: "700" }}
                                         >
-                                           𝟎𝟖𝟔.𝟓𝟓𝟎.𝟖𝟖𝟖𝟖
+                                            𝟎𝟖𝟔.𝟓𝟓𝟎.𝟖𝟖𝟖𝟖
                                         </span>
-                                      
                                     </div>
                                 </div>
                                 <div className="store-system d-flex align-items-center">
@@ -233,20 +249,32 @@ const Header = () => {
                     <nav className="header-inner d-flex justify-content-between gap-8">
                         <div className="flex-align menu-category-wrapper">
                             {/* Menu Start  */}
-                            <div className="header-menu d-lg-block d-none">
+                            <div className="header-menu d-lg-block">
                                 {/* Nav Menu Start */}
                                 <ul className="nav-menu flex-align ">
-                                    <li className="on-hover-item nav-menu__item">
+                                    <li
+                                        className={`on-hover-item nav-menu__item ${
+                                            activeIndex === 0 ? "active" : ""
+                                        }`}
+                                    >
                                         <Link to="/" className="nav-menu__link">
                                             Trang chủ
                                         </Link>
                                     </li>
-                                    <li className="on-hover-item nav-menu__item">
+                                    <li
+                                        className={`on-hover-item nav-menu__item ${
+                                            activeIndex === 1 ? "active" : ""
+                                        }`}
+                                    >
                                         <Link to="/shop" className="nav-menu__link">
                                             Sản phẩm
                                         </Link>
                                     </li>
-                                    <li className="on-hover-item nav-menu__item">
+                                    <li
+                                        className={`on-hover-item nav-menu__item ${
+                                            activeIndex === 2 ? "active" : ""
+                                        }`}
+                                    >
                                         <Link to="/blog" className="nav-menu__link">
                                             Tin tức
                                         </Link>
@@ -271,15 +299,14 @@ const Header = () => {
                                     </button>
                                 </div>
                             </div>
-                            <button
+                            {/* <button
                                 ref={menuButtonRef}
                                 onClick={handleMenuToggle}
                                 type="button"
                                 className="toggle-mobileMenu d-lg-none ms-3n text-gray-800 text-4xl d-flex"
                             >
-                                {" "}
-                                <i className="ph ph-list" />{" "}
-                            </button>
+                                <i className="ph ph-list" />
+                            </button> */}
                         </div>
                         {/* Header Right End  */}
                     </nav>

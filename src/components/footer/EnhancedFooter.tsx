@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./FooterStyles.css";
 
-const EnhancedFooter = () => {
+const EnhancedFooter = ({ logoUrl }: { logoUrl: string }) => {
     return (
         <footer className="footer">
             <div className="container container-lg">
@@ -9,13 +9,13 @@ const EnhancedFooter = () => {
                     {/* First Column - About & Contact */}
                     <div className="footer-item wide">
                         <Link to="/" className="footer-item__logo">
-                            <img src="/assets/images/logo/logo.png" alt="ZenStore Logo" />
+                            <img src={logoUrl} alt="ZenStore Logo" />
                         </Link>
                         <p className="footer-text">
                             Sản phẩm được khách hàng tin dùng khắp cả nước. Mang lại giá trị và trải
                             nghiệm tuyệt vời dành cho bạn.
                         </p>
-                        
+
                         {/* Phone Numbers */}
                         <div className="contact-item">
                             <span className="contact-icon">
@@ -31,7 +31,7 @@ const EnhancedFooter = () => {
                                 </a>
                             </div>
                         </div>
-                        
+
                         {/* Address 1 */}
                         <div className="contact-item">
                             <span className="contact-icon">
@@ -41,7 +41,7 @@ const EnhancedFooter = () => {
                                 CN1: 796 Kha Vạn Cân - P.Linh Đông - TP. Thủ Đức
                             </span>
                         </div>
-                        
+
                         {/* Address 2 */}
                         <div className="contact-item">
                             <span className="contact-icon">
@@ -52,7 +52,7 @@ const EnhancedFooter = () => {
                             </span>
                         </div>
                     </div>
-                    
+
                     {/* Second Column - Social & Apps */}
                     <div className="footer-item">
                         <h6 className="footer-title">Kết nối với ZenStore</h6>
@@ -83,20 +83,14 @@ const EnhancedFooter = () => {
                                 </a>
                             </li>
                         </ul>
-                        
+
                         {/* App Download Badges */}
                         <div className="app-download">
                             <a href="#" className="app-badge">
-                                <img
-                                    src="/assets/images/bg/footer1.png"
-                                    alt="App Store"
-                                />
+                                <img src="/assets/images/bg/footer1.png" alt="App Store" />
                             </a>
                             <a href="#" className="app-badge">
-                                <img
-                                    src="/assets/images/bg/footer2.png"
-                                    alt="Google Play"
-                                />
+                                <img src="/assets/images/bg/footer2.png" alt="Google Play" />
                             </a>
                         </div>
                     </div>

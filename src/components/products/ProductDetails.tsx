@@ -101,9 +101,8 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                 <div className="product-details__content">
                                     <InlineCountDown />
                                     <h5 className="mb-12">{productData.productName}</h5>
-                                    
-                                   
-                                    {productData.productPrice === 0 ? (
+
+                                    {productData.productPrice == 0 ? (
                                         <div className="my-32 flex-align gap-16 flex-wrap">
                                             <div className="flex-align gap-8">
                                                 <h6 className="mb-0 contact-price">Giá liên hệ</h6>
@@ -148,8 +147,12 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                             <i className="ph-fill ph-phone"></i>
                                         </div>
                                         <div className="contact-info-box__content">
-                                            <div className="contact-info-box__title">Tư vấn mua hàng miễn phí</div>
-                                            <div className="contact-info-box__phone">𝟎𝟕𝟕𝟕.𝟗𝟗𝟗𝟗.𝟎𝟖 - 𝟎𝟖𝟔.𝟓𝟓𝟎.𝟖𝟖𝟖𝟖</div>
+                                            <div className="contact-info-box__title">
+                                                Tư vấn mua hàng miễn phí
+                                            </div>
+                                            <div className="contact-info-box__phone">
+                                                𝟎𝟕𝟕𝟕.𝟗𝟗𝟗𝟗.𝟎𝟖 - 𝟎𝟖𝟔.𝟓𝟓𝟎.𝟖𝟖𝟖𝟖
+                                            </div>
                                             <div className="contact-info-box__hours">
                                                 <span></span>
                                             </div>
@@ -168,8 +171,8 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                    01 đổi 01 trong 30 ngày cho tất cả các lỗi do máy phát sinh.
-                                                    (07 ngày đối với máy mới).
+                                                    01 đổi 01 trong 30 ngày cho tất cả các lỗi do
+                                                    máy phát sinh. (07 ngày đối với máy mới).
                                                 </div>
                                             </div>
                                             <div className="warranty-item">
@@ -177,7 +180,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                Bảo hành pin trọn đời.
+                                                    Bảo hành pin trọn đời.
                                                 </div>
                                             </div>
                                             <div className="warranty-item">
@@ -193,7 +196,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                 Bảo hành nâng cấp phần mềm trọn đời.
+                                                    Bảo hành nâng cấp phần mềm trọn đời.
                                                 </div>
                                             </div>
                                             <div className="warranty-item">
@@ -201,7 +204,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="warranty-item__text">
-                                                Bảo hành phụ kiện suốt thời gian dùng máy.
+                                                    Bảo hành phụ kiện suốt thời gian dùng máy.
                                                 </div>
                                             </div>
                                         </div>
@@ -235,7 +238,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="promotion-item__text">
-                                                 Thu cũ đổi mới 95% giá bán tại Web.
+                                                    Thu cũ đổi mới 95% giá bán tại Web.
                                                 </div>
                                             </div>
                                             <div className="promotion-item">
@@ -243,12 +246,10 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                                     <i className="ph-fill ph-check-circle"></i>
                                                 </div>
                                                 <div className="promotion-item__text">
-                                                 Tặng sạc cáp chính hãng , tai nghe.
+                                                    Tặng sạc cáp chính hãng , tai nghe.
                                                 </div>
                                             </div>
-                                          
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 export enum EProductStatus {
-    ALL = 'ALL',
+    ALL = "ALL",
     LIKE_NEW = "LIKE_NEW",
     NEW = "NEW",
     BEST_SELL = "BEST_SELL",
@@ -22,4 +22,6 @@ export enum EBannerOrder {
     ROW_3 = "ROW_3",
     ROW_4 = "ROW_4",
     ROW_5 = "ROW_5",
+    LOGO_SHOP = "LOGO_SHOP",
+    LOGO_MINI = "LOGO_MINI",
 }

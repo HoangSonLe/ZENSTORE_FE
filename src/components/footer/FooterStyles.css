@@ -59,7 +59,7 @@
 .footer-item__logo img {
     max-width: 180px;
     height: auto;
-    filter: brightness(0) invert(1); /* Make logo white */
+    /* filter: brightness(0) invert(1); Make logo white */
     transition: all 0.3s ease;
 }
 

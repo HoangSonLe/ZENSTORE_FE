@@ -13,12 +13,12 @@ const PromotionalTwo = ({ bannerList }: IProps) => {
                     <div className="col-lg-4 col-sm-6">
                         <div className="position-relative rounded-16 overflow-hidden z-1 p-32">
                             <img
-                                src="/assets/images/bg/promo-bg-img1.png"
+                            src={bannerList[0]?.bannerImage}
                                 alt=""
                                 className="position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 object-fit-cover z-n1"
                             />
                             <div className="flex-between flex-wrap gap-16">
-                                <div className="">
+                                {/* <div className="">
                                     <span className="text-heading text-sm mb-8">
                                         {bannerList[0]?.bannerSubTitle}
                                     </span>
@@ -32,13 +32,13 @@ const PromotionalTwo = ({ bannerList }: IProps) => {
                                             <i className="ph ph-plus" />
                                         </span>
                                     </Link>
-                                </div>
-                                <div className="pe-xxl-4">
-                                    <img
+                                </div> */}
+                                <div className="pe-xxl-4" style={{ width: "98px", height: "115px" }}>
+                                    {/* <img
                                         style={{ width: "98px", height: "115px" }}
                                         src={bannerList[0]?.bannerImage}
                                         alt={bannerList[0]?.bannerImage}
-                                    />
+                                    /> */}
                                 </div>
                             </div>
                         </div>

@@ -40,7 +40,7 @@ const DealsOne = ({ bannerList, productList }: IProps) => {
     const settings = {
         dots: false,
         arrows: true,
-        infinite: productList.length > slidesToShow,
+        infinite: true, //productList.length > slidesToShow,
         speed: 1000,
         slidesToShow,
         slidesToScroll: 1,
@@ -76,7 +76,7 @@ const DealsOne = ({ bannerList, productList }: IProps) => {
         ],
     };
     return (
-        <section className="deals-weeek pt-80">
+        <section className="deals-weeek pt-40">
             <div className="container container-lg">
                 <div className="border border-gray-100 p-24 rounded-16">
                     <div className="section-heading mb-24">

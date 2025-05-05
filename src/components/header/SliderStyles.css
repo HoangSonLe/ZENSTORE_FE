@@ -11,6 +11,23 @@
     overflow: hidden;
 }
 
+/* Banner slider specific styles */
+.banner-item-two__slider {
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.banner-item-two__slider .slick-slide {
+    height: auto;
+    max-height: 600px;
+}
+
+.banner-item-two__slider .slick-slide img {
+    max-height: 600px;
+    object-fit: contain;
+    width: 100%;
+}
+
 /* Make sure the slick slider is properly contained */
 .slick-slider {
     position: relative;
@@ -107,6 +124,19 @@
         width: 12px;
         height: 12px;
     }
+
+    /* Banner slider responsive height */
+    .banner-item-two__slider {
+        max-height: 500px;
+    }
+
+    .banner-item-two__slider .slick-slide {
+        max-height: 500px;
+    }
+
+    .banner-item-two__slider .slick-slide img {
+        max-height: 500px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -127,6 +157,19 @@
         width: 11px;
         height: 11px;
     }
+
+    /* Banner slider responsive height */
+    .banner-item-two__slider {
+        max-height: 400px;
+    }
+
+    .banner-item-two__slider .slick-slide {
+        max-height: 400px;
+    }
+
+    .banner-item-two__slider .slick-slide img {
+        max-height: 400px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -146,6 +189,19 @@
     .slick-active .custom-dot {
         width: 10px;
         height: 10px;
+    }
+
+    /* Banner slider responsive height */
+    .banner-item-two__slider {
+        max-height: 300px;
+    }
+
+    .banner-item-two__slider .slick-slide {
+        max-height: 300px;
+    }
+
+    .banner-item-two__slider .slick-slide img {
+        max-height: 300px;
     }
 }
 

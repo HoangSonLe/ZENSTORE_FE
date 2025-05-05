@@ -36,7 +36,6 @@ const HomePage = () => {
                     pageNumber: 1,
                     pageSize: 10,
                     statusCodes: [
-                        EProductStatus.NEW,
                         EProductStatus.SALE,
                         EProductStatus.SALE10,
                         EProductStatus.SALE20,

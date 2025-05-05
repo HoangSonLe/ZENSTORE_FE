@@ -30,6 +30,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
         maxWidth: "100%",
         margin: "0 auto",
         overflow: "hidden",
+        maxHeight: "600px", // Fixed height for the slider container
     };
 
     // Responsive slide styles based on screen size
@@ -40,7 +41,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
             return {
                 height: "auto",
                 maxHeight: "300px",
-                minHeight: "200px",
+                minHeight: "250px",
                 aspectRatio: "16/9",
             };
         } else if (windowWidth < 768) {
@@ -48,7 +49,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
             return {
                 height: "auto",
                 maxHeight: "400px",
-                minHeight: "250px",
+                minHeight: "350px",
                 aspectRatio: "16/9",
             };
         } else if (windowWidth < 992) {
@@ -56,7 +57,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
             return {
                 height: "auto",
                 maxHeight: "500px",
-                minHeight: "300px",
+                minHeight: "450px",
                 aspectRatio: "16/9",
             };
         } else {
@@ -64,7 +65,7 @@ const BannerTwo = ({ bannerList }: IProps) => {
             return {
                 height: "auto",
                 maxHeight: "600px",
-                minHeight: "350px",
+                minHeight: "550px",
                 aspectRatio: "16/9",
             };
         }

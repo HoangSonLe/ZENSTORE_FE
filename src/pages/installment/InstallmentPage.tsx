@@ -50,15 +50,17 @@ const InstallmentPage: React.FC = () => {
                                 </div>
                             </div>
 
-                            
+
 
                             {/* Banner Image Section */}
                             <div className="banner-section mt-4">
-                                <div className="banner-image">
+                                <div className="banner-image" style={{ maxHeight: 'none' }}>
                                     <img
-                                        src="/assets/images/bg/banner-bg.png"
+                                        src="/assets/images/bg/banner_gop.png"
                                         alt="Trả góp banner"
-                                        className="img-fluid rounded shadow-sm"
+                                        className="img-fluid"
+                                        loading="lazy"
+                                        style={{ height: '100% !important', width: '100%' }}
                                     />
                                 </div>
                             </div>

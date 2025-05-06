@@ -7,6 +7,7 @@ import AppleAnimation from "./AppleAnimation";
 import ContactInfo, { ContactInfoMobile } from "./ContactInfo";
 import "./MobileMenuStyles.css"; // Import custom mobile menu styles
 import "./LogoStyles.css"; // Import custom logo styles
+import "./LogoOutlineEffect.css"; // Import logo outline effect styles
 import "./NavMenuStyles.css"; // Import custom nav menu styles
 
 const Header = ({ logoUrl }: { logoUrl: string }) => {
@@ -123,6 +124,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                 <div className="mobile-menu__inner">
                     <Link to="/" className="mobile-menu__logo" onClick={handleMenuToggle}>
                         <img src={logoUrl} alt="Logo" />
+                        <div className="logo-outline"></div>
                     </Link>
                     <div className="mobile-menu__menu">
                         {/* Nav Menu Start */}
@@ -196,6 +198,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         <div className="logo">
                             <Link to="/" className="link">
                                 <img src={logoUrl} alt="Logo" />
+                                <div className="logo-outline"></div>
                             </Link>
                         </div>
                         {/* Logo End  */}

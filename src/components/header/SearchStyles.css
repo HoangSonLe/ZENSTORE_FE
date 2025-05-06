@@ -138,19 +138,19 @@
         width: 50px;
         height: 50px;
     }
-    
+
     .product-name {
         font-size: 0.9rem;
     }
-    
+
     .price-sale {
         font-size: 0.9rem;
     }
-    
+
     .price-original {
         font-size: 0.8rem;
     }
-    
+
     .price-status {
         font-size: 0.7rem;
     }

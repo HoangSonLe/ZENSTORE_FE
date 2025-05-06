@@ -14,6 +14,15 @@ const FloatingSocialButtons = () => {
                 <i className="ph-fill ph-facebook-logo" />
             </a>
             <a
+                href="https://m.me/100084516681157"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="floating-social-button messenger"
+                aria-label="Messenger"
+            >
+                <i className="ph-fill ph-messenger-logo" />
+            </a>
+            <a
                 href="https://www.tiktok.com/@zenstore796khavancan"
                 target="_blank"
                 rel="noopener noreferrer"

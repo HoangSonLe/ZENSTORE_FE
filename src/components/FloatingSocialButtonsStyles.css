@@ -73,6 +73,53 @@
     background-color: #1877f2; /* Facebook blue */
     color: white;
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a subtle shine effect for Facebook button */
+.floating-social-button.facebook::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.floating-social-button.facebook:hover::before {
+    animation: shine 1.5s ease;
+    opacity: 1;
+}
+
+@keyframes shine {
+    0% {
+        left: -50%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+/* Messenger button with custom border */
+.floating-social-button.messenger {
+    background-color: #0099ff; /* Messenger blue */
+    color: white;
+    font-weight: bold;
 }
 
 /* TikTok button with custom border */

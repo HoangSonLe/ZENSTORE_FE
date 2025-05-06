@@ -2,7 +2,7 @@
 
 /* Main header logo (red background) */
 .header-middle.bg-zenStore-100 .logo img {
-    max-width: 180px;
+    /* max-width: 180px; */
     height: auto;
     /* filter: brightness(0) invert(1); Make sure logo is white */
     transition: all 0.3s ease;

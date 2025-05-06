@@ -1,13 +1,13 @@
 // src/layouts/MainLayout.jsx
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import ScrollToTop from "react-scroll-to-top";
 import bannerApi from "../../apis/banner/banner.api";
 import { IBanner } from "../../apis/banner/banner.interface";
 import { IApiResponseTable } from "../../apis/interface";
 import EnhancedBottomFooter from "../../components/footer/EnhancedBottomFooter";
 import EnhancedFooter from "../../components/footer/EnhancedFooter";
 import FloatingSocialButtons from "../../components/FloatingSocialButtons";
+import CustomScrollToTop from "../../components/CustomScrollToTop";
 import Header from "../../components/header/Header";
 import ColorInit from "../../helper/ColorInit";
 import Preloader from "../../helper/Preloader";
@@ -34,7 +34,7 @@ const MainLayout = () => {
         });
     };
     useAsyncEffect(async () => {
-        await getBannerData();
+        // await getBannerData();
     }, []);
 
     // Effect to change favicon when logoUrl changes
@@ -47,7 +47,7 @@ const MainLayout = () => {
             <header>
                 <ColorInit color={true} />
 
-                <ScrollToTop smooth color="#FA6400" />
+                <CustomScrollToTop />
 
                 <Preloader />
 

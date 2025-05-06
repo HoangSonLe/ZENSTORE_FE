@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import SearchBoxMobile from "./SearchBoxMobile";
 import AppleAnimation from "./AppleAnimation";
+import ContactInfo, { ContactInfoMobile } from "./ContactInfo";
 import "./MobileMenuStyles.css"; // Import custom mobile menu styles
 import "./LogoStyles.css"; // Import custom logo styles
 import "./NavMenuStyles.css"; // Import custom nav menu styles
@@ -165,6 +166,9 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                                 </Link>
                             </li>
                         </ul>
+
+                        {/* Mobile Contact Info */}
+                        <ContactInfoMobile />
                         {/* Nav Menu End */}
                     </div>
                 </div>
@@ -177,57 +181,15 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         {/* Logo Start */}
                         <div className="logo">
                             <Link to="/" className="link">
-                                <img src={"/assets/images/logo/bg-1.png"} alt="Logo" />
+                                <img src={logoUrl} alt="Logo" />
                             </Link>
                         </div>
                         {/* Logo End  */}
                         {/* form Category Start */}
                         <div className="d-flex align-items-center" style={{ marginLeft: "108px" }}>
                             <SearchBox />
-                            <div
-                                className="contact-info d-flex d-none d-lg-flex"
-                                style={{ marginLeft: "50px" }}
-                            >
-                                <div className="hotline d-flex align-items-center me-4">
-                                    <i
-                                        className="ph ph-phone text-white me-4"
-                                        style={{ fontSize: "28px" }}
-                                    ></i>
-                                    <div className="d-flex flex-column">
-                                        <span
-                                            className="text-white"
-                                            style={{ fontSize: "18px", fontWeight: "500" }}
-                                        >
-                                            Hotline liên hệ
-                                        </span>
-                                        <span
-                                            className="text-white"
-                                            style={{ fontSize: "16px", fontWeight: "700" }}
-                                        >
-                                            𝟎𝟖𝟔.𝟓𝟓𝟎.𝟖𝟖𝟖𝟖
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="store-system d-flex align-items-center">
-                                    <i
-                                        className="ph ph-map-pin text-white me-4"
-                                        style={{ fontSize: "28px" }}
-                                    ></i>
-                                    <div className="d-flex flex-column">
-                                        <span
-                                            className="text-white"
-                                            style={{ fontSize: "18px", fontWeight: "500" }}
-                                        >
-                                            Hệ thống
-                                        </span>
-                                        <span
-                                            className="text-white"
-                                            style={{ fontSize: "16px", fontWeight: "700" }}
-                                        >
-                                            02 cửa hàng
-                                        </span>
-                                    </div>
-                                </div>
+                            <div className="d-none d-lg-block ml-20">
+                                <ContactInfo />
                                 <AppleAnimation />
                             </div>
                         </div>

@@ -7,6 +7,7 @@ import { IBanner } from "../../apis/banner/banner.interface";
 import { IApiResponseTable } from "../../apis/interface";
 import EnhancedBottomFooter from "../../components/footer/EnhancedBottomFooter";
 import EnhancedFooter from "../../components/footer/EnhancedFooter";
+import FloatingSocialButtons from "../../components/FloatingSocialButtons";
 import Header from "../../components/header/Header";
 import ColorInit from "../../helper/ColorInit";
 import Preloader from "../../helper/Preloader";
@@ -14,7 +15,7 @@ import { useApi, useAsyncEffect } from "../../hooks";
 import { changeFavicon } from "../../utils/faviconUtils";
 import { EBannerOrder } from "../../constants/enum";
 const MainLayout = () => {
-    const [logoUrl, setLogoUrl] = useState<string>("/assets/images/logo/logo.png");
+    const [logoUrl, setLogoUrl] = useState<string>("/assets/images/logo/bg-1.png");
     const [logoMiniUrl, setLogoMiniUrl] = useState<string>();
 
     const { request: getBannerList } = useApi(bannerApi.getBannerList);
@@ -61,6 +62,9 @@ const MainLayout = () => {
                 {/* BottomFooter */}
                 <EnhancedBottomFooter />
             </footer>
+
+            {/* Floating Social Media Buttons */}
+            <FloatingSocialButtons />
         </div>
     );
 };

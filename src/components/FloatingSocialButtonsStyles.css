@@ -1,0 +1,150 @@
+.floating-social-buttons {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+
+/* Keyframes for pulsing zoom animation */
+@keyframes pulseZoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.floating-social-button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 26px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    /* Add border outline - thicker with softer color */
+    border: 3px solid rgba(255, 255, 255, 0.6); /* White border with transparency */
+    /* Apply the animation */
+    animation: pulseZoom 2s infinite ease-in-out;
+}
+
+/* Add a glowing effect with pseudo-element */
+.floating-social-button::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.25); /* Very soft white with transparency */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.floating-social-button:hover {
+    transform: translateY(-5px) scale(1.15);
+    border-color: rgba(255, 255, 255, 0.8); /* White border on hover */
+    border-width: 4px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Soft white glow */
+}
+
+.floating-social-button:hover::after {
+    border-color: rgba(255, 255, 255, 0.4); /* Matching white border but softer */
+    border-width: 4px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Very soft white glow */
+    animation: pulseZoom 1.5s infinite ease-in-out;
+}
+
+/* Facebook button with custom border */
+.floating-social-button.facebook {
+    background-color: #1877f2; /* Facebook blue */
+    color: white;
+    font-weight: bold;
+}
+
+/* TikTok button with custom border */
+.floating-social-button.tiktok {
+    background-color: #ee1d52; /* TikTok red */
+    color: white;
+}
+
+/* Phone button with custom border */
+.floating-social-button.phone {
+    background-color: #4caf50; /* Green - common phone color */
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-social-buttons {
+        right: 15px;
+    }
+
+    .floating-social-button {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        border-width: 2.5px;
+    }
+
+    .floating-social-button::after {
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-width: 2.5px;
+    }
+
+    .floating-social-button:hover {
+        border-width: 3px;
+    }
+
+    .floating-social-button:hover::after {
+        border-width: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-social-buttons {
+        right: 10px;
+    }
+
+    .floating-social-button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        border-width: 2px;
+        /* Slightly faster animation on mobile for better performance */
+        animation: pulseZoom 2.5s infinite ease-in-out;
+    }
+
+    .floating-social-button::after {
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border-width: 2px;
+    }
+
+    .floating-social-button:hover {
+        border-width: 2.5px;
+    }
+
+    .floating-social-button:hover::after {
+        border-width: 2.5px;
+        animation: pulseZoom 2s infinite ease-in-out;
+    }
+}

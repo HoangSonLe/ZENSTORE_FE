@@ -177,7 +177,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         {/* Logo Start */}
                         <div className="logo">
                             <Link to="/" className="link">
-                                <img src={logoUrl} alt="Logo" />
+                                <img src={"/assets/images/logo/bg-1.png"} alt="Logo" />
                             </Link>
                         </div>
                         {/* Logo End  */}

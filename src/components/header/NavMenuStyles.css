@@ -1,21 +1,75 @@
+/* Import Google Font for better typography */
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@500;600;700&display=swap");
+
+/* Enhanced menu links - bigger and uppercase */
+.nav-menu .nav-menu__link {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    padding: 16px 12px;
+    color: #4b545b;
+    font-family: "Exo", var(--heading-font-two), sans-serif;
+    position: relative;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: 4px;
+    margin: 0 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
 /* Styles for active menu items in desktop view */
 .nav-menu .nav-menu__item.active .nav-menu__link {
-    color: #4b545b;
-    font-weight: 600;
-    position: relative;
+    color: #ce2f3e; /* Use a more eye-catching color for active items */
+    font-weight: 700;
+    background: linear-gradient(
+        to bottom,
+        rgba(206, 47, 62, 0.08) 0%,
+        rgba(206, 47, 62, 0.03) 100%
+    );
+    box-shadow: 0 2px 5px rgba(206, 47, 62, 0.15);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid #ce2f3e;
 }
 
-.nav-menu .nav-menu__item.active .nav-menu__link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #4b545b;
-}
-
-/* Hover effect for menu items */
+/* Hover effect for menu items - simple color change only */
 .nav-menu .nav-menu__item .nav-menu__link:hover {
-    color: #4b545b;
+    color: #ce2f3e; /* Same eye-catching color on hover */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .nav-menu .nav-menu__link {
+        font-size: 1.1rem;
+        padding: 14px 8px;
+        letter-spacing: 0.6px;
+    }
+
+    .nav-menu .nav-menu__item.active .nav-menu__link {
+        box-shadow: 0 2px 4px rgba(206, 47, 62, 0.12);
+    }
+}
+
+@media (max-width: 991px) {
+    .nav-menu .nav-menu__link {
+        font-size: 0.985rem;
+        padding: 12px 6px;
+        letter-spacing: 0.5px;
+        margin: 0 1px;
+    }
+
+    .nav-menu .nav-menu__item.active .nav-menu__link {
+        box-shadow: 0 1px 3px rgba(206, 47, 62, 0.1);
+    }
 }

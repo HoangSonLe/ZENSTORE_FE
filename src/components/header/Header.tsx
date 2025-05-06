@@ -138,6 +138,20 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                                 </Link>
                             </li>
                             <li
+                                onClick={() => handleMenuClick(3)}
+                                className={`on-hover-item nav-menu__item ${
+                                    activeIndex === 3 ? "active" : ""
+                                }`}
+                            >
+                                <Link
+                                    to="/tra-gop"
+                                    className="nav-menu__link"
+                                    onClick={handleMenuToggle}
+                                >
+                                    Trả Góp
+                                </Link>
+                            </li>
+                            <li
                                 onClick={() => handleMenuClick(1)}
                                 className={`on-hover-item nav-menu__item ${
                                     activeIndex === 1 ? "active" : ""
@@ -221,6 +235,15 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                                     >
                                         <Link to="/" className="nav-menu__link">
                                             Trang chủ
+                                        </Link>
+                                    </li>
+                                    <li
+                                        className={`on-hover-item nav-menu__item ${
+                                            activeIndex === 3 ? "active" : ""
+                                        }`}
+                                    >
+                                        <Link to="/tra-gop" className="nav-menu__link">
+                                            Trả Góp
                                         </Link>
                                     </li>
                                     <li

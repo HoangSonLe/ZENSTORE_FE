@@ -7,6 +7,7 @@ import PhosphorIconInit from "./helper/PhosphorIconInit";
 import RouteScrollToTop from "./helper/RouteScrollToTop";
 import BlogPage from "./pages/blog/BlogPage";
 import BlogDetailsPage from "./pages/blog/BlogDetailsPage";
+import InstallmentPage from "./pages/installment/InstallmentPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SearchProvider } from "./context/SearchContext";
@@ -21,6 +22,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainLayout />}>
                         <Route index element={<HomePage />} />
+                        <Route path="tra-gop" element={<InstallmentPage />} />
                         <Route path="shop" element={<ProductPage />} />
                         <Route
                             path="product-details/:productParamId?"

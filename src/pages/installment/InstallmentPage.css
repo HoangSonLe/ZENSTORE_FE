@@ -1,0 +1,396 @@
+/* InstallmentPage.css */
+.installment-page {
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    padding: 40px 0;
+    min-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.installment-page.fade-in {
+    opacity: 1;
+}
+
+.installment-page .content-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 30px !important;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.installment-page .content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.installment-page .content-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #ff0000, #ff6b6b);
+}
+
+/* Animated heading with gradient text */
+.installment-page h1 {
+    color: #ff0000;
+    font-size: 30px; /* Increased by 2 sizes from 26px */
+    line-height: 1.4;
+    margin: 0 auto 30px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 0; /* Removed padding since we removed the underline */
+    background-image: linear-gradient(45deg, #ff0000, #ff5e5e);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    width: 100%;
+    max-width: 800px; /* Limit width for better readability */
+    display: block;
+}
+
+/* Removed the red underline
+.installment-page h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #ff0000, #ff6b6b);
+}
+*/
+
+/* Heading container for perfect centering */
+.heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Animated text with random color effect */
+.animated-text {
+    position: relative;
+    animation: textShadowPulse 2s infinite;
+}
+
+@keyframes textShadowPulse {
+    0% {
+        text-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 16px rgba(255, 0, 0, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+    }
+}
+
+.installment-page h2 {
+    color: #0066cc;
+    font-size: 26px; /* Increased by 2 sizes from 22px */
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.installment-page h2:hover {
+    transform: translateX(5px);
+}
+
+.installment-page h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #0066cc;
+    border-radius: 2px;
+}
+
+.installment-page h3 {
+    font-size: 24px; /* Increased by 2 sizes from 20px */
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.installment-page h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+}
+
+.installment-page p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 18px; /* Increased by 2 sizes from default (usually 16px) */
+    transition: all 0.2s ease;
+}
+
+.installment-page p:hover {
+    transform: translateX(3px);
+}
+
+.installment-page .text-primary {
+    color: #0066cc !important;
+    font-weight: 600;
+}
+
+.installment-page .text-danger {
+    color: #ff0000 !important;
+}
+
+.installment-page .fw-bold {
+    font-weight: 700 !important;
+}
+
+.highlight-text {
+    position: relative;
+    display: inline-block;
+    background-color: rgba(255, 0, 0, 0.08);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 18px; /* Increased by 2 sizes */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(255, 0, 0, 0.08);
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 0, 0, 0.08);
+    }
+}
+
+.installment-page .share-section {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+.installment-page .share-section p {
+    font-weight: 600;
+    color: #555;
+}
+
+.installment-page .social-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.installment-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.installment-page .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.installment-page .btn i {
+    font-size: 18px;
+}
+
+/* Silver background effect for buttons */
+.installment-page .btn-primary {
+    background: linear-gradient(145deg, #4a89dc, #5d9cec);
+}
+
+.installment-page .btn-info {
+    background: linear-gradient(145deg, #3bafda, #4fc1e9);
+}
+
+.installment-page .btn-secondary {
+    background: linear-gradient(145deg, #aab2bd, #ccd1d9);
+}
+
+/* Pulse animation for the first button */
+.pulse {
+    position: relative;
+}
+
+.pulse::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    80%, 100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Slide-in animations */
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation for list items */
+.fade-in-item {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Info section styling */
+.info-section {
+    padding: 10px 0;
+}
+
+.installment-options {
+    padding-left: 10px;
+    border-left: 2px solid #f0f0f0;
+    margin: 20px 0;
+}
+
+/* Banner section styling */
+.banner-section {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.banner-image {
+    position: relative;
+    transition: all 0.5s ease;
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+}
+
+.banner-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.banner-image:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .installment-page h1 {
+        font-size: 24px; /* Increased by 2 sizes from 20px */
+    }
+
+    .installment-page h2 {
+        font-size: 22px; /* Increased by 2 sizes from 18px */
+    }
+
+    .installment-page h3 {
+        font-size: 20px; /* Increased by 2 sizes from 16px */
+    }
+
+    .installment-page p {
+        font-size: 16px; /* Slightly smaller than desktop but still larger than default */
+    }
+
+    .highlight-text {
+        font-size: 16px; /* Consistent with paragraph text on mobile */
+    }
+
+    .installment-page .content-box {
+        padding: 20px !important;
+    }
+
+    .banner-image {
+        animation: none;
+    }
+}

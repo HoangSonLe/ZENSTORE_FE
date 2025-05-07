@@ -37,8 +37,9 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
     // Determine active index based on current path
     const getActiveIndexFromPath = (path: string) => {
         if (path === "/") return 0;
-        if (path.startsWith("/shop")) return 1;
-        if (path.startsWith("/blog")) return 2;
+        if (path.startsWith("/shop") || path.startsWith("/product-details")) return 1;
+        if (path.startsWith("/blog") || path.startsWith("/blog-details")) return 2;
+        if (path.startsWith("/tra-gop")) return 3;
         return null;
     };
 

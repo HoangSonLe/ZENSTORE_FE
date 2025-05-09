@@ -107,27 +107,10 @@ const TopSellingOne = ({ productList, bannerList }: IProps) => {
                         <div className="col-md-4">
                             <div className="banner-section">
                                 <img
-                                    src="/assets/images/bg/deal-bg.png"
+                                    src={bannerList[0].bannerImage}
                                     alt="Background"
                                     className="banner-bg"
                                 />
-                                <div className="banner-content">
-                                    <h6 className="banner-subtitle">
-                                        {bannerList[0].bannerSubTitle}
-                                    </h6>
-                                    <h5 className="banner-title">{bannerList[0].bannerTitle}</h5>
-                                    <Link to="/shop" className="shop-now-btn" tabIndex={0}>
-                                        Mua ngay <i className="ph ph-shopping-cart" />
-                                    </Link>
-                                </div>
-                                <div className="banner-image-container d-md-block d-none">
-                                    <img
-                                        className="banner-image"
-                                        alt={bannerList[0].bannerName || "Banner image"}
-                                        src={bannerList[0].bannerImage}
-                                        loading="lazy"
-                                    />
-                                </div>
                             </div>
                         </div>
                         <div className="col-md-8">

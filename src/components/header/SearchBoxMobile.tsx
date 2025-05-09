@@ -17,7 +17,10 @@ const SearchBoxMobile = ({
     const [input, setInput] = useState<string>("");
     const [results, setResults] = useState<IProduct[]>([]);
     const [showResults, setShowResults] = useState(false);
-    const { request: getProductList } = useApi(productApi.getProductList);
+    const [isSearching, setIsSearching] = useState(false);
+    const { request: getProductList, loading: productListLoading } = useApi(
+        productApi.getProductList
+    );
 
     // We'll use CSS classes instead of inline styles
 
@@ -48,6 +51,7 @@ const SearchBoxMobile = ({
         };
     }, []);
     const getProductData = async () => {
+        setIsSearching(true);
         await getProductList(
             {
                 params: {
@@ -58,9 +62,9 @@ const SearchBoxMobile = ({
             },
             (response) => {
                 const { data } = response as IApiResponseTable<IProduct>;
-
                 setResults(data.data);
                 setShowResults(true);
+                setIsSearching(false);
             }
         );
     };
@@ -77,6 +81,11 @@ const SearchBoxMobile = ({
 
         return () => clearTimeout(delayDebounce);
     }, [input]);
+
+    // Update searching state when API is loading
+    useEffect(() => {
+        setIsSearching(productListLoading);
+    }, [productListLoading]);
 
     return (
         <form
@@ -127,7 +136,18 @@ const SearchBoxMobile = ({
                             }}
                         >
                             <div className="d-flex flex-wrap justify-content-between px-3 py-2">
-                                {results?.length > 0 ? (
+                                {isSearching ? (
+                                    <div className="searching-message d-flex flex-column p-6 w-100">
+                                        <div className="fw-semibold text-center">
+                                            <span
+                                                className="spinner-border spinner-border-sm me-2"
+                                                role="status"
+                                                aria-hidden="true"
+                                            ></span>
+                                            Đang tìm kiếm...
+                                        </div>
+                                    </div>
+                                ) : results?.length > 0 ? (
                                     results.map((item) => (
                                         <div
                                             key={item.productId}
@@ -155,7 +175,7 @@ const SearchBoxMobile = ({
                                                 >
                                                     {item.productName}
                                                 </div>
-                                                {item.productPrice == 0 ? (
+                                                {item.productPrice === 0 ? (
                                                     <div className="price-contact text-muted">
                                                         Giá liên hệ
                                                     </div>

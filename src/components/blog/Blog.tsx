@@ -18,9 +18,11 @@ const Blog = () => {
     });
 
     const [blogTableData, setBlogTableData] = useState<IApiTable<IBlog>>();
-    const { request: getBlogList } = useApi(blogApi.getBlogList);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const { request: getBlogList, loading: blogListLoading } = useApi(blogApi.getBlogList);
 
     const getBlogData = async () => {
+        setIsLoading(true);
         const formValues = getValues();
         await getBlogList(
             {
@@ -30,15 +32,21 @@ const Blog = () => {
             },
             (response) => {
                 const { data } = response as IApiResponseTable<IBlog>;
-
                 setBlogTableData(data);
+                setIsLoading(false);
             }
         );
     };
+
     useEffect(() => {
         getBlogData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // Update loading state when API is loading
+    useEffect(() => {
+        setIsLoading(blogListLoading);
+    }, [blogListLoading]);
 
     const onPageChange = (page: number) => {
         setValue("pageNumber", page);
@@ -51,7 +59,31 @@ const Blog = () => {
                 <div className="row gy-5">
                     <div className="col-lg-8 pe-xl-4">
                         <div className="blog-item-wrapper">
-                            {blogTableData && blogTableData.data?.length > 0 ? (
+                            {isLoading ? (
+                                // Skeleton loading UI
+                                <>
+                                    {[1, 2, 3].map((item) => (
+                                        <div className="blog-item blog-skeleton" key={item}>
+                                            <div className="blog-image skeleton-blog-image"></div>
+                                            <div className="blog-content">
+                                                <div className="skeleton-title"></div>
+                                                <div className="skeleton-content">
+                                                    <div className="skeleton-text"></div>
+                                                    <div className="skeleton-text"></div>
+                                                    <div
+                                                        className="skeleton-text"
+                                                        style={{ width: "75%" }}
+                                                    ></div>
+                                                </div>
+                                                <div className="blog-meta skeleton-loading">
+                                                    <div className="skeleton-circle"></div>
+                                                    <div className="skeleton-text-sm"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </>
+                            ) : blogTableData && blogTableData.data?.length > 0 ? (
                                 blogTableData.data.map((blog, index) => (
                                     <div className="blog-item" key={blog.newsId || index}>
                                         <div className="blog-image">

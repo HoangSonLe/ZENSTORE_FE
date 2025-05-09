@@ -5,11 +5,10 @@ import productApi from "../../apis/product/product.api";
 import { IProduct, IProductQuery } from "../../apis/product/product.interface";
 import { EProductStatus } from "../../constants/enum";
 import { useApi } from "../../hooks";
-import Filter from "./Filter";
+import ProductItem from "../../pages/homePage/component/ProductItem";
 import Pagination from "../pagination/Pagination";
 import "./EnhancedShopStyles.css";
-import CompactProductItem from "../../pages/homePage/component/CompactProductItem";
-import ProductItem from "../../pages/homePage/component/ProductItem";
+import Filter from "./Filter";
 export interface IProductCustomQuery extends IProductQuery {
     statusCodeSingle: string;
 }

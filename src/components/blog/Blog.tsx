@@ -93,7 +93,7 @@ const Blog = () => {
                                 ))
                             ) : (
                                 <div className="blog-empty">
-                                    <p className="blog-empty-text">No blog posts found</p>
+                                    <p className="blog-empty-text">Không có bài viết nào</p>
                                 </div>
                             )}
                         </div>

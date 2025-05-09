@@ -12,7 +12,14 @@ const Preloader = () => {
         <>
             {active ? (
                 <div className="preloader">
-                    <img src="/assets/images/icon/preloader.gif" alt="" />
+                    <img
+                        width={100}
+                        height={100}
+                        src="/assets/images/logo/logo-admin.jpg"
+                        alt=""
+                        className="rounded-circle shadow-sm"
+                        style={{ objectFit: "cover" }}
+                    />
                 </div>
             ) : (
                 <div></div>

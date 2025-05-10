@@ -101,6 +101,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
         <>
             {/* Announcement Banner */}
             <AnnouncementBanner
+                style={{ backgroundColor: "#d3ebc0" }}
                 text="Mua Iphone trả góp bao duyệt nợ xấu 100%"
                 linkText="Xem chi tiết"
                 linkUrl="https://zenstores.com.vn/blog-details/8"
@@ -249,6 +250,15 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                                             Trang chủ
                                         </Link>
                                     </li>
+                                     <li
+                                        className={`on-hover-item nav-menu__item ${
+                                            activeIndex === 1 ? "active" : ""
+                                        }`}
+                                    >
+                                        <Link to="/shop" className="nav-menu__link">
+                                            Sản phẩm
+                                        </Link>
+                                    </li>
                                     <li
                                         className={`on-hover-item nav-menu__item ${
                                             activeIndex === 3 ? "active" : ""
@@ -258,15 +268,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                                             Trả Góp
                                         </Link>
                                     </li>
-                                    <li
-                                        className={`on-hover-item nav-menu__item ${
-                                            activeIndex === 1 ? "active" : ""
-                                        }`}
-                                    >
-                                        <Link to="/shop" className="nav-menu__link">
-                                            Sản phẩm
-                                        </Link>
-                                    </li>
+                                   
                                     <li
                                         className={`on-hover-item nav-menu__item ${
                                             activeIndex === 2 ? "active" : ""

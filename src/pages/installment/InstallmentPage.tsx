@@ -65,7 +65,7 @@ const InstallmentPage: React.FC = () => {
                                                 className="ph-fill ph-bank me-2"
                                                 style={{ fontSize: "1.3rem" }}
                                             ></i>
-                                            <span style={{ textIndent: "10px", display: "block" }}>
+                                            <span style={{ textIndent: "10px", fontSize: "22px", display: "block" }}>
                                                 Hỗ trợ hơn 26 ngân hàng liên kết: VietinBank,
                                                 Techcombank, VPBank, BIDV, Agribank và nhiều ngân
                                                 hàng khác
@@ -89,7 +89,7 @@ const InstallmentPage: React.FC = () => {
                                                     fontWeight: "600",
                                                 }}
                                             >
-                                                PHƯƠNG THỨC TRẢ GÓP QUA HỒ SƠ:
+                                                PHƯƠNG THỨC TRẢ GÓP QUA CÁC CÔNG TY TÀI CHÍNH:
                                             </span>
                                         </span>
                                     </p>
@@ -103,8 +103,8 @@ const InstallmentPage: React.FC = () => {
                                                 className="ph-fill ph-identification-card me-2"
                                                 style={{ fontSize: "1.3rem" }}
                                             ></i>
-                                            <span style={{ textIndent: "10px", display: "block" }}>
-                                                Chỉ cần CCCD gắn chip, độ tuổi từ 18-70
+                                            <span style={{ textIndent: "10px",fontSize: "22px", display: "block" }}>
+                                                Chỉ cần CCCD gắn chip, độ tuổi từ 18-50
                                             </span>
                                         </span>
                                         <span className="fw-bold highlight-text d-flex align-items-center">
@@ -123,11 +123,11 @@ const InstallmentPage: React.FC = () => {
                                         <span className="fw-bold d-flex align-items-center">
                                             <i
                                                 className="ph-fill ph-handshake me-2"
-                                                style={{ fontSize: "1.3rem" }}
+                                                style={{ fontSize: "1.7rem" }}
                                             ></i>
-                                            <span style={{ textIndent: "10px", display: "block" }}>
+                                            <span style={{ textIndent: "10px", fontSize: "25px", display: "block" }}>
                                                 Đối tác tài chính: HD Saison, MCredit, Mirae Asset,
-                                                FE Credit, Home Credit
+                                                FE Credit.
                                             </span>
                                         </span>
                                     </p>

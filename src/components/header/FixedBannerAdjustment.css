@@ -1,0 +1,11 @@
+/* Adjustments for fixed announcement banner */
+body {
+    padding-top: 40px; /* Height of the announcement banner */
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Taller on mobile due to wrapping */
+    }
+}

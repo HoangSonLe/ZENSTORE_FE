@@ -31,7 +31,7 @@ const FloatingSocialButtons = () => {
             >
                 <i className="ph-fill ph-tiktok-logo" />
             </a>
-            <a href="tel:𝟎𝟖𝟔𝟓𝟓𝟎𝟖𝟖𝟖𝟖" className="floating-social-button phone" aria-label="Call Us">
+            <a href="tel:+𝟎𝟖𝟔𝟓𝟓𝟎𝟖𝟖𝟖𝟖" className="floating-social-button phone" aria-label="Call Us">
                 <i className="ph-fill ph-phone-call" />
             </a>
         </div>

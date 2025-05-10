@@ -5,10 +5,12 @@ import SearchBox from "./SearchBox";
 import SearchBoxMobile from "./SearchBoxMobile";
 import AppleAnimation from "./AppleAnimation";
 import ContactInfo, { ContactInfoMobile } from "./ContactInfo";
+import AnnouncementBanner from "./AnnouncementBanner";
 import "./MobileMenuStyles.css"; // Import custom mobile menu styles
 import "./LogoStyles.css"; // Import custom logo styles
 import "./LogoOutlineEffect.css"; // Import logo outline effect styles
 import "./NavMenuStyles.css"; // Import custom nav menu styles
+import "./FixedBannerAdjustment.css"; // Import fixed banner adjustments
 
 const Header = ({ logoUrl }: { logoUrl: string }) => {
     const [scroll, setScroll] = useState(false);
@@ -97,6 +99,12 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
 
     return (
         <>
+            {/* Announcement Banner */}
+            <AnnouncementBanner
+                text="Mua Iphone trả góp bao duyệt nợ xấu 100%"
+                linkText="Xem chi tiết"
+                linkUrl="https://zenstores.com.vn/blog-details/8"
+            />
             <div className="overlay" />
             <div
                 className={`side-overlay ${menuActive && "show"}`}

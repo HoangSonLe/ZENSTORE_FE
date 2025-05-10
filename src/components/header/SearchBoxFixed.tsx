@@ -6,8 +6,6 @@ import { IApiResponseTable } from "../../apis/interface";
 import { useApi } from "../../hooks";
 import { formatVND } from "../../utils/numberUtils";
 import "./SearchStyles.css";
-import "./SearchFixStyles.css";
-import CustomSearchInput from "./CustomSearchInput";
 
 const SearchBox = () => {
     const [input, setInput] = useState<string>("");
@@ -84,7 +82,7 @@ const SearchBox = () => {
                         <input
                             type="text"
                             className="search-form__input desktop-search-input common-input py-13 ps-16 pe-18 rounded-0 border-0"
-                            placeholder="Bạn cần tìm sản phẩm gì?"
+                            placeholder="Bạn cần tìm sản phẩm gì?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             id="searchInput"
@@ -93,9 +91,8 @@ const SearchBox = () => {
                     </div>
                     <button
                         type="submit"
-                        className="desktop-search-button bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none rounded-end"
+                        className="desktop-search-button bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none"
                         aria-label="Submit Search"
-                        style={{ borderRadius: '0 8px 8px 0', margin: 0, padding: 0 }}
                     >
                         <i className="ph ph-magnifying-glass" />
                     </button>

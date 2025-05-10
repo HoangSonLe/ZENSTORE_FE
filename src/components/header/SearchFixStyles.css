@@ -1,0 +1,60 @@
+/* Fix for placeholder text with extra spaces */
+::placeholder {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+input[type="text"]::placeholder {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Override placeholder text */
+input.search-form__input::placeholder,
+input.mobile-search-input::placeholder {
+  color: #6c757d !important;
+  opacity: 1 !important;
+  font-size: 14px !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* JavaScript override for placeholder */
+.search-form__input, .mobile-search-input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Fix for input padding */
+.search-form__input,
+.mobile-search-input {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+/* Fix for search buttons */
+.desktop-search-button,
+.mobile-search-button {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.desktop-search-button {
+  border-radius: 0 8px 8px 0 !important;
+}
+
+.mobile-search-button {
+  border-radius: 50% !important;
+}
+
+/* Ensure no extra spaces in the search box */
+.search-form__wrapper,
+.position-relative input {
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
+}

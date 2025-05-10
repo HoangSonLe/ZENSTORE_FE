@@ -6,7 +6,6 @@ import { IApiResponseTable } from "../../apis/interface";
 import { useApi } from "../../hooks";
 import { formatVND } from "../../utils/numberUtils";
 import "./SearchStyles.css";
-import "./SearchFixStyles.css";
 
 const SearchBoxMobile = ({
     activeSearch,
@@ -109,7 +108,7 @@ const SearchBoxMobile = ({
                         <input
                             type="text"
                             className="form-control mobile-search-input py-16 px-24 text-xl rounded-pill pe-64"
-                            placeholder="Bạn cần tìm sản phẩm gì?"
+                            placeholder="Bạn cần tìm sản phẩm gì?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             id="searchInputMobile"
@@ -119,7 +118,6 @@ const SearchBoxMobile = ({
                             type="submit"
                             className="mobile-search-button w-48 h-48 bg-zenStore-100 rounded-circle flex-center text-xl text-white position-absolute top-50 translate-middle-y inset-inline-end-0 me-16"
                             aria-label="Search button"
-                            style={{ margin: 0, padding: 0 }}
                         >
                             <i className="ph ph-magnifying-glass" />
                         </button>

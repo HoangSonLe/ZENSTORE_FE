@@ -85,6 +85,18 @@
     color: white;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
+    line-height: 1.2;
+}
+
+/* Phone link styles */
+.phone-link {
+    text-decoration: none;
+    display: block;
+}
+
+.phone-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateX(2px);
 }
 
 .contact-info-item:hover .contact-label,

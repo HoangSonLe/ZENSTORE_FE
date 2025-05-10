@@ -22,7 +22,7 @@ const EnhancedBottomFooter = () => {
                                 <i className="ph ph-phone"></i>
                             </span>
                             <div className="contact-number__content">
-                                <p className="contact-number__label">Số hotline:</p>
+                                <p className="contact-number__label">Số hotline 3TS:</p>
                                 <a href="tel:0782065079" className="contact-number__value">
                                     0782065079
                                 </a>

@@ -29,7 +29,7 @@ function App() {
                             element={<ProductDetailsPage />}
                         />
                         <Route path="blog" element={<BlogPage />} />
-                        <Route path="blog-details/:blogParamId" element={<BlogDetailsPage />} />
+                        <Route path="tin-tuc/:blogParamId" element={<BlogDetailsPage />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

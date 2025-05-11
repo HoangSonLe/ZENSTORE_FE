@@ -1,0 +1,16 @@
+.header-announcement-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header-announcement-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: block;
+    }
+}

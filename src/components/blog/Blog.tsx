@@ -87,7 +87,7 @@ const Blog = () => {
                                 blogTableData.data.map((blog, index) => (
                                     <div className="blog-item" key={blog.newsId || index}>
                                         <div className="blog-image">
-                                            <Link to={`/blog-details/${blog.newsId}`}>
+                                            <Link to={`/tin-tuc/${blog.newsId}`}>
                                                 <img
                                                     src={
                                                         blog.newsThumbnail ??
@@ -100,7 +100,7 @@ const Blog = () => {
                                         </div>
                                         <div className="blog-content">
                                             <h3 className="blog-title">
-                                                <Link to={`/blog-details/${blog.newsId}`}>
+                                                <Link to={`/tin-tuc/${blog.newsId}`}>
                                                     {blog.newsTitle}
                                                 </Link>
                                             </h3>

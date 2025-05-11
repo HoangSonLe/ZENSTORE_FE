@@ -11,6 +11,8 @@ import "./LogoStyles.css"; // Import custom logo styles
 import "./LogoOutlineEffect.css"; // Import logo outline effect styles
 import "./NavMenuStyles.css"; // Import custom nav menu styles
 import "./FixedBannerAdjustment.css"; // Import fixed banner adjustments
+import "./HeaderAnnouncementWrapper.css"; // Import header announcement wrapper styles
+import "./MobileHeaderFix.css"; // Import mobile header fixes
 
 const Header = ({ logoUrl }: { logoUrl: string }) => {
     const [scroll, setScroll] = useState(false);
@@ -40,7 +42,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
     const getActiveIndexFromPath = (path: string) => {
         if (path === "/") return 0;
         if (path.startsWith("/shop") || path.startsWith("/product-details")) return 1;
-        if (path.startsWith("/blog") || path.startsWith("/blog-details")) return 2;
+        if (path.startsWith("/blog") || path.startsWith("/tin-tuc")) return 2;
         if (path.startsWith("/tra-gop")) return 3;
         return null;
     };
@@ -101,10 +103,9 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
         <>
             {/* Announcement Banner */}
             <AnnouncementBanner
-                style={{ backgroundColor: "#d3ebc0" }}
                 text="Mua Iphone trả góp bao duyệt nợ xấu 100%"
                 linkText="Xem chi tiết"
-                linkUrl="https://zenstores.com.vn/blog-details/8"
+                linkUrl="https://zenstores.com.vn/tin-tuc/8"
             />
             <div className="overlay" />
             <div
@@ -298,14 +299,14 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                                     </button>
                                 </div>
                             </div>
-                            {/* <button
+                            <button
                                 ref={menuButtonRef}
                                 onClick={handleMenuToggle}
                                 type="button"
                                 className="toggle-mobileMenu d-lg-none ms-3n text-gray-800 text-4xl d-flex"
                             >
                                 <i className="ph ph-list" />
-                            </button> */}
+                            </button>
                         </div>
                         {/* Header Right End  */}
                     </nav>

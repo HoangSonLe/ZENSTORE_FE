@@ -1,11 +1,9 @@
-/* Adjustments for fixed announcement banner */
+/* No padding needed since banner is not fixed anymore */
 body {
-    padding-top: 45px; /* Height of the announcement banner */
+    padding-top: 0;
 }
 
-/* Adjust for mobile */
-@media (max-width: 768px) {
-    body {
-        padding-top: 80px; /* Taller on mobile due to wrapping */
-    }
+/* Ensure proper spacing */
+.header-middle {
+    margin-top: 0;
 }

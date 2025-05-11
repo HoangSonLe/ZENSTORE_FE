@@ -4,7 +4,7 @@
 const getActiveIndexFromPath = (path) => {
     if (path === "/") return 0;
     if (path.startsWith("/shop") || path.startsWith("/product-details")) return 1;
-    if (path.startsWith("/blog") || path.startsWith("/blog-details")) return 2;
+    if (path.startsWith("/blog") || path.startsWith("/tin-tuc")) return 2;
     if (path.startsWith("/tra-gop")) return 3;
     return null;
 };
@@ -23,7 +23,7 @@ describe('getActiveIndexFromPath', () => {
     test('returns 2 for blog paths', () => {
         expect(getActiveIndexFromPath('/blog')).toBe(2);
         expect(getActiveIndexFromPath('/blog/category')).toBe(2);
-        expect(getActiveIndexFromPath('/blog-details/123')).toBe(2);
+        expect(getActiveIndexFromPath('/tin-tuc/123')).toBe(2);
     });
 
     test('returns 3 for installment path', () => {

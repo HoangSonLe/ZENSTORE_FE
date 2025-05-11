@@ -189,7 +189,7 @@ const SearchBox = () => {
                                 ))
                             ) : (
                                 <div className="no-results-message d-flex flex-column p-4">
-                                    <div className="fw-semibold text-center">
+                                    <div className="fw-semibold text-center p-4">
                                         Không có sản phẩm nào
                                     </div>
                                 </div>

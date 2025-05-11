@@ -251,7 +251,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                                             Trang chủ
                                         </Link>
                                     </li>
-                                     <li
+                                    <li
                                         className={`on-hover-item nav-menu__item ${
                                             activeIndex === 1 ? "active" : ""
                                         }`}

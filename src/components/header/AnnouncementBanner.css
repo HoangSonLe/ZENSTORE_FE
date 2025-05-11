@@ -1,7 +1,7 @@
 .announcement-banner {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    background-color: white;
     color: black;
-    padding: 10px 0;
+    padding: 8px 0;
     width: 100%;
     position: relative; /* Changed to relative */
     z-index: 1; /* Lower z-index */

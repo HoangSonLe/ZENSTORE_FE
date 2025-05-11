@@ -2,9 +2,9 @@
 
 /* Common styles for search results */
 .search-result-container {
-    border-radius: 20px !important;
-    box-shadow: 0 10px 30px rgba(206, 47, 62, 0.2) !important;
-    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 20px rgba(206, 47, 62, 0.15) !important;
+    border: 1px solid #ce2f3e !important;
     overflow: hidden;
     transition: all 0.3s ease;
     position: relative;
@@ -12,7 +12,6 @@
     background-color: white;
     max-width: 90%;
     margin: 0 auto;
-    padding: 10px !important;
 }
 
 .search-result-item {
@@ -33,10 +32,9 @@
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid #eee;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-result-item:hover .search-result-image {
@@ -107,28 +105,22 @@
 }
 
 .mobile-search-input {
-    border: none !important;
-    border-radius: 30px !important;
-    box-shadow: 0 6px 20px rgba(206, 47, 62, 0.25) !important;
+    border: 2px solid #ce2f3e !important;
+    box-shadow: 0 4px 15px rgba(206, 47, 62, 0.2) !important;
     font-size: 18px !important;
     height: 60px;
     transition: all 0.3s ease !important;
-    width: 93%;
+    width: 90%;
     max-width: 600px;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.95) !important;
     color: #333 !important;
     font-weight: 500;
-    padding-left: 25px !important;
-    padding-right: 70px !important;
-    letter-spacing: 0.5px;
 }
 
 .mobile-search-input:focus {
-    box-shadow: 0 8px 25px rgba(206, 47, 62, 0.35) !important;
-    transform: translateY(-3px);
-    background-color: white !important;
-    outline: none !important;
+    box-shadow: 0 4px 20px rgba(206, 47, 62, 0.3) !important;
+    transform: translateY(-2px);
 }
 
 .mobile-search-button {
@@ -136,28 +128,13 @@
     width: 48px;
     height: 48px;
     transition: all 0.3s ease;
-    position: absolute;
+    position: relative;
     z-index: 10002; /* Higher than search results */
-    right: 6px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50% !important;
-    border: none !important;
-    box-shadow: 0 4px 10px rgba(206, 47, 62, 0.3) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .mobile-search-button:hover {
     background-color: #b02535 !important;
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 6px 15px rgba(206, 47, 62, 0.4) !important;
-}
-
-.mobile-search-button i {
-    font-size: 22px;
-    color: white;
+    transform: scale(1.05);
 }
 
 .mobile-close-button {
@@ -182,46 +159,34 @@
 
 /* Desktop search box specific styles */
 .desktop-search-input {
-    border: 1px solid #e0e0e0 !important;
+    border-color: #e0e0e0 !important;
     transition: all 0.3s ease !important;
-    border-radius: 30px 0 0 30px !important;
-    height: 48px !important;
-    padding-left: 20px !important;
-    font-size: 15px !important;
-    letter-spacing: 0.3px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 8px 0 0 8px !important;
 }
 
 .desktop-search-input:focus {
     border-color: #ce2f3e !important;
-    box-shadow: 0 4px 15px rgba(206, 47, 62, 0.15) !important;
-    background-color: white !important;
+    box-shadow: 0 0 0 3px rgba(206, 47, 62, 0.1) !important;
 }
 
 .desktop-search-button {
     background-color: #ce2f3e !important;
     transition: all 0.3s ease;
-    border-radius: 0 30px 30px 0 !important;
-    height: 48px !important;
-    width: 60px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border: none !important;
-    box-shadow: 0 2px 10px rgba(206, 47, 62, 0.2) !important;
+    border-radius: 0 8px 8px 0 !important;
 }
 
 .desktop-search-button:hover {
     background-color: #b02535 !important;
-    box-shadow: 0 4px 15px rgba(206, 47, 62, 0.3) !important;
-}
-
-.desktop-search-button i {
-    font-size: 20px;
-    color: white;
 }
 
 /* Responsive adjustments */
+@media (max-width: 992px) {
+    /* Hide desktop SearchBox when ContactInfo becomes responsive */
+    .form-location-wrapper {
+        display: none !important;
+    }
+}
+
 @media (max-width: 576px) {
     .search-result-image {
         width: 50px;
@@ -280,14 +245,6 @@
 
 .search-result-item {
     animation: fadeInUp 0.3s ease-out forwards;
-    border-radius: 15px !important;
-    margin: 8px 0 !important;
-    transition: all 0.2s ease-in-out !important;
-}
-
-.search-result-item:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
 }
 
 .search-result-item:nth-child(2) {

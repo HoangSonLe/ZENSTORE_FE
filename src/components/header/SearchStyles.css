@@ -3,8 +3,8 @@
 /* Common styles for search results */
 .search-result-container {
     border-radius: 12px !important;
-    box-shadow: 0 8px 20px rgba(206, 47, 62, 0.15) !important;
-    border: 1px solid #ce2f3e !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e0e0e0 !important;
     overflow: hidden;
     transition: all 0.3s ease;
     position: relative;
@@ -25,7 +25,7 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
     background-color: #f8f9fa !important;
-    border-color: #ce2f3e;
+    border-color: #e0e0e0;
 }
 
 .search-result-image {
@@ -49,7 +49,7 @@
 }
 
 .search-result-item:hover .product-name {
-    color: #ce2f3e;
+    color: #4b545b;
 }
 
 .price-sale {
@@ -159,14 +159,14 @@
 
 /* Desktop search box specific styles */
 .desktop-search-input {
-    border-color: #e0e0e0 !important;
+    border: none !important;
     transition: all 0.3s ease !important;
     border-radius: 8px 0 0 8px !important;
 }
 
 .desktop-search-input:focus {
-    border-color: #ce2f3e !important;
-    box-shadow: 0 0 0 3px rgba(206, 47, 62, 0.1) !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .desktop-search-button {

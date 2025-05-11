@@ -1,0 +1,20 @@
+/* Specific fixes for header elements */
+
+/* Set z-index for main header */
+.header.bg-white.border-bottom.border-gray-100 {
+  z-index: 10 !important;
+  position: relative !important;
+}
+
+/* Ensure fixed header has correct z-index */
+.header.bg-white.border-bottom.border-gray-100.fixed-header {
+  z-index: 10 !important;
+  position: fixed !important;
+}
+
+/* Ensure dropdown is always on top */
+.search-result-container {
+  z-index: 999999 !important;
+  position: absolute !important;
+  pointer-events: auto !important;
+}

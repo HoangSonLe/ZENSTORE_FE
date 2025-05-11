@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { IApiResponseTable } from "../../apis/interface";
 import productApi from "../../apis/product/product.api";
 import { IProduct } from "../../apis/product/product.interface";
+import { IApiResponseTable } from "../../apis/interface";
 import { useApi } from "../../hooks";
 import { formatVND } from "../../utils/numberUtils";
-import "./SearchFixStyles.css";
 import "./SearchStyles.css";
+import "./SearchFixStyles.css";
+import "./DropdownFixStyles.css";
 
 const SearchBox = () => {
     const [input, setInput] = useState<string>("");
@@ -77,12 +78,12 @@ const SearchBox = () => {
 
     return (
         <form onSubmit={handleSearch} className="flex-align flex-wrap form-location-wrapper">
-            <div className="position-relative" ref={searchBoxRef}>
-                <div className="search-category style-two d-flex h-48 search-form d-sm-flex d-none">
-                    <div className="search-form__wrapper position-relative">
+            <div className="position-relative w-100" ref={searchBoxRef}>
+                <div className="search-category style-two d-flex h-48 search-form d-none d-lg-flex w-100" style={{ position: 'relative', left: 0, right: 0, margin: 0 }}>
+                    <div className="search-form__wrapper position-relative w-100">
                         <input
                             type="text"
-                            className="search-form__input desktop-search-input common-input py-13 ps-16 pe-18 rounded-0 border-0"
+                            className="search-form__input desktop-search-input common-input py-13 ps-16 pe-18 rounded-0 border-0 w-100"
                             placeholder="Bạn cần tìm sản phẩm gì?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
@@ -94,7 +95,7 @@ const SearchBox = () => {
                         type="submit"
                         className="desktop-search-button bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none rounded-end"
                         aria-label="Submit Search"
-                        style={{ borderRadius: "0 8px 8px 0", margin: 0, padding: 0 }}
+                        style={{ borderRadius: '0 8px 8px 0', margin: 0, padding: 0 }}
                     >
                         <i className="ph ph-magnifying-glass" />
                     </button>
@@ -102,13 +103,17 @@ const SearchBox = () => {
                 {/* Search Result List */}
                 {showResults && (
                     <div
-                        className="search-result-container position-absolute bg-white border rounded shadow mt-2 z-3"
+                        className="search-result-container position-absolute bg-white border rounded shadow mt-2"
                         style={{
-                            top: "110%",
+                            top: "100%",
                             left: 0,
                             width: "100%", // Make the result container width match the input
                             maxHeight: "300px", // Limit height to allow scrolling
                             overflowY: "auto", // Enable vertical scrolling
+                            transform: "none",
+                            marginLeft: "250px",
+                            marginRight: 0,
+                            zIndex: 999999 // Tăng z-index lên mức cao nhất để hiển thị đè lên tất cả
                         }}
                     >
                         <div className="d-flex flex-wrap justify-content-between">

@@ -2,10 +2,10 @@ import query from "jquery";
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SearchBox from "./SearchBox";
-import SearchBoxMobile from "./SearchBoxMobile";
 import AppleAnimation from "./AppleAnimation";
 import ContactInfo, { ContactInfoMobile } from "./ContactInfo";
 import AnnouncementBanner from "./AnnouncementBanner";
+import AnnouncementBannerMobile from "./AnnouncementBannerMobile";
 import "./MobileMenuStyles.css"; // Import custom mobile menu styles
 import "./LogoStyles.css"; // Import custom logo styles
 import "./LogoOutlineEffect.css"; // Import logo outline effect styles
@@ -13,6 +13,10 @@ import "./NavMenuStyles.css"; // Import custom nav menu styles
 import "./FixedBannerAdjustment.css"; // Import fixed banner adjustments
 import "./HeaderAnnouncementWrapper.css"; // Import header announcement wrapper styles
 import "./MobileHeaderFix.css"; // Import mobile header fixes
+import "./SearchBoxStyles.css"; // Import search box styles
+import "./HeaderLayoutStyles.css"; // Import header layout styles
+import "./HeaderZIndexFix.css"; // Import z-index fixes
+import "./HeaderSpecificFix.css"; // Import specific header fixes
 
 const Header = ({ logoUrl }: { logoUrl: string }) => {
     const [scroll, setScroll] = useState(false);
@@ -92,17 +96,19 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
         };
     }, [menuActive]);
 
-    // Search control support
-    const [activeSearch, setActiveSearch] = useState(false);
-    const handleSearchToggle = () => {
-        console.log("d");
-        setActiveSearch(!activeSearch);
-    };
+    // Search control support removed for mobile
 
     return (
         <>
-            {/* Announcement Banner */}
+            {/* Desktop Announcement Banner */}
             <AnnouncementBanner
+                text="Mua Iphone trả góp bao duyệt nợ xấu 100%"
+                linkText="Xem chi tiết"
+                linkUrl="https://zenstores.com.vn/tin-tuc/8"
+            />
+
+            {/* Mobile Announcement Banner */}
+            <AnnouncementBannerMobile
                 text="Mua Iphone trả góp bao duyệt nợ xấu 100%"
                 linkText="Xem chi tiết"
                 linkUrl="https://zenstores.com.vn/tin-tuc/8"
@@ -113,9 +119,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                 onClick={() => menuActive && setMenuActive(false)}
             />
             {/* ==================== Search Box Start Here ==================== */}
-
-            <SearchBoxMobile activeSearch={activeSearch} handleSearchToggle={handleSearchToggle} />
-
+            {/* Removed mobile search box as per requirement */}
             {/* ==================== Search Box End Here ==================== */}
             {/* ==================== Mobile Menu Start Here ==================== */}
             <div
@@ -214,9 +218,11 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         </div>
                         {/* Logo End  */}
                         {/* form Category Start */}
-                        <div className="d-flex align-items-center" style={{ marginLeft: "108px" }}>
-                            <SearchBox />
-                            <div className="d-none d-lg-block ml-20">
+                        <div className="d-flex align-items-center header-search-contact-wrapper">
+                            <div className="d-none d-lg-flex">
+                                <SearchBox />
+                            </div>
+                            <div className="d-none d-lg-block contact-animation-wrapper">
                                 <ContactInfo />
                                 <AppleAnimation />
                             </div>
@@ -234,6 +240,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                 className={`header bg-white border-bottom border-gray-100 ${
                     scroll && "fixed-header"
                 }`}
+                style={{ zIndex: 10 }}
             >
                 <div className="container container-lg">
                     <nav className="header-inner d-flex justify-content-between gap-8">
@@ -286,19 +293,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         </div>
                         {/* Header Right start */}
                         <div className="header-right flex-align">
-                            <div className="me-8 d-lg-none d-block">
-                                <div className="header-two-activities flex-align flex-wrap gap-32">
-                                    <button
-                                        onClick={handleSearchToggle}
-                                        type="button"
-                                        className="flex-align search-icon d-lg-none d-flex gap-4 item-hover-two"
-                                    >
-                                        <span className="text-2xl text-zenStore-100 d-flex position-relative item-hover__text">
-                                            <i className="ph ph-magnifying-glass" />
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
+                            {/* Search button removed for mobile as per requirement */}
                             <button
                                 ref={menuButtonRef}
                                 onClick={handleMenuToggle}

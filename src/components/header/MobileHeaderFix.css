@@ -18,6 +18,15 @@
     z-index: 999 !important;
 }
 
+/* Ensure proper display of banners */
+.announcement-banner {
+    display: block;
+}
+
+.announcement-banner-mobile {
+    display: none;
+}
+
 /* Mobile menu adjustments */
 @media (max-width: 768px) {
     .mobile-menu {
@@ -31,8 +40,7 @@
 
     /* Ensure announcement banner doesn't interfere with other elements */
     .announcement-banner {
-        position: static !important;
-        z-index: 1 !important;
+        display: none !important; /* Hide desktop banner on mobile */
     }
 
     /* Ensure proper stacking of elements */
@@ -57,5 +65,19 @@
     .search-icon {
         z-index: 20;
         position: relative;
+    }
+
+    /* Ensure mobile banner is properly displayed */
+    .announcement-banner-mobile {
+        display: block !important;
+        position: static !important;
+        z-index: 1 !important;
+    }
+}
+
+/* Hide mobile banner on desktop */
+@media (min-width: 769px) {
+    .announcement-banner-mobile {
+        display: none !important;
     }
 }

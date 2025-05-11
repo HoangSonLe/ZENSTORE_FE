@@ -1,0 +1,93 @@
+.announcement-banner-mobile {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    color: black;
+    padding: 8px 0;
+    width: 100%;
+    position: static;
+    z-index: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    display: none; /* Hidden by default, shown via media query */
+}
+
+.announcement-banner-mobile__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.announcement-banner-mobile__text {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.announcement-banner-mobile__link {
+    background: linear-gradient(145deg, #ff3b30, #ff5b52);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 59, 48, 0.25);
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.announcement-banner-mobile__link i {
+    transition: transform 0.3s ease;
+    margin-left: 4px;
+    font-size: 10px;
+}
+
+.announcement-banner-mobile__link:hover {
+    background: linear-gradient(145deg, #ff5b52, #ff3b30);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 59, 48, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.announcement-banner-mobile__link:hover i {
+    transform: translateX(3px);
+}
+
+/* Blinking dot animation */
+.blinking-dot-mobile {
+    display: inline-flex;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(145deg, #ff3b30, #ff5b52);
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink-mobile 1s infinite;
+    vertical-align: middle;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+@keyframes blink-mobile {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}

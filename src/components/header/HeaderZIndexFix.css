@@ -1,0 +1,70 @@
+/* Fix z-index issues with header elements */
+
+/* Ensure header elements have lower z-index than dropdown */
+.header {
+  z-index: 10 !important;
+  position: relative !important;
+}
+
+/* Specific z-index for main header */
+.header.bg-white.border-bottom.border-gray-100 {
+  z-index: 10 !important;
+  position: relative !important;
+}
+
+.header-inner {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+.nav-menu {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+.menu-category-wrapper {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+.header-menu {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+/* Ensure dropdown has highest z-index */
+.search-result-container {
+  z-index: 999999 !important;
+  position: absolute !important;
+  pointer-events: auto !important;
+}
+
+/* Fix for fixed header */
+.fixed-header {
+  z-index: 1000 !important;
+  position: fixed !important;
+}
+
+/* Ensure proper stacking for header elements */
+.header-inner.d-flex.justify-content-between.gap-8 {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+/* Ensure proper stacking context */
+.header-middle {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+/* Ensure search box is above other elements but below dropdown */
+.search-category {
+  z-index: 1001 !important;
+  position: relative !important;
+}
+
+/* Ensure form wrapper has proper z-index */
+.form-location-wrapper {
+  z-index: 1001 !important;
+  position: relative !important;
+}

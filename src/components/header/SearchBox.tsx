@@ -8,6 +8,7 @@ import { formatVND } from "../../utils/numberUtils";
 import "./SearchStyles.css";
 import "./SearchFixStyles.css";
 import "./DropdownFixStyles.css";
+import "./SearchCenterFix.css";
 
 const SearchBox = () => {
     const [input, setInput] = useState<string>("");
@@ -111,7 +112,7 @@ const SearchBox = () => {
                             maxHeight: "300px", // Limit height to allow scrolling
                             overflowY: "auto", // Enable vertical scrolling
                             transform: "none",
-                            marginLeft: "250px",
+                            marginLeft: 0,
                             marginRight: 0,
                             zIndex: 999999 // Tăng z-index lên mức cao nhất để hiển thị đè lên tất cả
                         }}

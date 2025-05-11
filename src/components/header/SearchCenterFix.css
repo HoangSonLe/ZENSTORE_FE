@@ -1,0 +1,25 @@
+/* Simple fix for search box centering */
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+  .search-category.style-two {
+    margin-left: 120px !important;
+    max-width: 400px !important;
+  }
+
+  .search-result-container {
+    margin-left: 120px !important;
+    max-width: 400px !important;
+  }
+}
+
+/* Adjust search box width for smaller resolutions */
+@media screen and (max-width: 1279px) {
+  .search-category.style-two {
+    max-width: 300px !important;
+    margin-left: 120px !important;
+  }
+
+  .search-result-container {
+    max-width: 300px !important;
+    margin-left: 120px !important;
+  }
+}

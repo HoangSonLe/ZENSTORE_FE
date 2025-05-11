@@ -155,7 +155,7 @@ const SearchBox = () => {
                                             >
                                                 {item.productName}
                                             </div>
-                                            {item.productPrice === 0 ? (
+                                            {item.productPrice == 0 ? (
                                                 <div className="price-contact text-muted">
                                                     Giá liên hệ
                                                 </div>

@@ -10,7 +10,7 @@ export function formatVND(amount: number | string | null | undefined): string {
     try {
         return Number(amount).toLocaleString("vi-VN") + " VNĐ";
     } catch {
-        return "0 VNĐ";
+        return "Giá liên hệ";
     }
 }
 

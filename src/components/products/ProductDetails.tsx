@@ -131,7 +131,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                                         <InlineCountDown />
                                         <h5 className="mb-12">{productData.productName}</h5>
 
-                                        {productData.productPrice === 0 ? (
+                                        {productData.productPrice == 0 ? (
                                             <div className="my-32 flex-align gap-16 flex-wrap">
                                                 <div className="flex-align gap-8">
                                                     <h6 className="mb-0 contact-price">

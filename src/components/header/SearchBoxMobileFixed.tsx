@@ -103,7 +103,7 @@ const SearchBoxMobile = ({
                 <i className="ph ph-x-circle" />
             </button>
             <div className="container">
-                <div className="container position-relative">
+                <div className="container position-relative flex-column">
                     <div className="position-relative">
                         <input
                             type="text"

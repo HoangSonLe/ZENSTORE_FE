@@ -82,7 +82,7 @@ const SearchBox = () => {
                     <div className="search-form__wrapper position-relative">
                         <input
                             type="text"
-                            className="search-form__input desktop-search-input common-input py-13 ps-16 pe-18 rounded-0 border-0"
+                            className="search-form__input desktop-search-input common-input py-8 ps-16 pe-18 rounded-0 border-0 text-xl"
                             placeholder="Bạn cần tìm sản phẩm gì?"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
@@ -184,7 +184,7 @@ const SearchBox = () => {
                                 ))
                             ) : (
                                 <div className="no-results-message d-flex flex-column p-4">
-                                    <div className="fw-semibold text-center">
+                                    <div className="fw-semibold text-center p-4">
                                         Không có sản phẩm nào
                                     </div>
                                 </div>

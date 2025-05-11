@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IApiResponseTable } from "../../apis/interface";
 import productApi from "../../apis/product/product.api";
 import { IProduct } from "../../apis/product/product.interface";
-import { IApiResponseTable } from "../../apis/interface";
 import { useApi } from "../../hooks";
 import { formatVND } from "../../utils/numberUtils";
-import "./SearchStyles.css";
 import "./SearchFixStyles.css";
-import CustomSearchInput from "./CustomSearchInput";
+import "./SearchStyles.css";
 
 const SearchBox = () => {
     const [input, setInput] = useState<string>("");
@@ -95,7 +94,7 @@ const SearchBox = () => {
                         type="submit"
                         className="desktop-search-button bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none rounded-end"
                         aria-label="Submit Search"
-                        style={{ borderRadius: '0 8px 8px 0', margin: 0, padding: 0 }}
+                        style={{ borderRadius: "0 8px 8px 0", margin: 0, padding: 0 }}
                     >
                         <i className="ph ph-magnifying-glass" />
                     </button>

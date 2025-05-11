@@ -9,7 +9,12 @@ interface AnnouncementBannerProps {
     style?: React.CSSProperties;
 }
 
-const AnnouncementBanner: React.FC<AnnouncementBannerProps> = ({ text, linkText, linkUrl, style }) => {
+const AnnouncementBanner: React.FC<AnnouncementBannerProps> = ({
+    text,
+    linkText,
+    linkUrl,
+    style,
+}) => {
     // Check if the URL is external (starts with http:// or https://)
     const isExternalLink = linkUrl.startsWith("http://") || linkUrl.startsWith("https://");
 
@@ -18,14 +23,20 @@ const AnnouncementBanner: React.FC<AnnouncementBannerProps> = ({ text, linkText,
             <div className="container container-lg">
                 <div className="announcement-banner__content">
                     <p className="announcement-banner__text">
-                        <span className="blinking-dot" aria-hidden="true" style={{ marginLeft: '15px' }}></span>
-                        <span style={{ position: 'relative', zIndex: 1, paddingLeft: '5px' }}>{text}</span>
+                        <span
+                            className="blinking-dot"
+                            aria-hidden="true"
+                            style={{ marginLeft: "15px" }}
+                        ></span>
+                        <span style={{ position: "relative", zIndex: 1, paddingLeft: "5px" }}>
+                            {text}
+                        </span>
                     </p>
                     {isExternalLink ? (
                         <a
                             href={linkUrl}
                             className="announcement-banner__link"
-                            target="_blank"
+                            target="_self"
                             rel="noopener noreferrer"
                         >
                             {linkText}

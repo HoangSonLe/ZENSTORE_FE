@@ -6,6 +6,6 @@ body {
 /* Adjust for mobile */
 @media (max-width: 768px) {
     body {
-        padding-top: 70px; /* Taller on mobile due to wrapping */
+        padding-top: 80px; /* Taller on mobile due to wrapping */
     }
 }

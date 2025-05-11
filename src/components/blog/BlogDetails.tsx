@@ -127,7 +127,7 @@ const BlogDetails = ({ blogId }: { blogId: number }) => {
                                     .map((post, index) => (
                                         <div className="recent-post" key={post.newsId || index}>
                                             <div className="recent-post-image">
-                                                <Link to={`/blog-details/${post.newsId}`}>
+                                                <Link to={`/tin-tuc/${post.newsId}`}>
                                                     <img
                                                         src={
                                                             post.newsThumbnail ??
@@ -143,7 +143,7 @@ const BlogDetails = ({ blogId }: { blogId: number }) => {
                                             </div>
                                             <div className="recent-post-content">
                                                 <h4 className="recent-post-title">
-                                                    <Link to={`/blog-details/${post.newsId}`}>
+                                                    <Link to={`/tin-tuc/${post.newsId}`}>
                                                         {post.newsTitle}
                                                     </Link>
                                                 </h4>

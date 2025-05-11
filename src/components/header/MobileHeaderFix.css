@@ -1,0 +1,61 @@
+/* Mobile header fixes */
+.header-middle.style-two {
+    position: relative;
+    z-index: 10;
+}
+
+.header.bg-white {
+    position: relative;
+    z-index: 10;
+}
+
+/* Fixed header adjustments */
+.fixed-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    width: 100%;
+    z-index: 999 !important;
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 768px) {
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 9990;
+    }
+
+    /* Ensure announcement banner doesn't interfere with other elements */
+    .announcement-banner {
+        position: static !important;
+        z-index: 1 !important;
+    }
+
+    /* Ensure proper stacking of elements */
+    .header-middle.style-two,
+    .header.bg-white {
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Ensure search box appears above other elements */
+    .mobile-search-box {
+        z-index: 9995;
+    }
+
+    /* Fix for mobile menu button */
+    .toggle-mobileMenu {
+        z-index: 20;
+        position: relative;
+    }
+
+    /* Fix for search icon */
+    .search-icon {
+        z-index: 20;
+        position: relative;
+    }
+}

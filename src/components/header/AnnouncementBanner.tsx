@@ -25,8 +25,6 @@ const AnnouncementBanner: React.FC<AnnouncementBannerProps> = ({ text, linkText,
                         <a
                             href={linkUrl}
                             className="announcement-banner__link"
-                            target="_blank"
-                            rel="noopener noreferrer"
                         >
                             {linkText}
                             <i className="ph ph-arrow-right"></i>

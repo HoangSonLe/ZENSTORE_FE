@@ -565,7 +565,7 @@
         max-width: 85%;
         height: 100vh;
         background-color: #fff;
-        z-index: 999;
+        z-index: 1000;
         overflow-y: auto;
         overflow-x: hidden;
         padding: 60px 0 0;

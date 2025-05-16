@@ -460,7 +460,6 @@
 
 /* Banner section styling */
 .banner-section {
-    margin-top: 35px;
     overflow: hidden;
     height: auto;
     min-height: 100%;
@@ -561,6 +560,7 @@
 
     .banner-section {
         margin-top: 25px;
+        height: 30vh;
     }
 
     .banner-image {
@@ -622,6 +622,7 @@
     .banner-section {
         padding: 10px;
         margin-top: 20px;
+        height: 30vh;
     }
 
     .banner-image {
@@ -656,6 +657,10 @@
 
     .installment-page .content-box {
         padding: 15px !important;
+    }
+
+    .banner-section {
+        height: 30vh;
     }
 
     .installment-page p span.d-flex {

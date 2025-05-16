@@ -103,9 +103,9 @@ const TopSellingOne = ({ productList, bannerList }: IProps) => {
                             <h5>Sản phẩm bán chạy</h5>
                         </div>
                     </div>
-                    <div className="row g-12">
-                        <div className="col-md-4">
-                            <div className="banner-section">
+                    <div className="row g-12 h-100">
+                        <div className="col-md-4 d-flex">
+                            <div className="banner-section w-100">
                                 <img
                                     src={bannerList[0].bannerImage}
                                     alt="Background"
@@ -114,7 +114,7 @@ const TopSellingOne = ({ productList, bannerList }: IProps) => {
                             </div>
                         </div>
                         <div className="col-md-8">
-                            <div className="slider-section">
+                            <div className="slider-section h-100">
                                 <Slider {...settings}>
                                     {productList.map((product) => (
                                         <div key={product.productId} className="slider-item">

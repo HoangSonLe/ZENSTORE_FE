@@ -16,7 +16,6 @@ import "./MobileHeaderFix.css"; // Import mobile header fixes
 import "./SearchBoxStyles.css"; // Import search box styles
 import "./HeaderLayoutStyles.css"; // Import header layout styles
 import "./HeaderZIndexFix.css"; // Import z-index fixes
-import "./HeaderSpecificFix.css"; // Import specific header fixes
 
 const Header = ({ logoUrl }: { logoUrl: string }) => {
     const [scroll, setScroll] = useState(false);
@@ -218,8 +217,11 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         </div>
                         {/* Logo End  */}
                         {/* form Category Start */}
-                        <div className="d-flex align-items-center header-search-contact-wrapper">
-                            <div className="d-none d-lg-flex" style={{ flex: 1 }}>
+                        <div className="d-flex align-items-center justify-content-center header-search-contact-wrapper">
+                            <div
+                                className="d-none d-lg-flex justify-content-center"
+                                style={{ flex: 1, display: "flex" }}
+                            >
                                 <SearchBox />
                             </div>
                             <div className="d-none d-lg-block contact-animation-wrapper">

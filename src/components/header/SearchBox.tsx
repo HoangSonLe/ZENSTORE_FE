@@ -5,9 +5,7 @@ import { IProduct } from "../../apis/product/product.interface";
 import { IApiResponseTable } from "../../apis/interface";
 import { useApi } from "../../hooks";
 import { formatVND } from "../../utils/numberUtils";
-import "./SearchStyles.css";
-import "./SearchFixStyles.css";
-import "./DropdownFixStyles.css";
+import "./SearchConsolidated.css";
 
 const SearchBox = () => {
     const [input, setInput] = useState<string>("");

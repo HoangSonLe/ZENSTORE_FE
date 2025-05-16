@@ -1,7 +1,8 @@
 import query from "jquery";
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBoxUpdated";
+import SearchBoxMobile from "./SearchBoxMobileUpdated";
 import AppleAnimation from "./AppleAnimation";
 import ContactInfo, { ContactInfoMobile } from "./ContactInfo";
 import AnnouncementBanner from "./AnnouncementBanner";
@@ -16,6 +17,8 @@ import "./MobileHeaderFix.css"; // Import mobile header fixes
 import "./SearchBoxStyles.css"; // Import search box styles
 import "./HeaderLayoutStyles.css"; // Import header layout styles
 import "./HeaderZIndexFix.css"; // Import z-index fixes
+import "./SearchConsolidated.css"; // Import consolidated search styles
+import "./SearchInputFix.css"; // Import search input fix styles
 
 const Header = ({ logoUrl }: { logoUrl: string }) => {
     const [scroll, setScroll] = useState(false);
@@ -56,12 +59,28 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
     const mobileMenuRef = useRef<HTMLDivElement>(null);
     const menuButtonRef = useRef<HTMLButtonElement>(null);
 
+    // Search control support for mobile
+    const [searchActive, setSearchActive] = useState(false);
+    const searchButtonRef = useRef<HTMLButtonElement>(null);
+
     const handleMenuClick = (index: any) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
     const handleMenuToggle = () => {
         setMenuActive(!menuActive);
+        // Close search if menu is opened
+        if (!menuActive) {
+            setSearchActive(false);
+        }
+    };
+
+    const handleSearchToggle = () => {
+        setSearchActive(!searchActive);
+        // Close menu if search is opened
+        if (!searchActive) {
+            setMenuActive(false);
+        }
     };
 
     // Update activeIndex when location changes
@@ -95,8 +114,6 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
         };
     }, [menuActive]);
 
-    // Search control support removed for mobile
-
     return (
         <>
             {/* Desktop Announcement Banner */}
@@ -118,7 +135,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                 onClick={() => menuActive && setMenuActive(false)}
             />
             {/* ==================== Search Box Start Here ==================== */}
-            {/* Removed mobile search box as per requirement */}
+            <SearchBoxMobile activeSearch={searchActive} handleSearchToggle={handleSearchToggle} />
             {/* ==================== Search Box End Here ==================== */}
             {/* ==================== Mobile Menu Start Here ==================== */}
             <div
@@ -295,7 +312,15 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         </div>
                         {/* Header Right start */}
                         <div className="header-right flex-align">
-                            {/* Search button removed for mobile as per requirement */}
+                            {/* Search button for mobile */}
+                            <button
+                                ref={searchButtonRef}
+                                onClick={handleSearchToggle}
+                                type="button"
+                                className="search-icon d-lg-none ms-3n text-gray-800 text-4xl d-flex"
+                            >
+                                <i className="ph ph-magnifying-glass" />
+                            </button>
                             <button
                                 ref={menuButtonRef}
                                 onClick={handleMenuToggle}

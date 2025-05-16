@@ -6,6 +6,7 @@ import { IApiResponseTable } from "../../apis/interface";
 import { useApi } from "../../hooks";
 import { formatVND } from "../../utils/numberUtils";
 import "./SearchConsolidated.css";
+import "./SearchInputFix.css";
 
 const SearchBoxMobile = ({
     activeSearch,
@@ -21,8 +22,6 @@ const SearchBoxMobile = ({
     const { request: getProductList, loading: productListLoading } = useApi(
         productApi.getProductList
     );
-
-    // We'll use CSS classes instead of inline styles
 
     const searchBoxRef = useRef<HTMLFormElement | null>(null); // Ref for the search box
     const navigate = useNavigate();
@@ -50,6 +49,7 @@ const SearchBoxMobile = ({
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [activeSearch]);
+
     const getProductData = async () => {
         setIsSearching(true);
         await getProductList(
@@ -68,6 +68,7 @@ const SearchBoxMobile = ({
             }
         );
     };
+
     // Debounced search to fetch results
     useEffect(() => {
         const delayDebounce = setTimeout(async () => {
@@ -107,8 +108,8 @@ const SearchBoxMobile = ({
                     <div className="position-relative">
                         <input
                             type="text"
-                            className="form-control mobile-search-input py-16 px-24 text-xl rounded-pill pe-64"
-                            placeholder="Bạn cần tìm sản phẩm gì?"
+                            className="form-control mobile-search-input py-16 px-24 text-xl pe-64"
+                            placeholder="Tìm sản phẩm"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             id="searchInputMobile"
@@ -116,9 +117,8 @@ const SearchBoxMobile = ({
                         />
                         <button
                             type="submit"
-                            className="mobile-search-button w-48 h-48 bg-zenStore-100 rounded-circle flex-center text-xl text-white position-absolute top-50 translate-middle-y inset-inline-end-0 me-16"
+                            className="mobile-search-button flex-center text-xl text-white position-absolute top-50 translate-middle-y inset-inline-end-0 me-16"
                             aria-label="Search button"
-                            style={{ margin: 0, padding: 0 }}
                         >
                             <i className="ph ph-magnifying-glass" />
                         </button>

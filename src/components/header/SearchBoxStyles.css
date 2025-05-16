@@ -1,7 +1,6 @@
 /* Styles for making the search box wider */
 .form-location-wrapper {
     width: 100%;
-    max-width: 650px !important; /* Adjusted for better alignment with contact icons */
     transition: all 0.3s ease;
     margin-right: 15px; /* Add space between search box and contact info */
 }
@@ -14,7 +13,6 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
     width: 100% !important; /* Ensure it takes full width of parent */
-    margin-left: 250px !important; /* Add specific left margin as requested */
 }
 
 .search-form__wrapper {
@@ -24,7 +22,7 @@
 .search-form__input {
     width: 100% !important; /* Ensure input takes full width */
     height: 48px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
     transition: all 0.3s ease;
 }
@@ -40,29 +38,17 @@
     .form-location-wrapper {
         max-width: 550px !important;
     }
-
-    .search-category.style-two {
-        margin-left: 200px !important; /* Adjust margin for medium screens */
-    }
 }
 
 @media (max-width: 992px) {
     .form-location-wrapper {
         max-width: 500px !important;
     }
-
-    .search-category.style-two {
-        margin-left: 150px !important; /* Reduce margin on smaller screens */
-    }
 }
 
 @media (max-width: 768px) {
     .form-location-wrapper {
         max-width: 100% !important;
-    }
-
-    .search-category.style-two {
-        margin-left: 0 !important; /* Reset margin on mobile */
     }
 }
 

@@ -219,7 +219,7 @@ const Header = ({ logoUrl }: { logoUrl: string }) => {
                         {/* Logo End  */}
                         {/* form Category Start */}
                         <div className="d-flex align-items-center header-search-contact-wrapper">
-                            <div className="d-none d-lg-flex">
+                            <div className="d-none d-lg-flex" style={{ flex: 1 }}>
                                 <SearchBox />
                             </div>
                             <div className="d-none d-lg-block contact-animation-wrapper">

@@ -8,7 +8,6 @@ import { formatVND } from "../../utils/numberUtils";
 import "./SearchStyles.css";
 import "./SearchFixStyles.css";
 import "./DropdownFixStyles.css";
-import "./SearchCenterFix.css";
 
 const SearchBox = () => {
     const [input, setInput] = useState<string>("");
@@ -80,7 +79,10 @@ const SearchBox = () => {
     return (
         <form onSubmit={handleSearch} className="flex-align flex-wrap form-location-wrapper">
             <div className="position-relative w-100" ref={searchBoxRef}>
-                <div className="search-category style-two d-flex h-48 search-form d-none d-lg-flex w-100" style={{ position: 'relative', left: 0, right: 0, margin: 0 }}>
+                <div
+                    className="search-category style-two d-flex h-48 search-form d-none d-lg-flex w-100"
+                    style={{ position: "relative", left: 0, right: 0, margin: 0 }}
+                >
                     <div className="search-form__wrapper position-relative w-100">
                         <input
                             type="text"
@@ -96,7 +98,7 @@ const SearchBox = () => {
                         type="submit"
                         className="desktop-search-button bg-main-two-600 flex-center text-xl text-white flex-shrink-0 w-48 hover-bg-main-two-700 d-lg-flex d-none rounded-end"
                         aria-label="Submit Search"
-                        style={{ borderRadius: '0 8px 8px 0', margin: 0, padding: 0 }}
+                        style={{ borderRadius: "0 8px 8px 0", margin: 0, padding: 0 }}
                     >
                         <i className="ph ph-magnifying-glass" />
                     </button>
@@ -114,7 +116,7 @@ const SearchBox = () => {
                             transform: "none",
                             marginLeft: 0,
                             marginRight: 0,
-                            zIndex: 999999 // Tăng z-index lên mức cao nhất để hiển thị đè lên tất cả
+                            zIndex: 999999, // Tăng z-index lên mức cao nhất để hiển thị đè lên tất cả
                         }}
                     >
                         <div className="d-flex flex-wrap justify-content-between">
